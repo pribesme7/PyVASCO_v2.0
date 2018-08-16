@@ -1,9 +1,0 @@
-,S1 
-d[mm],100,
-L[mm],1000,
-T[K],10,
-Material,M1,
-Pump,P1,P1
-Gassource,G0,G0
-Photon flux,1e12,
-Electron flux,1e16,

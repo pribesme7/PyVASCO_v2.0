@@ -1,9 +1,0 @@
-Cone_original,S1,S2,S3,S4
-d[mm],100.0,200.0,300.0,400.0
-L[mm],1000.0,1000.0,1000.0,1000.0
-T[K],293.0,293.0,293.0,293.0
-Material,M16,M16,M17,M16
-Pump,P12,P0,P0,P0,P12
-Gassource,G0,G0,G0,G0,G0
-Photon flux,0.0,0.0,0.0,0.0
-Electron flux,0.0,0.0,0.0,0.0

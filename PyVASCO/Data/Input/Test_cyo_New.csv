@@ -1,9 +1,0 @@
-Test_cyo,S1 
-d[mm],50,
-L[mm],300,
-T[K],10,
-Material,Cu,
-Pump,P1,P1
-Gassource,G0,G0
-Photon flux,0,
-Electron flux,0,
