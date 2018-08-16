@@ -1,0 +1,9 @@
+Test_RecursivePumps,S1,S2 
+d[mm],20,200
+L[mm],1000,1000
+T[K],293,293
+Material,M0,M0
+Pump,VPIC,P0,VPIC
+Gassource,G0,G0,G0
+Photon flux,0,0
+Electron flux,0,0

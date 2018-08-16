@@ -1,0 +1,9 @@
+TDI.C4L2Cu-1_lumpedS,S1
+d[mm],100.0
+L[mm],1686.666667
+T[K],300.0
+Material,M55
+Pump,P17,P17
+Gassource,G0,G0
+Photon flux,0.0
+Electron flux,0.0

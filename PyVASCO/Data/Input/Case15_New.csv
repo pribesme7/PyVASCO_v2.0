@@ -1,0 +1,9 @@
+Case15,S1,S2
+d[mm],91.63,91.63
+L[mm],3000.0,3000.0
+T[K],300.0,300.0
+Material,M47,M47
+Pump,P14,P15,P14
+Gassource,G0,G0,G0
+Photon flux,3e+15,3e+15
+Electron flux,1.2e+14,1.2e+14

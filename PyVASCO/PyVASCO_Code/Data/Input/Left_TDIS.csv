@@ -1,0 +1,9 @@
+TDIS_static,S1,S2,S3,S4,S5
+d[mm],63,63,63,200,212.7
+L[mm],400,162,400,160,340
+T[K],300,300,300,300,300
+Material,NEG,TDIS_SSteel,NEG,TDIS_SSteel,NEG
+Pump,P3,P0,P0,P0,P0
+Gassource,G0,G0,G0,G0,G0
+Photon flux,0,0,0,0,0
+Electron flux,2.00E+14,2.00E+14,2.00E+14,1.00E+16,2.00E+14

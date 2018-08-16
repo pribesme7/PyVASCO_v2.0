@@ -1,0 +1,10 @@
+Cu,H2,CO,CH4,CO2
+Sticking Probability,1.00E-07,1.00E-07,1.00E-07,1.00E-07
+Eta_i (molecules/ion),5.00E-03,5.00E-03,5.00E-03,5.40E-02
+,1.00E-03,1.00E-03,1.00E-03,4.00E-03
+,3.00E-03,3.00E-03,3.00E-03,2.50E-02
+,1.00E-03,1.00E-03,1.00E-03,1.40E-02
+Eta_e (molecules/electron),1.80E-05,6.50E-07,4.50E-06,3.90E-06
+Eta_Ph (molecules/photon),1.50E-04,4.00E-06,1.50E-05,2.50E-05
+LinearPumping (L/s),0,0,0,0
+OutGassing Rate (Torrl/s cm2),7.06E-12,3.53E-15,1.76E-14,1.76E-14

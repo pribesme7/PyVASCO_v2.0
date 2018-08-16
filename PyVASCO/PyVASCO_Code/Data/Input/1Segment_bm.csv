@@ -1,0 +1,9 @@
+1Segment,S1,
+d[mm],100,
+L[mm],1000,
+T[K],293,
+Material,M0,
+Pump,P_bench,P_bench
+Gassource,G0,G0
+Photon flux,0,
+Electron flux,0,

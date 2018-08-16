@@ -1,12 +1,11 @@
 PyVASCO/PyVASCO_Code/core/
-PyVASCO/PyVASCO_Code/Data/Input_benchmark/
-PyVASCO/PyVASCO_Code/Data/Input_CMS/
+Data/Input_benchmark/
+Data/Input_CMS/
 PyVASCO/PyVASCO_Code/Data/Input_CMS-Copy/
-PyVASCO/PyVASCO_Code/Data/Input_Fcc_ee/
-PyVASCO/PyVASCO_Code/Data/Input_TDIS/
-docs/
-Data/
+Data/Input_Fcc_ee/
+Data/Input_TDIS/
 Setup.iss
+docs/Comparison_with_VASCO/
 
 
 

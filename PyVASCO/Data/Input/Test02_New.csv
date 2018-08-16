@@ -1,0 +1,9 @@
+Test01,S1,S2 ,
+d[mm],100,200,
+L[mm],1000,1000,
+T[K],293,293,
+Material,M50,M52,
+Pump,PTest01,P0,PTest01
+Gassource,G0,G0,G0
+Photon flux,0,0,
+Electron flux,1.00E+11,1.00E+11,
