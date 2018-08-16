@@ -1,0 +1,8 @@
+Input folder without material folder gives error message in loadingMaterials function 
+-> write an try/except block or create folders automatically if needed
+
+
+Case1.csv and Case1_Multi.csv with zero beam gives different results, especially the multigas framework doamin looks not to be correct.
+
+
+Check error, when there are too many colomns (empty coloums) at the end the csv-file
