@@ -25,7 +25,7 @@ import PropertyWindow
 #import ExternalDataWindow
 import Scrubbing
 
-import NewMaterialWindow,NewPumpWindow,NewGasSourceWindow,NewESDcurve,NewInput,AnalysisWindow,ShowWindow
+import NewMaterialWindow,NewPumpWindow,NewGasSourceWindow,NewESDcurve,NewInput,AnalysisWindow,ShowWindow,MySimulationsWindow
 
 
 from PyQt4.QtCore import (PYQT_VERSION_STR, QFile, QFileInfo, QSettings,
@@ -52,7 +52,7 @@ from InputFormat.InputTransform import Main_Material_Transformation
 #import qrc_resources
 
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 
 
 
@@ -997,10 +997,11 @@ class Window(QMainWindow):
         #fileExternalAction = self.createAction("&External Data", self.fileExternal, "Ctrl+E")
         fileShowAction = self.createAction("&Show components", self.fileShow,"Ctrl+S")
         filePropertiesAction = self.createAction("&Properties",self.fileProperties, "Ctrl+P" )
+        fileMySimulationsAction = self.createAction("&My simulations", self.fileMysimulations, " Ctrl+M")
         fileQuitAction = self.createAction("&Quit", self.close,"Ctrl+Q")
 
         fileMenu = self.menuBar().addMenu("File")
-        fileMenuActions = (fileLoadAction,  filePropertiesAction,fileShowAction, None, fileQuitAction) #fileExternalAction,
+        fileMenuActions = (fileLoadAction,  filePropertiesAction,fileShowAction,fileMySimulationsAction, None, fileQuitAction) #fileExternalAction,
         self.addActions(fileMenu, fileMenuActions)
 
 
@@ -1102,6 +1103,11 @@ class Window(QMainWindow):
     def fileShow(self):
         self.showWindow = ShowWindow.ShowWindow()
         self.showWindow.show()
+
+    def fileMysimulations(self):
+
+        self.mySimulations = MySimulationsWindow.MySimulationsWindow()
+        self.mySimulations.show()
 
     def fileProperties(self):
         """

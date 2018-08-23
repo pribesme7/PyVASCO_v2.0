@@ -36,7 +36,7 @@ class ConfigClass():
     halfGap = 50
 
     # ----------------PROJECT VARIABLES---------------------
-    ProjectFolder = os.path.dirname(sys.argv[0]) + "/"#os.path.dirname(os.path.realpath(__file__)) + '/' #
+    ProjectFolder = os.path.dirname(os.path.realpath(__file__)) + '/' ##os.path.dirname(sys.argv[0]) + "/"
     DataFolder = ProjectFolder + 'Data/'
     DataFile =  "" #'Input/Materials/CMS/CMS_7_Mar_red_with_external_example.csv'   # second beamline
     DataFile2 =  DataFolder + 'Input/Materials/CMS/CMS_8_mars_blue_example.csv'   # second beamline

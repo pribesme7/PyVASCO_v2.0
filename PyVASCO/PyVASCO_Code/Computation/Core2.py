@@ -302,8 +302,6 @@ class Segment:
         #self.A = (Surface * 2 * np.sqrt(Surface/math.pi))/3 * np.sqrt(math.pi * Config.kB * self.Temperature/2/Config.Mass) #Area * Diffusivity,Diff = pi/6 * R * sqrt((8 * kb * T)/(pi * m)) --> Ida's version. Doesn't match with the definition of the specifinc conductance in her thesis!!!
         self.A = math.pi*self.Diameter**3/12.*VelocityMean   # Exactly as in VASCO!
         print "Conductance for segment ", self.Name, "is", self.A, "m**4 / s  "
-        # print self.S,self.Name,T,Current,Energy,ECLOUD,ECLOUDBoost
-        # print Perimeter * self.Material.OutGassing,PhFlux,ECLOUDD
 
         # Deriving from multigas appropriate eta_i for single gas 
         #print 'etai = ',  np.dot(Material.EtaI, Config.CrossSection)/ Config.CrossSection
@@ -322,22 +320,6 @@ class Segment:
 
         #c = Surface * Material.OutGassing + self.PhotonFlux * Material.EtaPh + self.ElectronFlux * Material.EtaE
 
-        print "In Core2, line 208. Config.useESDCurve",Config.useESDCurve
-        #if Material.Name == "BCu" or Material.Name == "BCu2":
-        #    with open(Config.logFile, "a") as f:
-        #        l = "Segment " + str(self.Name) + "made of" +str(self.Material) + " with EFlux " + str(self.ElectronFlux) + " \n"
-        #        line = "For material" + Material.Name + " Updata ESD ? :" + str(Config.useESDCurve) + '. Parameters before update : \n'
-        #        line2 = "EtaE : ["+ ",".join([str(eta) for eta in Material.EtaE]) + "] Electron Flux :" + str(self.ElectronFlux) + "\n"
-        #        f.write(l+line + line2)
-        #if self.Name == "S8":
-        #    line = "For material" + Material.Name + " Updata ESD ? :" + str(
-        #        Config.useESDCurve) + '. Parameters before update : \n'
-        #    line2 = "EtaE : [" + ",".join([str(eta) for eta in Material.EtaE]) + "] Electron Flux :" + str(
-        #        self.ElectronFlux) + "\n"
-        #    print line
-        #    print line2
-        #    print str(self.ElectronFlux)
-        #    return None
 
         if Config.useESDCurve is True:
             print "Config.eDose", Config.eDose
@@ -358,7 +340,6 @@ class Segment:
             print("Material EtaE updated to ", Material.EtaE )
         else: pass
 
-        print "In Core2, line 228. SEY upload"
         if Config.uploadElectronFluxFromSEY is True:
             # The correspondif file containing TDI/TDIS information is loaded
             Material.LoadSEYCurve(Config.TDISFile)
@@ -369,11 +350,7 @@ class Segment:
                 Config.currentSey = Material.SeyCurve.sey
                 # Compute here the new ElectronFlux from the e- current associated with SEY
                 self.UploadElectronFlux(Material, Config.halfGap)
-                #if Material.Name == "M50" or Material.Name == "M52":
-                #    with open(Config.logFile, "a") as f:
-                #        f.write("For eDose :" + str(Config.eDose) + " ESD updated to [" + ",".join([str(eta) for eta in Material.EtaE]) + "]"
-                #                + "SEY updated to " + str(Material.SeyCurve.sey) + " and EFlux set to " + str(self.ElectronFlux)
-                #                + "\n")
+
             else:
                 print "Material doesn't have an SEY curve associated!!!"
                 pass
@@ -381,14 +358,18 @@ class Segment:
         else:
             print "Config.uploadElectronFluxFromSEY is False. Not changing value"
 
-        if self.Temperature < 15:
+        if self.Temperature < 100: #Cryosorption occurs till ~ 100 K for CO2, but at this T, hidrogen is not physisorbed!
             #cryo_pumping = 1.e10
             #Config.nEq/self.Temperature
             cryo_pumping = []
             i = 0
             labels = ["H2", "CH4", "CO", "CO2"]
             for gas in Config.nEq:
-                nEq = gas[1][np.argmin(abs(gas[0] - self.Temperature))] / self.Temperature
+                if gas[0][-1] < self.Temperature:
+                    nEq = 0
+                else:
+                    #nEq = gas[1][np.argmin(abs(gas[0] - self.Temperature))] / self.Temperature
+                    nEq = np.interp(self.Temperature,gas[0],gas[1])/self.Temperature
 
                 print "CryoSurface --> T =",self.Temperature, "nEq =", nEq, " for ", labels[i]
                 i +=1
