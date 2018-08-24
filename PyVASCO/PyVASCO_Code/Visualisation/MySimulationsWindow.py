@@ -15,41 +15,7 @@ from Config import Config
 
 #import unit
 #from Components import MySimulations,Gassource,Pump
-from __init__ import MyMessageBox
-
-
-def ReadComponent(File):
-    Data = []
-    if os.path.isdir(File):
-        Name = os.path.split(File)[-1]
-        files = os.listdir(File)
-        Data = {}
-        for f in files:
-            p = f.split("_")[-1].split(".")[0]
-            data = ReadComponent(File + "/" +  f)
-            Data[p] = data
-        return Data
-
-    else:
-
-        with open(File,"r") as f:
-            lines = f.readlines()
-
-        for l in lines:
-            l = l.strip("\n").split(",")
-            Data.append(l)
-
-        return [x[1:] for x in Data[1:]]
-
-def ReWrite(File, Data):
-    f = open(File, "w")
-    vertical_labels = ["d [mm]", "L [mm]", "T [K]", "Material", "Pump", 'Gas source', 'Photon flux [photons/m/s]', 'Electron flux [electrons/m/s]']
-    horizontal_labels = ["S%i"%(i) for i in range(len(Data[0])-1)] + [""]
-    name = os.path.split(str(File))[-1].split("_New")[0]
-    f.write("%s,%s \n"%(name,",".join(horizontal_labels)))
-    for i in range(len(vertical_labels)):
-        f.write("%s,%s \n"%(vertical_labels[i],",".join(Data[i])))
-    f.close()
+from __init__ import MyMessageBox,ReadComponent,ReWrite
 
 
 class MySimulationsWindow(QMainWindow):
@@ -63,7 +29,7 @@ class MySimulationsWindow(QMainWindow):
         self.msg = MyMessageBox()
         self.setCentralWidget(self.tabWidget)
         self.create_connections()
-        self.setWindowTitle("Show registered components")
+        self.setWindowTitle("My simulations")
         #self.initiate_window()
 
 
@@ -122,7 +88,7 @@ class MySimulationsWindow(QMainWindow):
         """
         tab2Widget = QWidget()
 
-        Frame2 = QGroupBox("Write New Input File")
+        Frame2 = QGroupBox("Write new simulation")
         self.InputNameLabel = QLabel("Name: ")
         self.InputNameEdit = QLineEdit("")
         self.table_widget = QTableWidget()
@@ -295,7 +261,7 @@ class MySimulationsWindow(QMainWindow):
                 column.append(str(self.MySimulationsTableWidget.item(i,j).text()))
             Data.append(column)
         name = Config.DataFolder + "Input/" + self.MySimulationsNameEdit.text() + "_New.csv"
-        ReWrite(name,Data)
+        ReWrite(name,Data,vertical_labels= ["d [mm]", "L [mm]", "T [K]", "Material", "Pump", 'Gas source', 'Photon flux [photons/m/s]','Electron flux [electrons/m/s]'],horizontal_labels = ["S%i" % (i) for i in range(len(Data[0]) - 1)] + [""])
 
     def edit_current(self):
 

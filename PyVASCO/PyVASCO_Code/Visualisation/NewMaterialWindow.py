@@ -12,7 +12,7 @@ from Config import Config
 
 import unit
 from Components.Material import Material
-from Visualisation import MyMessageBox
+from __init__ import MyMessageBox,ReadComponent,ReWrite
 
 
 class NewMatWindow(QMainWindow):
@@ -32,7 +32,8 @@ class NewMatWindow(QMainWindow):
         """
        Calls the methods 'create_tab1()' and 'create_tab2()' .
        """
-        self.create_tab1()
+        #self.create_tab1()
+        self.create_tab3()
         self.create_tab2()
 
     def create_tab1(self):
@@ -99,8 +100,61 @@ class NewMatWindow(QMainWindow):
         tab2Widget.setLayout(tab2Layout)
         self.tabWidget.addTab(tab2Widget, "Write New Material")
 
+    def create_tab3(self):
+        # Show registered Materials
+        tab3Widget = QWidget()
+        tab3Layout = QGridLayout()
+
+        Frame2 = QGroupBox("Material")
+
+        self.MaterialNameLabel = QLabel("Name: ")
+        self.MaterialNameEdit2 = QLabel("")
+        self.MaterialSaveChangesPushButton = QPushButton("Save changes")
+        self.MaterialTableWidget = QTableWidget()
+
+        self.MaterialTableWidget.setRowCount(9)
+        self.MaterialTableWidget.setColumnCount(4)
+        self.MaterialTableWidget.setHorizontalHeaderLabels(['H2', 'CH4', "CO", 'CO2'])
+        if unit.unit == 0.750062:
+            self.MaterialTableWidget.setVerticalHeaderLabels(
+                ["alpha", "eta_ion", "", "", "", 'eta_e', 'eta_ph', 'Cbs [l/m/s]', 'Qth [mbar*l/cm^2/s]'])
+        elif unit.unit == 1.33322:
+            self.MaterialTableWidget.setVerticalHeaderLabels(
+                ["alpha", "eta_ion", "", "", "", 'eta_e', 'eta_ph', 'Cbs [l/m/s]', 'Qth [torr*l/cm^2/s]'])
+
+        frame2Layout = QGridLayout()
+        frame2Layout.addWidget(self.MaterialNameLabel, 0, 0, 1, 1)
+        frame2Layout.addWidget(self.MaterialNameEdit2, 0, 1, 1, 1)
+        frame2Layout.addWidget(self.MaterialSaveChangesPushButton,0,2,1,1)
+        frame2Layout.addWidget(self.MaterialTableWidget, 1, 0, 9, 4)
+        Frame2.setLayout(frame2Layout)
+        Frame2.setMinimumWidth(550)
+        Frame2.setMinimumHeight(400)
+
+        Frame1 = QGroupBox("List of Materials")
+        self.MaterialsList = self.CreateList(Config.MaterialFolder)
+        frame1Layout = QGridLayout()
+        frame1Layout.addWidget(self.MaterialsList)
+        Frame1.setLayout(frame1Layout)
+        Frame1.setFixedWidth(300)
+
+        tab3Layout.addWidget(Frame1, 0, 0)
+        tab3Layout.addWidget(Frame2, 0, 1)
+
+        tab3Widget.setLayout(tab3Layout)
+        self.tabWidget.addTab(tab3Widget, "View and Edit")
+
     def initiate_window(self):
         pass
+
+    def populateTable(self):
+        item = self.MaterialsList.currentItem().text()
+        self.MaterialNameEdit2.setText(item.split("_")[0])
+        Data = ReadComponent(Config.DataFolder + "Input/Materials/" + item + ".csv")
+        #self.MaterialTableWidget.setHorizontalHeaderLabels(['H2', 'CH4', "CO", 'CO2'])
+        for i in range(self.MaterialTableWidget.rowCount()):
+            for j in range(len(Data[0])):
+                self.MaterialTableWidget.setItem(i, j, QTableWidgetItem(str(Data[i][j])))
 
     def populate(self):
         """
@@ -121,9 +175,14 @@ class NewMatWindow(QMainWindow):
 
         print('create_connections')
         #self.unitComboBox.currentIndexChanged.connect(self.unitchange)
-        self.MaterialButton.clicked.connect(self.openDirectoryMaterial)
-        self.SaveMaterialButton.clicked.connect(self.SaveMaterial)
+        #self.MaterialButton.clicked.connect(self.openDirectoryMaterial)
+
+        #self.SaveMaterialButton.clicked.connect(self.SaveMaterial)
         self.SaveMaterialButton2.clicked.connect(self.SaveCustomMaterial)
+        self.MaterialsList.doubleClicked.connect(self.edit_current)
+        self.MaterialsList.itemClicked.connect(self.populateTable)
+        self.MaterialsList.itemChanged.connect(self.saveNameChanged)
+        self.MaterialSaveChangesPushButton.clicked.connect(self.SaveChanges)
 
     def openDirectoryMaterial(self):
         """
@@ -184,6 +243,20 @@ class NewMatWindow(QMainWindow):
             NewMaterial = Material(NewMaterial)
             Config.Config.LoadMaterials()
 
+    def CreateList(self,Dir):
+
+        listWidget = QListWidget()
+        listWidget.resize(300, 120)
+
+        for c in os.listdir(Dir):
+            item = ".".join(c.split(".")[:-1])
+            if item == "" and os.path.isdir(Dir + "/" + c):
+                item = c
+            list_item = QListWidgetItem(item,parent=listWidget)
+            list_item.setFlags(list_item.flags() | Qt.ItemIsEditable)
+        return listWidget
+
+
     def SaveCustomMaterial(self):
         """
         Creates a file in the corresponding input folder for the Material defined in the tab 'Write New Material' of the 'New Material' window.
@@ -200,6 +273,7 @@ class NewMatWindow(QMainWindow):
                 f.write(labels[i] + "," + cols)
             f.close()
             Config.LoadMaterials()
+            self.CreateList(Config.MaterialFolder)
         else:
             msg = MyMessageBox()
             msg.setIcon(QMessageBox.Warning)
@@ -215,10 +289,43 @@ class NewMatWindow(QMainWindow):
                         f.write(labels[i] + "," + cols)
                     f.close()
                     Config.LoadMaterials()
+
                 else:
                     pass
 
+
             msg.buttonClicked.connect(msgbtn)
+            self.CreateList(Config.MaterialFolder)
+
+    def edit_current(self):
+
+        index = self.MaterialsList.currentIndex()
+        if index.isValid():
+            item = self.MaterialsList.itemFromIndex(index)
+            if not item.isSelected():
+                item.setSelected(True)
+            self.MaterialsList.edit(index)
+
+            self.oldName = item.text()
+
+    def saveNameChanged(self):
+
+        index = self.MaterialsList.currentIndex()
+        self.newName = self.MaterialsList.itemFromIndex(index).text()
+        os.rename(Config.DataFolder + "Input/Materials/" + self.oldName + ".csv",
+                  Config.DataFolder + "Input/Materials/" + str(self.newName) + ".csv")
+        self.populateTable()
+        self.CreateList(Config.DataFolder + "Input/Materials/")
+
+    def SaveChanges(self):
+        Data = []
+        for i in range(self.MaterialTableWidget.rowCount()):
+            column = []
+            for j in range(self.MaterialTableWidget.columnCount()):
+                column.append(str(self.MaterialTableWidget.item(i,j).text()))
+            Data.append(column)
+        name = Config.DataFolder + "Input/Materials/" + self.MaterialNameEdit2.text() + ".csv"
+        ReWrite(name,Data,horizontal_labels=['H2', 'CH4', "CO", 'CO2'],vertical_labels=["alpha", "eta_ion", "", "", "", 'eta_e', 'eta_ph', 'Cbs [l/m/s]', 'Qth [mbar*l/cm^2/s]'])
 
 
 

@@ -1,6 +1,8 @@
 from PyQt4.QtGui import QMessageBox,QSizePolicy,QTextEdit,QValidator,QDoubleSpinBox
 import numpy as np
 import re
+import os
+
 
 class MyMessageBox(QMessageBox):
     """
@@ -96,3 +98,35 @@ def format_float(value):
     string = "{:g}".format(value).replace("e+", "e")
     string = re.sub("e(-?)0*(\d+)", r"e\1\2", string)
     return string
+
+def ReadComponent(File):
+    Data = []
+    if os.path.isdir(File):
+        Name = os.path.split(File)[-1]
+        files = os.listdir(File)
+        Data = {}
+        for f in files:
+            p = f.split("_")[-1].split(".")[0]
+            data = ReadComponent(File + "/" +  f)
+            Data[p] = data
+        return Data
+
+    else:
+
+        with open(File,"r") as f:
+            lines = f.readlines()
+
+        for l in lines:
+            l = l.strip("\n").split(",")
+            Data.append(l)
+
+        return [x[1:] for x in Data[1:]]
+
+def ReWrite(File, Data,vertical_labels= ["d [mm]", "L [mm]", "T [K]", "Material", "Pump", 'Gas source', 'Photon flux [photons/m/s]',
+                       'Electron flux [electrons/m/s]'], horizontal_labels = [""] ):
+    f = open(File, "w")
+    name = os.path.split(str(File))[-1].split("_New")[0]
+    f.write("%s,%s \n" % (name, ",".join(horizontal_labels)))
+    for i in range(len(vertical_labels)):
+        f.write("%s,%s \n" % (vertical_labels[i], ",".join(Data[i])))
+    f.close()

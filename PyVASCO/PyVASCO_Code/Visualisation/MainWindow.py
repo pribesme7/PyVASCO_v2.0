@@ -1007,7 +1007,7 @@ class Window(QMainWindow):
 
 
         #Add
-        addInputAction = self.createAction("&Input file", self.inputNew, "Ctrl+I" )
+        addInputAction = self.createAction("&Simulation", self.inputNew, "Ctrl+I" )
         addMaterialAction = self.createAction("&Material", self.materialNew, "Ctrl+M" )
         addPumpAction = self.createAction("&Pump",self.pumpNew, "Ctrl+P" )
         addGassourceAction = self.createAction("&Gassource", self.gassourceNew,"Ctrl+G")
@@ -1015,7 +1015,7 @@ class Window(QMainWindow):
         #addSEYCurve = self.createAction("&SEY curve", self.SEYcurveNew, "Ctrl+Y")
 
 
-        addInputMenu = self.menuBar().addMenu("Add")
+        addInputMenu = self.menuBar().addMenu("Add and Edit")
         addInputMenuActions = (addInputAction,addMaterialAction, addPumpAction, addGassourceAction,addESDCurve)#,addSEYCurve)
         self.addActions(addInputMenu, addInputMenuActions)
 
