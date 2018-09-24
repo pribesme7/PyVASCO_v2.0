@@ -3,14 +3,14 @@ import os
 
 class Pump():
     """
-    Properties:
-    ----------
-     **File** (str): Name of the directory containing the pumping speeds for H2, CH4, CO and CO2 (in l/s).  \n
+    Properties
+    ==========
+    @var File: (str) Name of the directory containing the pumping speeds for H2, CH4, CO and CO2 (in l/s).  \n
 
-     Attributes:
-     ----------
-     **Name** (str): Name of the Pump, default P + Number
-     **Speed** (numpy.array): Pumping speeds in m^3/s
+     Attributes
+     ==========
+     @var Name:(str) Name of the Pump, default P + Number
+     @var Speed: (numpy.array) Pumping speeds in m^3/s
     """
 
     Name = ''
@@ -28,6 +28,11 @@ class Pump():
             self.PumpingCurve = {"Nominal":self.Speed}
 
     def SetPumpingSpeed(self,p):
+        """
+        Sets the pumping speed of the pump for the different relevant gases at a given pressure
+        @param  p: (float) Pressure
+        @return:
+        """
 
         pressures = self.PumpingCurve.keys()
         try:
@@ -40,6 +45,12 @@ class Pump():
 
 
     def LoadSpeedCurve(self,File):
+        """
+        Loads the pumping speed curve for different gases
+
+        @param  File: (str) Directory where the pumping  speed for different pressures for that pump are stored
+        @return:
+        """
         self.Name = os.path.split(File)[-1]
         files = os.listdir(File)
         self.PumpingCurve = {}
@@ -50,9 +61,18 @@ class Pump():
 
 
     def SetNominalSpeed(self):
+        """
+        Sets the nominal pumping speed
+
+        """
         self.Speed = self.PumpingCurve["Nominal"]
 
     def LoadPump(self,File):
+        """
+        Load pump from 'File'
+        @param  File: (str) path where the file describing the pump is located.
+        @return:
+        """
         LArray = []
         with open(File) as f:
             for line in f.readlines():
@@ -67,6 +87,14 @@ class Pump():
         return Name, Speed
 
     def eformat(self,f, prec, exp_digits):
+        """
+        Writes a number in scientific format with a specified precission
+        @param f: number to express in scientific format
+        @param prec: (int) precission of the decimal part
+        @param exp_digits: (int) precission of the exponent
+
+        @return: (str) Input number in scientific format with
+        """
         s = "%.*e" % (prec, f)
         mantissa, exp = s.split('e')
         # add 1 to digits as 1 is taken by sign +/-

@@ -17,7 +17,7 @@ from __init__ import MyMessageBox,ReadComponent,ReWrite
 
 class NewMatWindow(QMainWindow):
     """
-    'New Material' Window launched by the action 'Material' in the menu 'Add' of PyVASCO.
+    'New Material' Window launched by the action 'Material' in the menu 'Add and Edit' of PyVASCO.
     """
     def __init__(self, parent=None):
         super(NewMatWindow, self).__init__(parent)
@@ -26,42 +26,15 @@ class NewMatWindow(QMainWindow):
         self.setCentralWidget(self.tabWidget)
         self.create_connections()
         self.setWindowTitle("New Material")
-        self.initiate_window()
+
 
     def create_widgets(self):
         """
-       Calls the methods 'create_tab1()' and 'create_tab2()' .
+       Calls the methods 'create_tab3()' and 'create_tab2()' .
        """
-        #self.create_tab1()
+
         self.create_tab3()
         self.create_tab2()
-
-    def create_tab1(self):
-        """
-        Creates and initializes all widgets in tab 1.
-        """
-        tab1Widget = QWidget()
-
-        Frame1 = QGroupBox("Load Data")
-        # widgets for FRAME 1
-        infoLabel = QLabel("Select new material from file")
-
-        self.MaterialEdit = QLineEdit()
-        self.MaterialButton = QPushButton("Directory")
-        self.SaveMaterialButton = QPushButton("Save Material")
-
-        frame1Layout = QGridLayout()  # how the items within one frame are aligned
-        frame1Layout.addWidget(infoLabel, 0, 0)
-        frame1Layout.addWidget(self.MaterialButton, 1,0)
-        frame1Layout.addWidget(self.MaterialEdit, 1,1)
-        frame1Layout.addWidget(self.SaveMaterialButton, 2, 1)
-
-        Frame1.setLayout(frame1Layout)
-
-        tab1Layout = QVBoxLayout()
-        tab1Layout.addWidget(Frame1)
-        tab1Widget.setLayout(tab1Layout)
-        self.tabWidget.addTab(tab1Widget, "Data")
 
 
     def create_tab2(self):
@@ -101,6 +74,10 @@ class NewMatWindow(QMainWindow):
         self.tabWidget.addTab(tab2Widget, "Write New Material")
 
     def create_tab3(self):
+        """
+        Creates and initializes all widgets in tab 2.
+        @return:
+        """
         # Show registered Materials
         tab3Widget = QWidget()
         tab3Layout = QGridLayout()
@@ -144,14 +121,16 @@ class NewMatWindow(QMainWindow):
         tab3Widget.setLayout(tab3Layout)
         self.tabWidget.addTab(tab3Widget, "View and Edit")
 
-    def initiate_window(self):
-        pass
 
     def populateTable(self):
+        """
+        Fills the table where the contents of a simulation are shown on selecting an item from the list.
+       @return:
+       """
         item = self.MaterialsList.currentItem().text()
         self.MaterialNameEdit2.setText(item.split("_")[0])
         Data = ReadComponent(Config.DataFolder + "Input/Materials/" + item + ".csv")
-        #self.MaterialTableWidget.setHorizontalHeaderLabels(['H2', 'CH4', "CO", 'CO2'])
+
         for i in range(self.MaterialTableWidget.rowCount()):
             for j in range(len(Data[0])):
                 self.MaterialTableWidget.setItem(i, j, QTableWidgetItem(str(Data[i][j])))
@@ -174,10 +153,7 @@ class NewMatWindow(QMainWindow):
         """
 
         print('create_connections')
-        #self.unitComboBox.currentIndexChanged.connect(self.unitchange)
-        #self.MaterialButton.clicked.connect(self.openDirectoryMaterial)
 
-        #self.SaveMaterialButton.clicked.connect(self.SaveMaterial)
         self.SaveMaterialButton2.clicked.connect(self.SaveCustomMaterial)
         self.MaterialsList.doubleClicked.connect(self.edit_current)
         self.MaterialsList.itemClicked.connect(self.populateTable)
@@ -195,56 +171,13 @@ class NewMatWindow(QMainWindow):
 
         self.MaterialEdit.setText(fname)
 
-    def SaveMaterial(self):
-        """
-        Copies the file containg the new Material in the corresponding directory, so it will be properly detected by the PyVASCO. In case of error, launches a warning message.
-        """
-
-        f = open(self.MaterialEdit.text())
-        lines = f.readlines()
-        f.close()
-        lines = [l.strip("\n").split(",") for l in lines]
-        print lines
-        if (lines[1][0].lower() != "alpha" or lines[2][0].lower() != "eta_ion" or lines[6][0].lower() != "eta_e" or \
-            lines[7][0].lower() != "eta_ph" or lines[8][0] != "Cbs" or lines[9][0] != "Qth" or len(lines[0]) != 4):
-            msg = MyMessageBox()
-            msg.setIcon(QMessageBox.Warning)
-            msg.setText("Wrong format for material! ")
-            msg.setInformativeText("This is additional information")
-            msg.setWindowTitle("Material Warning Bow")
-            msg.setDetailedText("A Material file should be a CSV file with the following structure: \n\n"
-                                "| Name of the material | H2|CH4| CO|CO2 \n"
-                                "|----------------------|---|---|---|---- \n"
-                                "|          alpha       |   |   |   |       \n"
-                                "|----------------------|---|---|---|---- \n"
-                                "|          eta_ion     |   |   |   |       \n"
-                                "|                      |   |   |   |\n"
-                                "|                      |   |   |   |\n"
-                                "|                      |   |   |   |\n"
-                                "|----------------------|---|---|---|---- \n"
-                                "|          eta_e       |   |   |   |\n"
-                                "|----------------------|---|---|---|---- \n"
-                                "|          eta_ph      |   |   |   |\n"
-                                "|----------------------|---|---|---|---- \n"
-                                "|           Cbs        |   |   |   |\n"
-                                "|----------------------|---|---|---|---- \n"
-                                "|           Qth        |   |   |   |\n"
-                                "|----------------------|---|---|---|---- \n")
-            msg.exec_()
-
-        else:
-            name = os.path.split(self.MaterialEdit.text())
-            if name[0] != Config.MaterialFolder:
-                NewMaterial = os.path.join(Config.MaterialFolder, name[1])
-                os.rename(name, NewMaterial)
-            else:
-                NewMaterial = self.MaterialEdit.text()
-
-            NewMaterial = Material(NewMaterial)
-            Config.Config.LoadMaterials()
 
     def CreateList(self,Dir):
-
+        """
+        Creates a list with all the files stored in Dir
+        @param Dir: Directory from which the items for the list are extrated.
+        @return: listWidget (QListWidget)
+        """
         listWidget = QListWidget()
         listWidget.resize(300, 120)
 
@@ -273,7 +206,10 @@ class NewMatWindow(QMainWindow):
                 f.write(labels[i] + "," + cols)
             f.close()
             Config.LoadMaterials()
-            self.CreateList(Config.MaterialFolder)
+
+            self.close()
+            self.__init__()
+            self.show()
         else:
             msg = MyMessageBox()
             msg.setIcon(QMessageBox.Warning)
@@ -295,10 +231,16 @@ class NewMatWindow(QMainWindow):
 
 
             msg.buttonClicked.connect(msgbtn)
-            self.CreateList(Config.MaterialFolder)
+
+            self.close()
+            self.__init__()
+            self.show()
 
     def edit_current(self):
-
+        """
+        Allows the user to change the name of the items of the list
+        @return:
+        """
         index = self.MaterialsList.currentIndex()
         if index.isValid():
             item = self.MaterialsList.itemFromIndex(index)
@@ -309,7 +251,11 @@ class NewMatWindow(QMainWindow):
             self.oldName = item.text()
 
     def saveNameChanged(self):
-
+        """
+        Saves the new name assigned to any item of the list and changes the name of the correspondig simulation to its
+        new name
+        @return:
+        """
         index = self.MaterialsList.currentIndex()
         self.newName = self.MaterialsList.itemFromIndex(index).text()
         os.rename(Config.DataFolder + "Input/Materials/" + self.oldName + ".csv",
@@ -318,6 +264,10 @@ class NewMatWindow(QMainWindow):
         self.CreateList(Config.DataFolder + "Input/Materials/")
 
     def SaveChanges(self):
+        """
+        Saves changes in an existing simulation
+     @  return:
+     """
         Data = []
         for i in range(self.MaterialTableWidget.rowCount()):
             column = []

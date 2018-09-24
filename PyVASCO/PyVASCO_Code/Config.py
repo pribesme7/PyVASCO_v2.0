@@ -101,8 +101,10 @@ class ConfigClass():
     ScalingXAxis = 0.10
 
     MaterialFolder = DataFolder + 'Input/Materials/'
+    CryogenicsFolder = DataFolder +'Input/Cryogenics/'
     PumpFolder = DataFolder + 'Input/Pumps/'
     GassourceFolder = DataFolder + 'Input/Gassource/'
+
     GaugesFolder = DataFolder + 'Input/GaugesData/'
     VacProfileOutputFolder = DataFolder + 'Output/'
     #logFile = ProjectFolder + "log.txt"
@@ -304,7 +306,7 @@ class ConfigClass():
         VaporPressure = pickle.load(open(self.DataFolder + "Input/VapPressure/VaporPressure.p"))
         nEq = []
         for k in ["H2","CH4","CO","CO2"]:
-            nEq.append(np.array([np.array(VaporPressure[k])[:,0],np.array(VaporPressure[k])[:,1]*1.33e2/ kB]))
+            nEq.append(np.array([np.array(VaporPressure[k])[:,0],np.array(VaporPressure[k])[:,1]*1.33e2/ kB/self.RoomTemperature]))
         self.nEq = nEq
-
+        self.maxNeq = np.array([1e-4,1e-10,1e-10,1e-10])*1.33e2/kB
 Config = ConfigClass()

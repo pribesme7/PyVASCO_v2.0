@@ -14,9 +14,8 @@ import Config
 def PrintMatrix(A):
     """
    Prints on screen a formatted version of matrix A. \n
-   Parameters:
-   -----------
-   :param A: (ndarray) Matrix to be printed
+
+   @param A: (ndarray) Matrix to be printed
 
     """
     print('------------------------------')
@@ -27,22 +26,20 @@ def PrintMatrix(A):
     print('------------------------------')
 
 
-#Solve returns the parameters that classifies the solution
+#Solve return the parameters that classifies the solution
 def Solve(Ms,  bs,  Ls,  Ss,  gs,  As): #single gas and multi gas combined
     """
     Solves the linear system presented in the user guide to obtain the list of integration constants which satisfy the imposed boundary conditions.  A Multi-Gas model in which the dominant species (H2,CH4,CO and CO2) can interact is considered. \n
 
-    Parameters:
-    -----------
-        :param Ms: (ndarray) : Matrix for equation y' = My + b
-        :param bs: (ndarray) : Vector for equation y' = My + b
-        :param Ls: (float) : Length of the segment  [m]
-        :param Ss: (list) : Punctual pumping speeds [m**3/s]
-        :param gs: (list) : Punctual gas sources
-        :param As: (ndarray) : Specific conductances
-    Returns:
-    --------
-        :param  Ps: (list) :  Integration constants which satisfy the imposed boundary conditions.
+    
+        @param Ms: (ndarray) : Matrix for equation y' = My + b
+        @param bs: (ndarray) : Vector for equation y' = My + b
+        @param Ls: (float) : Length of the segment  [m]
+        @param Ss: (list) : Punctual pumping speeds [m**3/s]
+        @param gs: (list) : Punctual gas sources
+        @param As: (ndarray) : Specific conductances
+
+        @return  Ps: (list) :  Integration constants which satisfy the imposed boundary conditions.
     """
     print('Solve')    
     #Ms, bs- Matrices and vectors for equation y' = My + b
@@ -146,7 +143,7 @@ def Solve(Ms,  bs,  Ls,  Ss,  gs,  As): #single gas and multi gas combined
         rhs1 = np.zeros(4)
         rhs2 = np.zeros(4)    
         if Is_Single_Gas[i]:
-            block1 = np.bmat([[alpha(Hs2[i], Ls_Singlegas[i])* np.identity(4), beta(Hs2[i], Ls_Singlegas[i])* np.identity(4)],
+            block1 = np.bmat([[alpha(Hs2[i], Ls_Singlegas[i])* np.identity(4), beta(Hs2[i], Ls_Singlegas[i]) * np.identity(4)],
                               [(-As[i]*alpha_prime(Hs2[i], Ls_Singlegas[i]))* np.identity(4), (-As[i]*beta_prime(Hs2[i], Ls_Singlegas[i]))* np.identity(4)]])
             rhs1 = -gamma(Hs2[i], Ls[i]) 
             rhs2 = As[i]*gamma_prime(Hs2[i], Ls[i])
@@ -251,14 +248,11 @@ def MakeTriangular(A, i, j):
     """
     Computes the Triangular matrix of the input matrix A. Matrix A can't contain integer numbers (only floats) \n
 
-    Parameters:
-    ----------
-        :param A: (ndarray) : Input matrix
-        :param i: (int) : Number of rows of A
-        :param j: (int) : Number of columns of A
-    Returns:
-    -------
-        :param A: (ndarray) : Triangular matrix of A
+        @param A: (ndarray) : Input matrix
+        @param i: (int) : Number of rows of A
+        @param j: (int) : Number of columns of A
+    
+        @return A: (ndarray) : Triangular matrix of A
     """
 
     #!!Make sure that A contains only float numbers (not int)!!
@@ -286,14 +280,12 @@ def MakeTriangular(A, i, j):
 def MakeDiagFromT(A, i, j):
     """
     Computes the diagonal matrix from the triangular  input matrix, A.
-    Parameters:
-    ----------
-        :param A: (ndarray) : Input matrix
-        :param i: (int) : Number of rows of A
-        :param j: (int) : Number of columns of A
-    Returns:
-    -------
-        :param A: (ndarray) : Diagonal matrix
+    
+        @param A: (ndarray) : Input matrix
+        @param i: (int) : Number of rows of A
+        @param j: (int) : Number of columns of A
+    
+        @return A: (ndarray) : Diagonal matrix
     """
 
     Dim = A.shape[1]-1
@@ -310,18 +302,15 @@ def Exchange(A, i, j):
     """
     Exchanges the position of the first half of columns of the input matrix with the second half of columns in the selected interval of rows [i:j). The input matrix, A, has to have an even number of columns.
 
-    Parameters:
-    ----------
-        :param A: (ndarray) :  Input matrix. It has to have an even number of columns. \n
-        :param i: (int) : Index of the first row in which columns have to be exchanged. \n
-        :param j: (int) : Index of the first row in which columns shouldn't be exchanged. \n
+    @param A: (ndarray) :  Input matrix. It has to have an even number of columns. \n
+    @param i: (int) : Index of the first row in which columns have to be exchanged. \n
+    @param j: (int) : Index of the first row in which columns shouldn't be exchanged. \n
 
-    Returns:
-    -------
-        :param A: (ndarray) : Modified matrix
+    
+    @return:  A (ndarray) : Modified matrix
 
-    Examples:
-    --------
+    Examples
+    ========
     >>> A = np.array([[1,2,3,4],[6,7,8,9]])
     >>> Exchange(A,0,1) # Columns will be modified only in the first row
     Out[1]:\n
@@ -347,14 +336,12 @@ def Exchange(A, i, j):
 def alpha(coeff,length):
     """
     Generates auxiliary matrix alpha in the single-gas model. See user guide for more details. \n
-    Parameters:
-    ----------
-    :param coeff: (list): \n
-    :param length: (numpy.array): x-coordinates where the matrix alpha is evaluated.\n
+    
+    @param coeff: (list): \n
+    @param length: (numpy.array): x-coordinates where the matrix alpha is evaluated.\n
 
-    Returns:
-    -------
-    :returns help: (list) : Auxiliary matrix alpha. See user guide for more information.
+    
+    @return: help (list) : Auxiliary matrix alpha. See user guide for more information.
     """
     #return np.ones(4)
     [a, b, c] = coeff
@@ -377,14 +364,12 @@ def alpha(coeff,length):
 def beta(coeff,length):
     """
     Generates auxiliary matrix beta in the single-gas model. See user guide for more details. \n
-    Parameters:
-    ----------
-    :param coeff: (list): \n
-    :param length: (numpy.array): x-coordinates where the matrix beta is evaluated.\n
+    
+    @param coeff: (list): \n
+    @param length: (numpy.array): x-coordinates where the matrix beta is evaluated.\n
 
-    Returns:
-    -------
-    :returns help: (list) : Auxiliary matrix beta. See user guide for more information.
+    
+    @return help: (list) : Auxiliary matrix beta. See user guide for more information.
     """
     #return (np.ones(4)*100)
     [a, b, c] = coeff
@@ -408,14 +393,12 @@ def beta(coeff,length):
 def gamma(coeff,length):
     """
     Generates auxiliary matrix gamma in the single-gas model. See user guide for more details. \n
-    Parameters:
-    ----------
-    :param coeff: (list): \n
-    :param length: (numpy.array): x-coordinates where the matrix gamma is evaluated.\n
+    
+    @param coeff: (list): \n
+    @param length: (numpy.array): x-coordinates where the matrix gamma is evaluated.\n
 
-    Returns:
-    -------
-    :returns help: (list) : Auxiliary matrix gamma. See user guide for more information.
+
+    @return help: (list) : Auxiliary matrix gamma. See user guide for more information.
     """
     #return (np.ones(4)*3)
     [a, b, c] = coeff
@@ -429,14 +412,12 @@ def gamma(coeff,length):
 def alpha_prime(coeff,length):
     """
     Generates auxiliary matrix alpha'  in the single-gas model. See user guide for more details. \n
-    Parameters:
-    ----------
-    :param coeff: (list): \n
-    :param length: (numpy.array): x-coordinates where the matrix alpha' is evaluated.\n
+    
+    @param coeff: (list): \n
+    @param length: (numpy.array): x-coordinates where the matrix alpha' is evaluated.\n
 
-    Returns:
-    -------
-    :returns help: (list) : Auxiliary matrix alpha'. See user guide for more information.
+    
+    @return help: (list) : Auxiliary matrix alpha'. See user guide for more information.
     """
     #return (np.ones(4)*2)
     [a, b, c] = coeff
@@ -460,14 +441,12 @@ def alpha_prime(coeff,length):
 def beta_prime(coeff,length):
     """
     Generates auxiliary matrix beta' in the single-gas model. See user guide for more details. \n
-    Parameters:
-    ----------
-    :param coeff: (list): \n
-    :param length: (numpy.array): x-coordinates where the matrix beta' is evaluated.\n
+    
+    @param coeff: (list): \n
+    @param length: (numpy.array): x-coordinates where the matrix beta' is evaluated.\n
 
-    Returns:
-    -------
-    :returns help: (list) : Auxiliary matrix beta'. See user guide for more information.
+    
+    @return help: (list) : Auxiliary matrix beta'. See user guide for more information.
     """
     #return (np.ones(4)*200)
     [a, b, c] = coeff
@@ -490,14 +469,12 @@ def beta_prime(coeff,length):
 def gamma_prime(coeff,length):
     """
     Generates auxiliary matrix beta' in the single-gas model. See user guide for more details. \n
-    Parameters:
-    ----------
-    :param coeff: (list): \n
-    :param length: (numpy.array): x-coordinates where the matrix beta' is evaluated.\n
+    
+    @param coeff: (list): \n
+    @param length: (numpy.array): x-coordinates where the matrix beta' is evaluated.\n
 
-    Returns:
-    -------
-    :returns help: (list) : Auxiliary matrix beta'. See user guide for more information.
+    
+    @return help: (list) : Auxiliary matrix beta'. See user guide for more information.
     """
     #return (np.ones(4)*3)
     [a, b, c] = coeff
@@ -511,7 +488,7 @@ def gamma_prime(coeff,length):
 '''
 def Solve_Singlegas(Bs, Cs, Ls, Ss, Gs, As): #_Singlegas
     #input values are all (4x4) vectors
-    #returns the constants C1 and C2 for each segment that define the solution function
+    #return the constants C1 and C2 for each segment that define the solution function
     print("Singlegas")
     N = len(As)
     coeff = []
@@ -599,17 +576,15 @@ def Solve_One_Segment_Singlegas(Bs, Cs, Ls, Ss, Gs, As):
     Solves the linear system presented in the user guide to obtain the list of integration constants which satisfy the
     imposed boundary conditions for one segment in the single-gas model.\n
 
-    Parameters:
-    -----------
-        :param Bs: (ndarray) : Matrix for equation y' = By + c
-        :param Cs: (ndarray) : Vector for equation y' = By + c
-        :param Ls: (float) : Length of the segment  [m]
-        :param Ss: (list) : Punctual pumping speeds [m**3/s]
-        :param gs: (list) : Punctual gas sources
-        :param As: (ndarray) : Specific conductances
-    Returns:
-    --------
-        :param  Ps: (list) :  Integration constants which satisfy the imposed boundary conditions.
+    
+        @param Bs: (ndarray) : Matrix for equation y' = By + c
+        @param Cs: (ndarray) : Vector for equation y' = By + c
+        @param Ls: (float) : Length of the segment  [m]
+        @param Ss: (list) : Punctual pumping speeds [m**3/s]
+        @param gs: (list) : Punctual gas sources
+        @param As: (ndarray) : Specific conductances
+
+        @return  Ps: (list) :  Integration constants which satisfy the imposed boundary conditions.
     """
 
     #Similiar to multi segment singlas gas 

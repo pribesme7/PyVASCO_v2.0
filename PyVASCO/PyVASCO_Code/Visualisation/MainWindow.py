@@ -25,7 +25,8 @@ import PropertyWindow
 #import ExternalDataWindow
 import Scrubbing
 
-import NewMaterialWindow,NewPumpWindow,NewGasSourceWindow,NewESDcurve,NewInput,AnalysisWindow,ShowWindow,MySimulationsWindow
+import NewMaterialWindow,NewPumpWindow,NewGasSourceWindow,NewESDcurve,NewInput,AnalysisWindow,ShowWindow
+import MySimulationsWindow, CryoWindow
 
 
 from PyQt4.QtCore import (PYQT_VERSION_STR, QFile, QFileInfo, QSettings,
@@ -38,7 +39,7 @@ import pyqtgraph.opengl as gl
 from Components.ESD import ESD
 import webbrowser
 
-#import Config
+
 from Computation import dataDensity
 from Config import Config
 from Computation.dataDensity import Density 
@@ -46,10 +47,6 @@ from Computation.dataDensity import Density
 from Computation.Core2 import Calculate, GetSegments, SetPumpingSpeedforAvgPressure
 #from InputTransform import Main_Material_Transformation
 from InputFormat.InputTransform import Main_Material_Transformation
-
-#import helpform
-#import newimagedlg
-#import qrc_resources
 
 
 __version__ = "2.0.0"
@@ -67,22 +64,14 @@ class Window(QMainWindow):
     def __init__(self, parent=None):
         super(Window, self).__init__(parent)
         self.tabWidget=QTabWidget()
-        #self.image = QImage()
         self.dirty = False
         self.filename = Config.DataFile #QDir.homePath() #None
-        #self.mirroredvertically = False
-        #self.mirroredhorizontally = False
-        #self.printer = None
         self.create_widgets()
         self.create_actions()
         self.create_menu()
         self.initiateMainWindow()
         self.create_connections()
-        #self.create_actions()
-        #self.load_settings()
         self.setWindowTitle("PyVASCO")
-        #self.updateFileMenu()
-        #QTimer.singleShot(0, self.loadInitialFile)
         self.nameEdit.selectAll()
         self.nameEdit.setFocus()
         self.setCentralWidget(self.tabWidget)
@@ -105,8 +94,6 @@ class Window(QMainWindow):
         Frame2=QGroupBox("Plot properties")
         Frame3=QGroupBox("Simulation parameters")
         Frame4=QGroupBox("Beam parameters and critical current")
-        #Frame4=QFrame()
-        #Frame6=QGroupBox("Estimation of the ESD from electron dose")
         Frame5=QGroupBox("Start Simulation")
 
         #widgets for FRAME 1 
@@ -123,9 +110,8 @@ class Window(QMainWindow):
         self.gaugesEdit = QLineEdit()
         self.gaugesSpinbox = QDoubleSpinBox(value=0, singleStep=0.1, minimum = -100000., maximum = 100000. )
         self.savetxtCheckBox = QCheckBox("Save simulation values in csv-file")
-        #self.savepngCheckBox = QCheckBox("Save simulation as png-file/Compare Data")
         self.ThreeDCheckBox = QCheckBox("Print 3D sketch of the domain")
-        #self.savepngCheckBox.setDisabled(True)
+
 
         #widgets for FRAME 2 
 
@@ -167,7 +153,7 @@ class Window(QMainWindow):
         self.ch4SpinBox = QDoubleSpinBox(value=1.4285, singleStep=0.05, minimum=0.1)
         self.coSpinBox = QDoubleSpinBox(value=1.1111, singleStep=0.05, minimum=0.1)
         self.co2SpinBox = QDoubleSpinBox(value=1.4285, singleStep=0.05, minimum=0.1)
-        #self.totalSpinBox = QDoubleSpinBox(value=1.0 ,singleStep=0.1, minimum=0.1)
+
 
 
 
@@ -175,17 +161,13 @@ class Window(QMainWindow):
         currentLabel = QLabel("Beam Current [A]")
         self.currentEdit = QLineEdit("0.5")
         self.currentCheckBox = QCheckBox("Compute critical current")
-        #self.currentCheckBox.setDisabled(True)
+
         initialcurrentLabel = QLabel("Initial current [A]")
         self.initialcurrentSpinBox = QDoubleSpinBox(value=1.0, singleStep=0.1, minimum=0.1)
 
         precisioncurrentLabel = QLabel("Precission [A]")
         self.precisioncurrentSpinBox = QDoubleSpinBox(value=0.1, singleStep=0.1, minimum=0.1)
 
-        ''' Unbar to go back to IdaVac's original version
-        endcurrentLabel = QLabel("End current [A]")
-        self.endcurrentSpinBox = QDoubleSpinBox(value=50.0, singleStep=0.1, minimum=0.1, maximum=500)
-        '''
         stepscurrentLabel = QLabel("calculation steps")
         self.stepscurrentSpinBox = QSpinBox(value=10)
 
@@ -216,7 +198,6 @@ class Window(QMainWindow):
         frame1Layout.addWidget(self.gaugesSpinbox,4,2)
 
         frame1Layout.addWidget(self.savetxtCheckBox,5,0)
-        #frame1Layout.addWidget(self.savepngCheckBox,6,0)
         frame1Layout.addWidget(self.ThreeDCheckBox,6,0)
 
         Frame1.setLayout(frame1Layout)
@@ -229,8 +210,7 @@ class Window(QMainWindow):
 
 
 
-        #frame2Layout.addWidget(instabilitiesLabel,1,0)
-        #frame2Layout.addWidget(self.instabilitiesSlider,1,1)
+
         frame2Layout.addWidget(plottingLabel,0,0)
         frame2Layout.addWidget(self.plottingSlider,0,1,1,4)
         frame2Layout.addWidget(self.logCheckBox,1,0)
@@ -274,7 +254,7 @@ class Window(QMainWindow):
         frame3Layout.addWidget(self.co2SpinBox,7,3)
         frame3Layout.addWidget(self.totalCheckBox,8,0)
         frame3Layout.addWidget(self.UseRecursivePumpingSpeedCheckButton,8,2)
-        #frame3Layout.addWidget(self.totalSpinBox,8,3)
+
         Frame3.setLayout(frame3Layout)
 
 
@@ -291,11 +271,6 @@ class Window(QMainWindow):
         frame4Layout.addWidget(precisioncurrentLabel, 1, 4)
         frame4Layout.addWidget(self.precisioncurrentSpinBox, 1, 5)
 
-        '''
-        # Unbar to go back to IdaVac original version
-        frame4Layout.addWidget(endcurrentLabel,1,2)
-        frame4Layout.addWidget(self.endcurrentSpinBox,1,3)
-        '''
         frame4Layout.addWidget(stepscurrentLabel,1,6)
         frame4Layout.addWidget(self.stepscurrentSpinBox,1,7)
 
@@ -307,13 +282,12 @@ class Window(QMainWindow):
         Frame5.setFixedHeight(75)
 
 
-        #layout.addStretch()
+
 
         tab1Layout.addWidget(Frame1)
         tab1Layout.addWidget(Frame2)
         tab1Layout.addWidget(Frame3)
         tab1Layout.addWidget(Frame4)
-        #tab1Layout.addWidget(Frame6)
         tab1Layout.addWidget(Frame5)
 
 
@@ -328,7 +302,7 @@ class Window(QMainWindow):
     def create_tab2(self):
         """
         Place and initialize all the widgets in Tab 2, labeled 'Simulation',  of PyVASCO.
-        :return: None
+        @return:  None
         """
         tab2Widget=QWidget()
 
@@ -362,8 +336,6 @@ class Window(QMainWindow):
         self.geometryPlotWidget.getPlotItem().getAxis("bottom").setStyle(tickTextOffset=16)
         self.geometryPlotWidget.getPlotItem().getAxis("bottom").tickFont = font
 
-        self.geometryPlotWidget.addLegend()
-
         self.l.addWidget(self.densityPlotWidget)
         self.l.addWidget(self.geometryPlotWidget)
         self.geometryPlotWidget.setXLink(self.densityPlotWidget)
@@ -381,13 +353,6 @@ class Window(QMainWindow):
         self.plot_Data_blue = self.densityPlotWidget.plot(pen= None, symbol = '+', symbolSize = 5, symbolPen = (255, 255, 255, 200), symbolBrush = (0,0,255,150), name = 'LHC data')
 
 
-
-
-
-
-        #self.plot_Data_min = self.densityPlotWidget.plot(x= xvals , y= yvals_min , pen= None, symbol = 'o', symbolSize = 5, symbolPen = (255, 204, 153, 200), symbolBrush = (0,0,255,150))
-        #self.plot_Data_max = self.densityPlotWidget.plot(x= xvals , y= yvals_max , pen= None, symbol = 'o', symbolSize = 5, symbolPen = (255, 64, 64, 200), symbolBrush = (0,0,255,150))
-
         tab2Layout=QVBoxLayout()
 
         tab2Layout.addWidget(self.densityRadioButton)
@@ -399,7 +364,7 @@ class Window(QMainWindow):
     def create_tab3(self):
         """
         Place and initialize all the widgets in Tab 3, labeled 'Critical Current', of PyVASCO.
-        :return: None
+        @return:  None
        """
         self.critCurrentLabel = QLabel("")
         tab3Widget=QWidget()
@@ -445,7 +410,7 @@ class Window(QMainWindow):
         self.plotCurrent2 = critCurrent1PlotWidget.plot(pen=Config.ColorPalette['ColorCH4'])
         self.plotCurrent3 = critCurrent1PlotWidget.plot(pen=Config.ColorPalette['ColorCO'])
         self.plotCurrent4 = critCurrent1PlotWidget.plot(pen=Config.ColorPalette['ColorCO2'])
-        #self.plotCurrent5 = critCurrent1PlotWidget.plot(pen=Config.ColorPalette['Colortotal'])
+
         '''
         self.plotCurrent1 = critCurrent1PlotWidget.plot(pen=Config.ColorPalette['ColorH2'], name = 'H<sub>2</sub>')
         self.plotCurrent2 = critCurrent1PlotWidget.plot(pen=Config.ColorPalette['ColorCH4'], name = 'CH<sub>4</sub>')
@@ -469,7 +434,7 @@ class Window(QMainWindow):
     def create_tab6(self):
         """
         Place and initialize all the widgets in Tab 6, labeled 'Scrubbing Simulation',  of PyVASCO.
-        :return: None
+        @return:  None
         """
         # Study of the Scrubbing effect
         tab6Widget = QWidget()
@@ -480,10 +445,6 @@ class Window(QMainWindow):
         self.Frame2 = QGroupBox("Simulation parameters")
         self.Frame2p = QGroupBox("Simulation parameters")
         Frame3 = QGroupBox("Results")
-
-
-        # self.TotalOutgassingMaterialsLabel = QLabel("Use total Outgassing [mbar l/s] for materials: ")
-        # self.TotalOutgassingMaterials = QLineEdit("BCu,BCu2")
 
 
         #  Widgets for Frame1: Simulation menu
@@ -529,14 +490,9 @@ class Window(QMainWindow):
         self.scrubbingPlotWidget.getPlotItem().getAxis("left").tickFont= font
         self.scrubbingPlotWidget.getPlotItem().getAxis("bottom").setStyle(tickTextOffset=16)
         self.scrubbingPlotWidget.getPlotItem().getAxis("bottom").tickFont = font
-        #self.scrubbingLegend = self.scrubbingPlotWidget.addLegend()
         self.scrubbingPlotWidget.showGrid(True, True, 0.5)
 
-        #self.plotScrubbing1 = self.scrubbingPlotWidget.plot(pen=Config.ColorPalette['ColorH2'])
-        #self.plotScrubbing2 = self.scrubbingPlotWidget.plot(pen=Config.ColorPalette['ColorCH4'])
-        #self.plotScrubbing3 = self.scrubbingPlotWidget.plot(pen=Config.ColorPalette['ColorCO'])
-        #self.plotScrubbing4 = self.scrubbingPlotWidget.plot(pen=Config.ColorPalette['ColorCO2'])
-        #self.plotScrubbing5 = self.scrubbingPlotWidget.plot(pen=Config.ColorPalette['Colortotal'])
+
 
         # +++++++++++ LAYOUT
         tab6Layout = QVBoxLayout()  # how the frames are aligned
@@ -558,8 +514,7 @@ class Window(QMainWindow):
         frame2Layout.addWidget(self.esdFromDoseSlider, 1, 1)
         frame2Layout.addWidget(self.esdFromDoseInfo, 1, 2)
         frame2Layout.addWidget(self.scrubbingOp1PushButton,2,0,1,3)
-        # frame6Layout.addWidget(self.TotalOutgassingMaterialsLabel, 2,0)
-        # frame6Layout.addWidget(self.TotalOutgassingMaterials,2,2)
+
         self.Frame2.setLayout(frame2Layout)
 
         # Option 2
@@ -594,15 +549,13 @@ class Window(QMainWindow):
     def create_widgets(self):
         """
         Initialize the different tabs of PyVASCO.
-        :return:None
+        @return:  None
         """
         self.create_tab1()
         self.create_tab2()
         self.create_tab3()
-        #self.create_tab4()
-        #self.create_tab5()
         self.create_tab6()
-        #self.create_tab7()
+
 
     def create_connections(self):
         """
@@ -620,12 +573,6 @@ class Window(QMainWindow):
         self.pressureRadioButton.toggled.connect(self.PressureDensity)
         self.logCheckBox.stateChanged.connect(self.logScale)
         self.plottingSlider.valueChanged.connect(self.PlottingQuality)
-
-
-
-
-        #self.seyFromDoseCheckBox.connect()
-
 
 
         #Visibility of Plot according to checkbox value
@@ -666,7 +613,7 @@ class Window(QMainWindow):
     def h2Visible(self):
         """
         Makes the H2 curve visible if the H2 check-button in the tab 'Data' is checked.
-        :return: None
+        @return:  None
         """
         if self.h2CheckBox.isChecked():
             self.plotH2.setData(x = Density.X,y = Density.H2)
@@ -676,7 +623,7 @@ class Window(QMainWindow):
     def ch4Visible(self):
         """
         Makes the CH4 curve visible in the results of tab 'Simulation' if the CH4 check-button in the tab 'Data' is checked.
-        :return: None
+        @return:  None
         """
         if self.ch4CheckBox.isChecked(): self.plotCH4.setData(x = Density.X, y = Density.CH4)
         else: self.plotCH4.setData(x = [], y = [])
@@ -685,7 +632,7 @@ class Window(QMainWindow):
     def coVisible(self):
         """
         Makes the CO curve visible in the results of tab 'Simulation' if the CO check-button in the tab 'Data' is checked.
-        :return: None
+        @return:  None
         """
         if self.coCheckBox.isChecked(): self.plotCO.setData(x = Density.X, y = Density.CO)
         else: self.plotCO.setData(x = [], y = [])
@@ -694,7 +641,7 @@ class Window(QMainWindow):
     def co2Visible(self):
         """
         Makes the CO2 curve visible in the results of tab 'Simulation' if the CO2 check-button in the tab 'Data' is checked.
-        :return: None
+        @return:  None
         """
         if self.co2CheckBox.isChecked(): self.plotCO2.setData(x = Density.X, y = Density.CO2)
         else: self.plotCO2.setData(x = [], y = [])
@@ -704,7 +651,7 @@ class Window(QMainWindow):
         """
         Makes the total pressure curve visible in the results of tab 'Simulation' if the 'Total of all gas species' check-button in the tab 'Data' is checked.
         The total pressure is computed according to the values of the sensitivity factors for each specie selected in the 'Data' tab of PyVASCO.
-        :return: None
+        @return:  None
         """
         if self.totalCheckBox.isChecked() and Density.density is False:
             total_Density = Density.SensitivityTotal()
@@ -716,7 +663,7 @@ class Window(QMainWindow):
     def h2Sensitivity(self):
         """
         Sets the value for the sensitivity factor of H2 for conversion between molecules density and pressure.
-        :return: None
+        @return:  None
         """
         Density.SensitivityFactor[0] =  self.h2SpinBox.value()
 
@@ -726,7 +673,7 @@ class Window(QMainWindow):
     def ch4Sensitivity(self):
         """
         Sets the value for the sensitivity factor of CH4 for conversion between molecules density and pressure.
-        :return: None
+        @return:  None
         """
         Density.SensitivityFactor[1] = self.ch4SpinBox.value()
         #if self.ch4CheckBox.isChecked(): self.plotCH4.setData(x = Density.X, y = Density.CH4)
@@ -735,7 +682,7 @@ class Window(QMainWindow):
     def coSensitivity(self):
         """
         Sets the value for the sensitivity factor of CO for conversion between molecules density and pressure.
-        :return: None
+        @return:  None
         """
         Density.SensitivityFactor[2] = self.coSpinBox.value()
         #if self.coCheckBox.isChecked(): self.plotCO.setData(x = Density.X, y = Density.CO)
@@ -744,7 +691,7 @@ class Window(QMainWindow):
     def co2Sensitivity(self):
         """
         Sets the value for the sensitivity factor of CO2 for conversion between molecules density and pressure.
-        :return: None
+        @return:  None
         """
         Density.SensitivityFactor[3]= self.co2SpinBox.value()
         #if self.co2CheckBox.isChecked(): self.plotCO2.setData(x = Density.X, y = Density.CO2)
@@ -752,8 +699,8 @@ class Window(QMainWindow):
 
     def setESDFromDose(self):
         """
-
-        :return: None
+        Sets the ESD (Electron Stimulated Desorption) yield from a set accumulated electron dose. 
+        @return:  None
         """
         self.esdFromDoseInfo.setText('1.0e' + str(self.esdFromDoseSlider.value()))
         self.eDose = float('1.0e' + str(self.esdFromDoseSlider.value()))
@@ -762,7 +709,7 @@ class Window(QMainWindow):
     def getESDFromDose(self):
         """
         Gets the ESD of a certain material given an approximated electron dose
-        :return:
+        @return:  None
         """
         #newESD = ESD(self.eDose)
         try:
@@ -772,16 +719,12 @@ class Window(QMainWindow):
         Config.UpdateESD = True
         Config.useESDCurve = True
 
-
-
-
-
     '''
     def ClickrunAnalysis(self):
         """
         When clicked, changes the text of the button 'Run Simulation' in Tab 'Data' to 'Running' and raises a warning
         message in case of unsuccessful simulation.
-        :return: None
+        @return:  None
         """
         self.runAnalysisButton.setText('Runnning...')
         flag = Analysis.runAnalysis(self, Config.Upload1, Config.Upload2)
@@ -794,7 +737,7 @@ class Window(QMainWindow):
     def RunScrubbingSimulation2(self):
         """
         Runs the simulation on the Scrubbing effect and plots the result in the tab 'Scrubbing Simulation'. See the user manual for more details.
-        :return: None
+        @return:  None
 
         """
 
@@ -823,6 +766,10 @@ class Window(QMainWindow):
 
 
     def RunScrubbingSimulation(self):
+        """
+        Runs the simulation on the Scrubbing effect and plots the result in the tab 'Scrubbing Simulation'. See the user manual for more details.
+        @return:  None
+        """
         self.scrubbingOp2PushButton.setText("Running...")
         self.getESDFromDose()
         if Config.DataFile == "":
@@ -888,6 +835,11 @@ class Window(QMainWindow):
         self.scrubbingOp2PushButton.setText('Run Simulation')
 
     def ScrubbingPlot2(self,den):
+        """
+        Plots the results from RunScrubbingSimulation2  in the Tab 'Dynamic pressure due to ESD'. See the User Guide for more information. 
+        @param den: Density profile for the simulated system 
+        @return: : None 
+        """
         self.scrubbingPlotWidget.getPlotItem().clear()
         try:
             self.ScrubbingLegend.scene().removeItem(self.ScrubbingLegend)
@@ -921,8 +873,8 @@ class Window(QMainWindow):
         Plots the result of the Scrubbing Simulation. \n
         Parameters:
         ----------
-        :param eDoseRange: (list) Simulated values of received electron dose.
-        :param listDensity: (list) Density profile for the different simulated electron doses.
+        @param eDoseRange: (list) Simulated values of received electron dose.
+        @param listDensity: (list) Density profile for the different simulated electron doses.
         :return None:
         """
         print('Scrubbing Plot')
@@ -984,39 +936,35 @@ class Window(QMainWindow):
         """
 
 
-
-
     def create_actions(self):
         """
         Creates the different actions in the Menu.
-        :return: None
+        @return:  None
         """
         print('createActions')
         #File
         fileLoadAction = self.createAction("&Load...", self.fileLoad, "Ctrl+L")
-        #fileExternalAction = self.createAction("&External Data", self.fileExternal, "Ctrl+E")
-        fileShowAction = self.createAction("&Show components", self.fileShow,"Ctrl+S")
         filePropertiesAction = self.createAction("&Properties",self.fileProperties, "Ctrl+P" )
-        fileMySimulationsAction = self.createAction("&My simulations", self.fileMysimulations, " Ctrl+M")
         fileQuitAction = self.createAction("&Quit", self.close,"Ctrl+Q")
 
         fileMenu = self.menuBar().addMenu("File")
-        fileMenuActions = (fileLoadAction,  filePropertiesAction,fileShowAction,fileMySimulationsAction, None, fileQuitAction) #fileExternalAction,
+        fileMenuActions = (fileLoadAction,  filePropertiesAction, None, fileQuitAction)
         self.addActions(fileMenu, fileMenuActions)
 
 
 
-        #Add
-        addInputAction = self.createAction("&Simulation", self.inputNew, "Ctrl+I" )
+        #Add&Edi
+        addInputAction = self.createAction("&Simulation", self.fileMysimulations, "Ctrl+I" )
         addMaterialAction = self.createAction("&Material", self.materialNew, "Ctrl+M" )
-        addPumpAction = self.createAction("&Pump",self.pumpNew, "Ctrl+P" )
+        addPumpAction = self.createAction("&Pump",self.pumpNew, "Alt+P" )
         addGassourceAction = self.createAction("&Gassource", self.gassourceNew,"Ctrl+G")
+        addCryoAction = self.createAction("&Cryogenics",self.CryogenicSetup, "Alt+C")
         addESDCurve = self.createAction("&ESD curve", self.ESDcurveNew,"Ctrl+D")
-        #addSEYCurve = self.createAction("&SEY curve", self.SEYcurveNew, "Ctrl+Y")
+
 
 
         addInputMenu = self.menuBar().addMenu("Add and Edit")
-        addInputMenuActions = (addInputAction,addMaterialAction, addPumpAction, addGassourceAction,addESDCurve)#,addSEYCurve)
+        addInputMenuActions = (addInputAction,addMaterialAction, addPumpAction, addGassourceAction,addCryoAction,addESDCurve)
         self.addActions(addInputMenu, addInputMenuActions)
 
 
@@ -1041,7 +989,7 @@ class Window(QMainWindow):
     def PressureDensity(self):
         """
         Changes the results presented in the the tab 'Simulation' from density to pressure and  back
-        :return: None
+        @return:  None
         """
         print('PressureDensity')
         Density.setSensitivityFactor([float(self.h2SpinBox.value()), float(self.ch4SpinBox.value()), float(self.coSpinBox.value()), float(self.co2SpinBox.value())])
@@ -1056,7 +1004,7 @@ class Window(QMainWindow):
     def ShiftXAxis(self):
         """
         Shifts the X axis in the 'Simulation' tab
-        :return:
+        @return: 
         """
         print('ShiftXAxis')
         shift= self.shiftEdit.text()
@@ -1088,7 +1036,7 @@ class Window(QMainWindow):
     def fileLoad(self):
         """
         Loads Materials, Pumps and Gas sources
-        :return: None
+        @return:  None
         """
         print('fileLoad: Reload Materials, Pumps, Gassources')
         Config.Load()
@@ -1112,7 +1060,7 @@ class Window(QMainWindow):
     def fileProperties(self):
         """
         Launches the Property Window
-        :return: None
+        @return:  None
         """
         self.ex = PropertyWindow.PropWindow()
         self.ex.show()
@@ -1222,6 +1170,13 @@ class Window(QMainWindow):
         self.GasSNew = NewGasSourceWindow.NewGSourceWindow()
         self.GasSNew.show()
 
+    def CryogenicSetup(self):
+        """
+        Launches the 'Cryogenics setup' window
+        """
+        self.CryoWindow = CryoWindow.CryoWindow()
+        self.CryoWindow.show()
+
     def ESDcurveNew(self):
         """
         Launches the 'New ESD curve' window.
@@ -1265,12 +1220,12 @@ class Window(QMainWindow):
     def updatePlot(self, density):
         """
         Updates the plot in the 'Simulation' tab.
-        :param density: (DensityClass): Result of the simulation.
+        @param density: (DensityClass): Result of the simulation.
         """
         self.ShiftXAxis()
         if self.h2CheckBox.isChecked():
             self.plotH2.setData(x = density.X,y = density.H2)
-            #self.Plot8.setData(x = density.X,y = density.H2)
+
         else: self.plotH2.setData(x = [], y = [])
         if self.ch4CheckBox.isChecked(): self.plotCH4.setData(x = density.X, y = density.CH4)
         else: self.plotCH4.setData(x = [], y = [])
@@ -1282,8 +1237,7 @@ class Window(QMainWindow):
 
             self.plot_total.setData(x = density.X, y = density.SensitivityTotal())
             self.densityPlotWidget.plotItem.legend.addItem(self.plot_total,"Total pressure")
-            #self.densityPlotWidget.plotItem.removeItem(self.densityPlotWidget.plotItem.legend)
-            #self.densityPlotWidget.addLegend()
+
 
         else:
             self.plot_total.setData(x = [], y = [])
@@ -1336,9 +1290,9 @@ class Window(QMainWindow):
     def critCurrentPlot(self, listDensity,listCurrent):
         """
         Plot in the 'Critical Current' tab.
-        :param listDensity: (list) List containing the density profile for the different simulated currents.
-        :param listCurrent: (list) List with simulated beam currents.
-        :return:
+        @param listDensity: (list) List containing the density profile for the different simulated currents.
+        @param listCurrent: (list) List with simulated beam currents.
+        @return: None
         """
         print('crit current Plot')
         print(listCurrent)
@@ -1398,9 +1352,6 @@ class Window(QMainWindow):
             self.critLegend.addItem(self.plotCurrent2, name=" " + str(listCurrent[1]) + " A")
             self.names.append(" " + str(listCurrent[-1]) + " A")
 
-        #self.plotCurrent5.setData(x=X, y=listDensity[n + 1].total())
-        #self.critLegend.addItem(self.plotCurrent5, name=" " + str(listCurrent[n + 1]) + " A")
-        #self.names.append(" " + str(listCurrent[n+1]) + " A")
 
 
 
@@ -1420,7 +1371,6 @@ class Window(QMainWindow):
             w.setCameraPosition(distance=50)
             w.resize(800,600)
             w.setBackgroundColor('w')
-            #w.setWindowState(qt.windowmaximized); 
 
 
 
@@ -1461,9 +1411,6 @@ class Window(QMainWindow):
             except:
                 break
 
-
-
-        #Segments2, EndPump2, EndSource2, DivisionList2, GeometryParameters2 = GetSegments(Config.DataFile2)   #second beam line
         if Segments == False:
             QMessageBox.warning(self, "ERROR in Input Parameters", "Please define the Input parameter correctly! Could not find item: " + str(EndPump) , QMessageBox.Ok)
             self.runsimulationButton.setText('Run Simulation')
@@ -1510,8 +1457,7 @@ class Window(QMainWindow):
 
         self.updatePlot(Density)
         self.updateLHCData()
-        #x,y= UploadData(Config.DataFolder+'Input/Roberto.txt' )
-        #self.densityPlotWidget.plot(x,y)
+
 
         #Geometry
         l0 =self.shiftEdit.text()
@@ -1537,13 +1483,10 @@ class Window(QMainWindow):
                 self.geometryPlotWidget.addItem(rect_magnet)
 
 
-            #if l0 < 367.064:
-            #    help_vertical = 0.07
-            #elif l0 > 655.39:   help_vertical = -0.07            
-            #else: help_vertical = 0
+
             rect=QGraphicsRectItem(QRectF(l0, -b/2+ help_vertical, l, b))
             rect.setPen(QPen(Config.ColorPalette['LightGray']))
-            #rect.opaqueArea(QPen(Config.ColorPalette['Red']))  #QPen(Config.ColorPalette['Red'])
+
 
             rect.setBrush(QBrush(
                 Config.MaterialColorDict[material]
@@ -1607,9 +1550,6 @@ class Window(QMainWindow):
 
 #############################3
 
-
-
-
         for element in LegendMaterialDict:
             print("LegendMaterialDict[element]",LegendMaterialDict[element]," element", element)
             self.geometryPlotWidget.plot(pen=LegendMaterialDict[element], name=element)
@@ -1619,30 +1559,20 @@ class Window(QMainWindow):
             self.saveFile([Density.X,Density.H2, Density.CH4, Density.CO, Density.CO2])
         self.runsimulationButton.setText('Run Simulation')
         if self.currentCheckBox.isChecked(): self.critCurrent2() #self.critCurrent()
-        #checks if log-button is checked or not
-        #if self.savepngCheckBox.isChecked():
-        #    self.take_screenshot()
-        #    vals =  np.hstack([np.random.normal(size=100), np.random.normal(size=260, loc=4)])
-        #    y = pg.pseudoScatter(vals, spacing=0.15)
 
-        #    self.l.update()
         if self.ThreeDCheckBox.isChecked():
             w.grabFrameBuffer().save('3DPlot.png')
 
+    #def runSimulation3(self):
 
-
-
-
-    def runSimulation3(self):
-
-        self.geometryPlotWidget.clear()
-        self.densityRadioButton.click()
-        Config.setMass([float(self.massEdit1.text()), float(self.massEdit2.text()), float(self.massEdit3.text()), float(self.massEdit4.text())])
-        Config.setCrossSection([float(self.crossSectionEdit1.text()), float(self.crossSectionEdit2.text()), float(self.crossSectionEdit3.text()), float(self.crossSectionEdit4.text())])
-        self.runsimulationButton.setText('Running...')
-        self.logScale()
-        QApplication.processEvents()
-        Segments, EndPump, EndSource, DivisionList, GeometryParameters = GetSegments(Config.DataFile)
+    #    self.geometryPlotWidget.clear()
+    #    self.densityRadioButton.click()
+    #    Config.setMass([float(self.massEdit1.text()), float(self.massEdit2.text()), float(self.massEdit3.text()), float(self.massEdit4.text())])
+    #    Config.setCrossSection([float(self.crossSectionEdit1.text()), float(self.crossSectionEdit2.text()), float(self.crossSectionEdit3.text()), float(self.crossSectionEdit4.text())])
+    #    self.runsimulationButton.setText('Running...')
+    #    self.logScale()
+    #    QApplication.processEvents()
+    #    Segments, EndPump, EndSource, DivisionList, GeometryParameters = GetSegments(Config.DataFile)
 
     def transformInput(self):
         """
@@ -1675,7 +1605,7 @@ class Window(QMainWindow):
         self.critCurrentLabel.setText("Critical Current: not determined!")
         QApplication.processEvents()
         Segments, EndPump, EndSource, DivisionList, GeometryParameters  = GetSegments(Config.DataFile)
-        #print("Segments", Segments)
+
 
         if Segments == False:
             QMessageBox.warning(self, "ERROR in Input Parameters", "Please define the Input parameter correctly! Could not find item: "+ str(EndPump) , QMessageBox.Ok)
@@ -1688,8 +1618,6 @@ class Window(QMainWindow):
             return
 
         #DENSITY PLOT
-
-        #den = Calculate(Segments,EndPump, EndSource, Current=float(self.currentEdit.text()))
 
                 #DENSITY PLOT
         initialCurrent = float(self.initialcurrentSpinBox.value())
@@ -1921,16 +1849,17 @@ class Window(QMainWindow):
         """
         Implements computation of the Critical Current using the same algorithm used in VASCO. \n
 
-        Description:
-        ----------
-         1.- Read values for Initial current (current from which the Ic is going to be computed), step (current
+        Description
+        ===========
+
+            1. Read values for Initial current (current from which the Ic is going to be computed), step (current
          increase between consecutive calculations), nsteps (maximum number of steps in the calculation) \n
-         2.- Set maximum relative increase between 2 consecutive computations of the average density. Why in VASCO is
+            2. Set maximum relative increase between 2 consecutive computations of the average density. Why in VASCO is
          set to Ic_step = tan(88/90*pi/2) ? \n
-         3.- Conditions for finishing the computation: Relative increase in consecutive steps > Ic_step OR the
+            3. Conditions for finishing the computation: Relative increase in consecutive steps > Ic_step OR the
          minimum density for the gas with smaller density becomes negative OR  end of steps. \n
-         4.- Check if the density decreases with respect to the previous step. If so, stop the calculation and raise a
-         warning. \n
+            4. Check if the density decreases with respect to the previous step. If so, stop the calculation and raise a
+         warning.
 
         """
         # Implements computation of the Critical Current using the same algorithm used in VASCO
@@ -1951,7 +1880,7 @@ class Window(QMainWindow):
         self.critCurrentLabel.setText("Critical Current: not determined!")
         QApplication.processEvents()
         Segments, EndPump, EndSource, DivisionList, GeometryParameters = GetSegments(Config.DataFile)
-        # print("Segments", Segments)
+
 
         if Segments == False:
             QMessageBox.warning(self, "ERROR in Input Parameters",
@@ -1965,10 +1894,6 @@ class Window(QMainWindow):
             self.uploadEdit.setFocus()
             self.runsimulationButton.setText('Run Simulation')
             return
-
-            # DENSITY PLOT
-
-            # den = Calculate(Segments,EndPump, EndSource, Current=float(self.currentEdit.text()))
 
             # DENSITY PLOT
         initialCurrent = float(self.initialcurrentSpinBox.value())
@@ -2050,11 +1975,9 @@ class Window(QMainWindow):
 
     def saveFile(self,Array):
         """
-        Saves the simulation results to CSV file in the directory indicated in the 'Data' tab under the label 'Save results in folder' \n
+        Saves the simulation results to CSV file in the directory indicated in the 'Data' tab under the label 'Save results in folder'
 
-        Parameters:
-        ----------
-        :param Array: (numpy.ndarray) Array containing the density or pressure profile for the different considered species.
+        @param Array: (numpy.ndarray) Array containing the density or pressure profile for the different considered species.
         """
         print('saveFile')
         #Array = [X, H2, CH4, CO, CO2] saves the values of array in a txt-file.
@@ -2128,14 +2051,13 @@ class Window(QMainWindow):
     def createAction(self, text, slot=None, shortcut=None, icon=None,tip=None, checkable=False):
         """
         Creates an action in the Menu and vinculates a keyboard shortcut. \n
-        Parameters:
-        ----------
-        :param text: (str) Name of the action.
-        :param slot: (optional, str)
-        :param shortcut: (str) Definition of the action's shortcut.
-        :param icon: (optional, str) Name of the PNG icon for the action.
-        :param tip: (optional, str) Short description of the action.
-        :param checkable: (optional, bool) If True, makes the action checkable.
+
+        @param text: (str) Name of the action.
+        @param slot: (optional, str)
+        @param shortcut: (str) Definition of the action's shortcut.
+        @param icon: (optional, str) Name of the PNG icon for the action.
+        @param tip: (optional, str) Short description of the action.
+        @param checkable: (optional, bool) If True, makes the action checkable.
 
         """
         action = QAction(text, self)
@@ -2155,10 +2077,9 @@ class Window(QMainWindow):
     def addActions(self, target, actions):
         """
         Adds actions to the targeted object. \n
-        Parameters:
-        -----------
-        :param target: (PyQTWindow.Menu) Object where to add the specified list of Actions
-        :param actions: (list) Actions to be added.
+
+        @param target: (PyQTWindow.Menu) Object where to add the specified list of Actions
+        @param actions: (list) Actions to be added.
         """
         for action in actions:
             if action is None:
@@ -2172,5 +2093,4 @@ class Window(QMainWindow):
         """
         frameGm = self.frameGeometry()
         centerPoint = QDesktopWidget().availableGeometry().center()
-        #frameGm.moveCenter(centerPoint)
         self.move(frameGm.topLeft())

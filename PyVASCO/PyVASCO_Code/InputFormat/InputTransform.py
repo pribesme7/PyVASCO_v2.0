@@ -14,7 +14,12 @@ import unit
 
 
 def FileToArray(file,delimiter=','):
-
+    """
+     Reads and parses a CSV input file in the 'old' format. 
+    @param file: (str) path to the file  to read
+    @param delimiter: (str) column delimiter. Default is ',', as in a CSV file
+    @return Array:  (array) Array containing the information in file
+    """
     print "FileToArray"
 
     try:
@@ -49,15 +54,13 @@ def FileToArray(file,delimiter=','):
 def deleteCol(Array, Material = False):
     """
     Deletes the extra columns of a loaded file written in the VASCO old format
-    Parameters:
-    ----------
-    :param Array: (numpy.array): Array containing an input  written in the VASCO old format
-    :param Material: (bool) : If True, this function interprets that Array contains information of a material and
+
+    @param Array: (numpy.array): Array containing an input  written in the VASCO old format
+    @param Material: (bool) : If True, this function interprets that Array contains information of a material and
     assigns to the output array 9 rows. The extra rows are deleted.
 
-    Returns:
-    -------
-    :return Array: (np.array)
+
+    @return Array: (np.array)
     """
     print "deleteCol"
     #delete the first threee coloumns of Array and transforms all entries to float numbers
@@ -118,10 +121,10 @@ def deleteCol(Array, Material = False):
 
 def AddMaterial(Array, Name='M'):
     """
-
-    :param Array:
-    :param Name:
-    :return:
+    Writes a new 'Material' identified as 'Name'
+    @param Array: (array) Array containing the new material's properties
+    @param Name: (str) Name of the material
+    @return:
     """
     print "AddMaterial"
     #array keeps the information about one new material
@@ -141,19 +144,15 @@ def AddMaterial(Array, Name='M'):
 def CheckMaterial(Array):
     """
     Checks Array if some segments = (4 coloumns) have the same material properties; check only among the current inputfile \n
-    - if yes, then delete one segment from Array
+        - if yes, then delete one segment from Array
       Materiallist has length of number of segments and its values are due to which material the segment has, e.g. MaterialList[2] = 0 means that
       the thierd segment has material 1 properties!
-    - if no, then add the new material to ArrayList and specify a new number for the material in MaterialList
+        - if no, then add the new material to ArrayList and specify a new number for the material in MaterialList
 
-    Properties:
-    ----------
-    :param Array: (np.array): Array containing the properties of a Material expressed in VASCO format. \m
+    @param Array: (np.array): Array containing the properties of a Material expressed in VASCO format. \m
 
-    Returns:
-    --------
-    :MaterialList: (list)  used for SegmentFIle
-    :arrayList: (list)  used to define new materials in materialsfolder.
+    @return: MaterialList (list)  used for SegmentFIle
+    @return: arrayList (list)  used to define new materials in materialsfolder.
 
     """
     print "CheckMaterial"
@@ -239,7 +238,12 @@ def CheckMaterial(Array):
 
 
 def NewPump(Array):
+    """
+    Writes a new 'Pump'
+    @param Array: (array) Array containing the pumping speed of the pump for the relevant gases
+    @return:
 
+    """
     print "NewPump"
     caption_Pump=['S_H2 [l/s]','S_CH4 [l/s]','S_CO [l/s]','S_CO2 [l/s]']
     #Config.Pumps=LoadPumps()
@@ -261,7 +265,12 @@ def NewPump(Array):
 
 
 def NewGassource(Array):
+    """
+   Writes a new 'gas source'
+   @param Array: (array) Array containing the pumping speed of the pump for the relevant gases
+   @return:
 
+   """
     print "NewGassource"
     #checks if array is gassource folder, otherwise it adds it
     caption_Gassource=['g_H2 [l/s]','g_CH4 [l/s]','g_CO [l/s]','g_CO2 [l/s]']
@@ -285,7 +294,14 @@ def NewGassource(Array):
         else: index+=1
 
 
-def Compare(ArrayList,MaterialList): 
+def Compare(ArrayList,MaterialList):
+    """
+    Looms if the properties defined in array have already been defined in one of the registered Materials. If so, the
+    name of the coresponding material will be kept. Otherwise, a new material is created
+    @param ArrayList: (array) Array containing 
+    @param MaterialList: (list) List containing all materials already defined.
+    @return:
+    """
     print "Compare"
     #ArrayList contains list of data arrays with differnt materials from the transformin data file
     #Materiallist contains shortcuts for material for each segment
@@ -354,6 +370,14 @@ def Compare(ArrayList,MaterialList):
 
 
 def Main_Material_Transformation(oldInputFile):
+    """
+    Reads a file in the 'old'input format and builds a new file written in the new format, together with the corresponding
+    pumps, materials and gas sources. A default name is given for this components.
+
+    @param oldInputFile: (str) path to the file to  transform
+    @return True: (bool) (If completed successfully
+    """
+
     print "Main_Material_Transformation"
     #dir=Config.Config.DataFolder+'Input/MultiGas1.csv'
     dir=oldInputFile
@@ -481,6 +505,13 @@ def Main_Material_Transformation(oldInputFile):
 
 
 def Find_Name(OldName, type, initialNumber=1):
+    """
+    Finds a new name for the a component (M for material, P for pump and G for a gas source) 
+    @param OldName: 
+    @param type: 
+    @param initialNumber: 
+    @return name : (str) New name for the component
+    """
     print "Find_Name"
     if type == 'M':
         name='M'+str(initialNumber)

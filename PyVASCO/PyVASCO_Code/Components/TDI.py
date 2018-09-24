@@ -9,25 +9,24 @@ import os
 
 class TDIS:
     """
-    Properties: 
-    ----------
-    **nfile** (str): Name of the file containing the half-gap vs. electron current curve. \n
-    **TDISFile** (str): Name of the file containing the description of the geometry of the TDIS. \n
+    Properties
+    ==========
 
+    @var nfile: (str): Name of the file containing the half-gap vs. electron current curve. \n
+    @var TDISFile:(str): Name of the file containing the description of the geometry of the TDIS. \n
 
-    Attributes:
-    ----------
-     **nfile** (str): Name of the file containing the half-gap vs. electron current curve. \n
-    **TDISFile** (str): Name of the file containing the description of the geometry of the TDIS. \n
-    **daFrame** (dict): Dictionary containing the half-gap vs. electron current curve for different cases. \n
-    **sey** (float) : SEY in the TDIS (considering homogeneous SEY in the tanks). \n
+    Attributes
+    ===========
+    B{nfile} (str): Name of the file containing the half-gap vs. electron current curve. \n
+    B{TDISFile} (str): Name of the file containing the description of the geometry of the TDIS. \n
+    B{daFrame} (dict): Dictionary containing the half-gap vs. electron current curve for different cases. \n
+    B{sey} (float) : SEY in the TDIS (considering homogeneous SEY in the tanks). \n
 
-
-    Methods:
-    -------
-    * read_csv((float) NFile, (bool) headers, (str) delimiter)
-    * seyFromDose((float) eDose)
-    * setElectronCurrent()
+    Methods
+    =======
+        - read_csv((float) NFile, (bool) headers, (str) delimiter)
+        - seyFromDose((float) eDose)
+        - setElectronCurrent()
     """
     def __init__(self,nfile,TDISFile):
         self.nFile = nfile
@@ -40,16 +39,12 @@ class TDIS:
         """
          Reads and parses the input file NFile containing the ESD vs. electron dose for H2, CH4, CO and CO2. \n
 
-        Parameters:
-        ----------
+        @param NFile: (str) Name of the directory containing a curve ESD vs. electron dose
+        @param headers: (optional, bool) If True, the names of the columns are kept as the keys of the output dictionary
+        @param delimiter: (optional, str) Delimiter used to separate the data in NFile
 
-        :param NFile: (str) Name of the directory containing a curve ESD vs. electron dose
-        :param headers: (optional, bool) If True, the names of the columns are kept as the keys of the output dictionary
-        :param delimiter: (optional, str) Delimiter used to separate the data in NFile
 
-        Returns:
-        -------
-        :return data: If headers is True --> dict containing the names of the columns as keys. If headers is False --> list
+        @return: data. If headers is True --> dict containing the names of the columns as keys. If headers is False --> list
         """
 
         f = open(NFile)
@@ -78,9 +73,8 @@ class TDIS:
         """
         Computes the SEY of the TDIS tanks after a given received electron dose, considering that both  the surface of
         the chamber and the received electron flux are homogeneous.\n
-        Parameters:
-        ----------
-        :param eDose: (float) : electron dose received on the surface of the TDIS (in e-/cm^2)
+
+        @param eDose: (float) : electron dose received on the surface of the TDIS (in e-/cm^2)
         """
 
         #print self.dataFrame

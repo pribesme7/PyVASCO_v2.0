@@ -20,17 +20,13 @@ def GetSegments(File=Config.DataFile):
     Gets the segments conforming the simulated geometry, materials, outgassing, etc. from the specified input file. See the User guide for more details
     on the format of the input file.\n
 
-    Parameters:
-    ----------
-    :param File: (str) : Input directory where the geometry, materials, outgassing, etc. for the simulation are defined.
+    @param  File: (str) : Input directory where the geometry, materials, outgassing, etc. for the simulation are defined.
 
-    Returns:
-    -------
-    :Segments: (list) List of the segments conforming the geometry of the simulated system. \n
-    :EndPump: (Pump) Pump located at the right side of the last segment \n
-    :EndSource: (Gassource)  Gas source  located at the right side of the last segment. \n
-    :DivisionsList: (list) List of integers ranging from 0 to the number of segments. \n
-    :GeometryPlot: (list) List of tuples  specifying the length of each segment, its diameter, its material and its temperature.
+    @return Segments: (list) List of the segments conforming the geometry of the simulated system. \n
+    @return EndPump: (Pump) Pump located at the right side of the last segment \n
+    @return EndSource: (Gassource)  Gas source  located at the right side of the last segment. \n
+    @return DivisionsList: (list) List of integers ranging from 0 to the number of segments. \n
+    @return GeometryPlot: (list) List of tuples  specifying the length of each segment, its diameter, its material and its temperature.
     """
     print('GetSegments:', Config.DataFile, File)
     Segments = []
@@ -107,8 +103,8 @@ def GetSegments(File=Config.DataFile):
         if Divisions2<1:
             Divisions2 = 1
 
-        if NSeg < 10 :
-            Divisions2 = int(Divisions2 * 16)
+        #if NSeg < 10 :   # Check!!!
+        #    Divisions2 = int(Divisions2 * 16)
         if SegmentT.Is_Single_Gas:
             Divisions2 = 1.
         #else: Divisions2  =  int(Divisions2 * 8 * 8)
@@ -133,7 +129,7 @@ def GetSegments(File=Config.DataFile):
     except KeyError, e: 
         print ' KeyError - reason "%s" ' % str(e)
         return  False , e,0,0 ,0
-    try: EndSource  =  np.array(Config.Gassources[SegmentGassources[-1].rstrip()].GasRelease)/SegmentT.Temperature 
+    try: EndSource  =  np.array(Config.Gassources[SegmentGassources[-1].rstrip()].GasRelease)#/SegmentT.Temperature
     except KeyError, e: 
         print ' KeyError - reason "%s" ' % str(e)
         return False , e,0,0 ,0
@@ -145,6 +141,15 @@ def GetSegments(File=Config.DataFile):
 
 
 def SetPumpingSpeedforAvgPressure(Density,Segments,EndPump):
+    """
+    Modifies the pumping speed of the lumped pumps according to the average pressure of each segment
+    @param Density: (array) Density profile in the simulated geometry
+    @param Segments: (array) Array containing the simulated Segments
+    @param EndPump: (Pump) Pump located at the end of the geometry
+
+    @return Segments:(array) Array containing the simulated segments after modifying the pumping speed of the lumped pumps in the simulation
+    @return EndPump: (Pump) End pump after modifying the pumping speed of the pump at the end of the geometry
+    """
     xList = np.array(Density.X)
     TotalP = np.array(Density.transformation().total())
     x0Cum = 0
@@ -167,37 +172,38 @@ def SetPumpingSpeedforAvgPressure(Density,Segments,EndPump):
 
 class Segment:
     """
-        Parameters:
-        ----------
-            **Array** (numpy.array) : Array containing the following properties of a segment: the length, the diameter,
+        Parameters
+        ==========
+
+            @param Array: (numpy.array) : Array containing the following properties of a segment: the length, the diameter,
             the temperature, the material, the name, the attached pumps, the gas source (if any) located at the end of the
             segment, the photon flux and the electron flux.
 
-        Attributes:
-        ----------
-        **Diameter** (float): diameter of the segment, considered cylindrical (in m) \n
-        **Length** (float): length of the segment (in m) \n
-        **VapPressure** (float) : temperature of the segment (in K) \n
-        **Material** (str): Name of the material of the segment \n
-        **Name** (str): Name of the segment, typically S+Number
-        **Pump** (str): Name of the pump attached to the start of the segment \n
-        **Gassource** (str): Name of the gas source at the start of the segment \n
-        **PhotonFlux** (float):  Homogeneous photon flux received in the segment (in photons/m/s) \n
-        **ElectronFlux** (float): Homogeneous electron flux received in the segment (in electrons/m/s) \n
-        **Is_Single_Gas** (bool): True if a single-gas model is used. \n
+        Attributes
+        ==========
+        B{Diameter}(float): diameter of the segment, considered cylindrical (in m) \n
+        B{Length} (float): length of the segment (in m) \n
+        B{VapPressure} (float) : temperature of the segment (in K) \n
+        B{Material} (str): Name of the material of the segment \n
+        B{Name}(str): Name of the segment, typically S+Number
+        B{Pump} (str): Name of the pump attached to the start of the segment \n
+        B{Gassource} (str): Name of the gas source at the start of the segment \n
+        B{PhotonFlux} (float):  Homogeneous photon flux received in the segment (in photons/m/s) \n
+        B{ElectronFlux} (float): Homogeneous electron flux received in the segment (in electrons/m/s) \n
+        B{Is_Single_Gas} (bool): True if a single-gas model is used. \n
 
 
-        Methods:
-        -------
-            * __init__()
-            * isSinglegas((str) Material): returns: (bool)
-            * PrintMatrix2()
-            * GetMatrices((Material) Material, (float) Current ): returns: (ndarray), (ndarray), (float), (ndarray),
+        Methods
+        =======
+             - __init__()
+             - isSinglegas((str) Material): returns: (bool)
+             - PrintMatrix2()
+             - GetMatrices((Material) Material, (float) Current ): returns: (ndarray), (ndarray), (float), (ndarray),
             (ndarray), (ndarray) \n
-            * GetFundamentalSystem((Material) Material, (float) x): returns: (ndarray)
-            * GetLength():  returns: (float)
-            * GetDiameter(): returns: (float)
-            * UploadElectronFlux((Material) Material, (float) HalfGap)
+             - GetFundamentalSystem((Material) Material, (float) x): returns: (ndarray)
+             - GetLength():  returns: (float)
+             - GetDiameter(): returns: (float)
+             - UploadElectronFlux((Material) Material, (float) HalfGap)
         """
 
     Diameter = 0
@@ -230,13 +236,11 @@ class Segment:
     def isSinglegas(self, Material):
         """
         Checks if self (segment) is singlegas.  \n
-        Parameters:
-        ----------
-        :param Material: (Material) Segment's material.\n
 
-        Returns:
-        -------
-        :return: (bool) : Singlegas = True; Multigas = False
+        @param  Material: (Material) Segment's material.\n
+
+
+        @return: (bool) : Singlegas = True; Multigas = False
         """
         #checks if self (segment) is singlegas
         #Singlegas = True
@@ -257,9 +261,8 @@ class Segment:
     def PrintMatrix2(A):
         """
           Prints on screen a formatted version of matrix A. \n
-          Parameters:
-          -----------
-          :param A: (ndarray) Matrix to be printed
+
+          @param  A: (ndarray) Matrix to be printed
 
         """
         print('------------------------------')
@@ -273,19 +276,16 @@ class Segment:
         """"
            Builds the Solving matrices. See User Guide for more information.
 
-           Parameters:
-           ----------
-            :param Material: (Material): Segment's material \n
-            :param Current: (float) : proton beam current \n
+            @param  Material: (Material): Segment's material \n
+            @param  Current: (float) : proton beam current \n
 
-           Returns:
-           -------
-           :param B: (ndarray) :
-           :param c: (ndarray) :
-           :param Length: (float):
-           :param Pumping: (ndarray):
-           :param OutgassingLocal: (ndarray):
-           :param A: (ndarray): Matrix containing the specific conductances for the main gasses present in an UHV system (H2, CH4, CO, CO2). The default gases can be modified changing the masses of the array 'Masses' in Config
+
+           @return  B: (ndarray) :
+           @return  c: (ndarray) :
+           @return  Length: (float):
+           @return  Pumping: (ndarray):
+           @return  OutgassingLocal: (ndarray):
+           @return  A: (ndarray): Matrix containing the specific conductances for the main gasses present in an UHV system (H2, CH4, CO, CO2). The default gases can be modified changing the masses of the array 'Masses' in Config
                """
         print('Segment-GetMatrices')
         # Material needs to be set as input parameter, because it needs the function "load materials" to access the material properties. 
@@ -303,22 +303,7 @@ class Segment:
         self.A = math.pi*self.Diameter**3/12.*VelocityMean   # Exactly as in VASCO!
         print "Conductance for segment ", self.Name, "is", self.A, "m**4 / s  "
 
-        # Deriving from multigas appropriate eta_i for single gas 
-        #print 'etai = ',  np.dot(Material.EtaI, Config.CrossSection)/ Config.CrossSection
-
-        B = BeamCurrent/Config.e * np.dot(Material.EtaI, np.diag(Config.CrossSection)) - np.diag(Surface/4. * VelocityMean * (Material.Sticking) + Material.LinearPumping)
-        print("MatrixB", B)
-        #B = 0 * np.identity(4)
-        #Check ill-conditioned segments
-        #if np.max(np.diag(B)) > 0:
-            #print 'matrix B',  np.diag(B)
-        #print 'B', B
-
-        #OutGassingRatio = np.exp(-Config.EnergyOutgassing/(Config.kB * T))/np.exp(-Config.EnergyOutgassing/(Config.kB * Config.RoomTemperature))
-        #if OutGassingRatio<1:
-        #	print OutGassingRatio
-
-        #c = Surface * Material.OutGassing + self.PhotonFlux * Material.EtaPh + self.ElectronFlux * Material.EtaE
+        # Deriving from multigas appropriate eta_i for single gas
 
 
         if Config.useESDCurve is True:
@@ -358,31 +343,11 @@ class Segment:
         else:
             print "Config.uploadElectronFluxFromSEY is False. Not changing value"
 
-        if self.Temperature < 100: #Cryosorption occurs till ~ 100 K for CO2, but at this T, hidrogen is not physisorbed!
-            #cryo_pumping = 1.e10
-            #Config.nEq/self.Temperature
-            cryo_pumping = []
-            i = 0
-            labels = ["H2", "CH4", "CO", "CO2"]
-            for gas in Config.nEq:
-                if gas[0][-1] < self.Temperature:
-                    nEq = 0
-                else:
-                    #nEq = gas[1][np.argmin(abs(gas[0] - self.Temperature))] / self.Temperature
-                    nEq = np.interp(self.Temperature,gas[0],gas[1])/self.Temperature
-
-                print "CryoSurface --> T =",self.Temperature, "nEq =", nEq, " for ", labels[i]
-                i +=1
-                cryo_pumping.append(nEq)
-
-            cryo_pumping = np.array(cryo_pumping)
-        else:   cryo_pumping = 0.
-
         if np.any(np.array(Config.TotalOutgassingForMaterials) ==self.Material):
             print "self.Material",self.Material
             print "Config.TotalOutgassingForMaterials", Config.TotalOutgassingForMaterials
             print "Material.OutGassing",Material.OutGassing
-            TotalOutgassing = Material.OutGassing /1e4/self.Temperature  # molecules/s
+            TotalOutgassing = Material.OutGassing /1.e4/self.Temperature  # molecules/s
             print "TotalOutgassing", TotalOutgassing
 
         else:
@@ -391,7 +356,56 @@ class Segment:
             print "Material.OutGassing", Material.OutGassing, " Surface", Surface
             TotalOutgassing = Material.OutGassing * Surface/self.Temperature  # molecules/s
             print "TotalOutgassing", TotalOutgassing
-        c = cryo_pumping*Surface * VelocityMean/4. * Material.Sticking + self.ElectronFlux * Material.EtaE + self.PhotonFlux * Material.EtaPh + TotalOutgassing
+
+        if self.Temperature < 100: #Cryosorption occurs till ~ 100 K for CO2, but at this T, hidrogen is not physisorbed!
+            #cryo_pumping = 1.e10
+            #Config.nEq/self.Temperature
+            TotalOutgassing = [0,0,0,0] # No thermal outgassing considered below 100 K
+            cryo_pumping = []
+            Sticking = []
+            i = 0
+            labels = ["H2", "CH4", "CO", "CO2"]
+            for gas in Config.nEq:
+                if gas[0][-1] < self.Temperature:
+                    # No condensation layer
+                    nEq = 0.
+                    Sticking.append(Material.Sticking[i])
+                elif gas[0][0] > self.Temperature:
+                    # Total sticking
+                    nEq = 0.
+                    #Sticking.append(1.)
+                else:
+                    # Scale sticking coefficient accordingly  to T !!!!!!!!!!!!!
+                    nEq = np.interp(self.Temperature,gas[0],gas[1])/self.Temperature
+
+                    # For the moment, step function
+                    if nEq > Config.maxNeq[i]/self.Temperature:
+                        # No condensed gas left --> No cryogenic correction
+                        nEq = 0.
+                    #    Sticking.append(Material.Sticking[i])
+                    #else:
+                    #    Sticking.append(1)
+                        #nEq = 0.
+
+
+
+                print "CryoSurface --> T =",self.Temperature, "nEq =", nEq, " for ", labels[i]
+                i +=1
+                cryo_pumping.append(nEq)
+
+            Sticking = Material.GetSticking(self.Temperature)
+            cryo_pumping = np.array(cryo_pumping)
+        else:
+            cryo_pumping = 0.
+            Sticking = Material.Sticking
+
+        B = BeamCurrent / Config.e * np.dot(Material.EtaI, np.diag(Config.CrossSection)) - np.diag(
+            Surface / 4. * VelocityMean * (Sticking) + Material.LinearPumping)
+
+        print("MatrixB", B)
+
+
+        c = cryo_pumping*Surface * VelocityMean/4. * Sticking + self.ElectronFlux * Material.EtaE + self.PhotonFlux * Material.EtaPh + TotalOutgassing
 
         print 'c: ', c
 
@@ -418,15 +432,10 @@ class Segment:
         """
            Eponenciates the matrix M in x
 
-           Parameters:
-           ----------
-            :param Material: (Material): Segment's material \n
-            :param x: (float) : Position [m]
+            @param  Material: (Material): Segment's material \n
+            @param  x: (float) : Position [m]
 
-
-           Returns:
-           -------
-            :param expMx: (ndarray): Exponentiation of matrix M in position x.
+            @return  expMx: (ndarray): Exponentiation of matrix M in position x.
            """
         #if self.isSinglegas(Material):
             #return 1
@@ -440,18 +449,16 @@ class Segment:
     def GetLength(self):
         """
         Length of the segment. \n
-        Returns:
-        -------
-        :param Length: (float) : length of the segment (in m).
+
+        @return  Length: (float) : length of the segment (in m).
         """
         return self.Length
 
     def GetDiameter(self):
         """
         Diameter of the segment. \n
-        Returns:
-        -------
-        :param Diameter: (float) : Diameter of the segment (in m).
+
+        @return  Diameter: (float) : Diameter of the segment (in m).
         """
         return self.Diameter
 
@@ -463,10 +470,9 @@ class Segment:
     def UploadElectronFlux(self, Material, halfGap):
         """
         Only used for the TDIS simulation. Gets the corresponding Electron flux for a specific half-gap. \n
-        Parameters:
-        ----------
-        :param Material: (Material): Segment's material
-        :param halfGap: (float) : Half-gap considered for the TDIS tanks. \n
+
+        @param  Material: (Material): Segment's material
+        @param  halfGap: (float) : Half-gap considered for the TDIS tanks. \n
         """
 
         print "UploadElectronFlux"
@@ -486,12 +492,10 @@ class Segment:
 def UploadData(dir):
     """
     Loads a CSV file containing a pressure/density profile\n
-    Parameters:
-    ----------
-    :param dir: (str) : Name of the directory to upload. \n
-    Returns:
-    -------
-    :param Y1,Y2,Y3,Y4: (lists) : Uploaded data corresponding to the four first columns of the CSV file. \n
+
+    @param  dir: (str) : Name of the directory to upload. \n
+
+    @return  Y1,Y2,Y3,Y4: (lists) : Uploaded data corresponding to the four first columns of the CSV file. \n
     """
     f = open(dir,'r')
     Array = []
@@ -520,12 +524,10 @@ def UploadData(dir):
 def UploadData2(dir):
     """
     Loads a CSV file containing a pressure/density profile\n
-    Parameters:
-    ----------
-    :param dir: (str) : Name of the directory to upload. \n
-    Returns:
-    -------
-    :param Y1,Y2,Y3,Y4: (lists) : Uploaded data corresponding to the two first columns of the CSV file. \n
+
+    @param  dir: (str) : Name of the directory to upload. \n
+
+    @return  Y1,Y2,Y3,Y4: (lists) : Uploaded data corresponding to the two first columns of the CSV file. \n
     """
 
     f = open(dir,'r')
@@ -656,16 +658,13 @@ def CleanZeroLength(Segments):
 def Calculate(Segments,EndPump, EndSource, Current = 0.5):
     """
     Computes the dynamic density profile of a given geometry considering beam induced effects. \n
-    Parameters:
-    -----------
-    :param Segments: (list) : List of segments in the geometry \n
-    :param EndPump: (Pump) : Pump located at the end of the last segment \n
-    :param EndSource: (Gassource) : Gas source located at the end of the last segment \n
-    :param Current: (float) : Proton beam current (in A).
 
-    Returns:
-    -------
-    :param: density (DensityClass): Dynamic molecular density profile for H2,CH4,CO and CO2 in the considered geometry. \n
+    @param  Segments: (list) : List of segments in the geometry \n
+    @param  EndPump: (Pump) : Pump located at the end of the last segment \n
+    @param  EndSource: (Gassource) : Gas source located at the end of the last segment \n
+    @param  Current: (float) : Proton beam current (in A).
+
+    @return: density (DensityClass): Dynamic molecular density profile for H2,CH4,CO and CO2 in the considered geometry. \n
     """
     print('Calculate')
     print "Config.Materials =",Config.Materials["BCu2"].EtaE
@@ -755,7 +754,7 @@ def Calculate(Segments,EndPump, EndSource, Current = 0.5):
                 print ' KeyError - reason "%s" ' % str(e)
                 return e             
             try: 
-                gs.append(Config.Gassources[g].GasRelease/OneSegment.Temperature)
+                gs.append(Config.Gassources[g].GasRelease)#/OneSegment.Temperature)
 
             except KeyError, e: 
                 print ' KeyError - reason "%s" ' % str(e)

@@ -3,31 +3,30 @@
 
 class DensityClass:
     """
-    Parameters:
-    ----------
-    :param x: (list) X-coordinates of a density/pressure profile
-    :param listH2: (list) Density/pressure of hydrogen (H2) in the positions x
-    :param listCH4: (list) Density/pressure of methane (CH4) in the positions x
-    :param listCO: (list) Density/pressure of carbon monoxide (CO) in the positions x
-    :param listCO2: (list) Density/pressure of carbon dioxide (CO2) in the positions x
-    :param listTemp: (list) List of the temperature in the positions x
-    :param boolDensity: (bool) If True --> Density, else: Pressure
+    
+    @param x: (list) X-coordinates of a density/pressure profile
+    @param listH2: (list) Density/pressure of hydrogen (H2) in the positions x
+    @param listCH4: (list) Density/pressure of methane (CH4) in the positions x
+    @param listCO: (list) Density/pressure of carbon monoxide (CO) in the positions x
+    @param listCO2: (list) Density/pressure of carbon dioxide (CO2) in the positions x
+    @param listTemp: (list) List of the temperature in the positions x
+    @param boolDensity: (bool) If True --> Density, else: Pressure
 
-    Attributes:
-    ----------
-    **X** (list): X-coordinates of a density/pressure profile
-    **H2** (list): Density/pressure of hydrogen (H2) in the positions x
-    **CH4** (list):Density/pressure of methane (CH4) in the positions x
-    **CO** (list): Density/pressure of carbon monoxide (CO) in the positions x
-    **CO2** (list): (list) Density/pressure of carbon dioxide (CO2) in the positions x
-    **VapPressure** (list): List of the temperature in the positions x
+    Attributes
+    ==========
+        **X** (list): X-coordinates of a density/pressure profile
+        **H2** (list): Density/pressure of hydrogen (H2) in the positions x
+        **CH4** (list):Density/pressure of methane (CH4) in the positions x
+        **CO** (list): Density/pressure of carbon monoxide (CO) in the positions x
+        **CO2** (list): (list) Density/pressure of carbon dioxide (CO2) in the positions x
+        **VapPressure** (list): List of the temperature in the positions x
 
-    Methods:
-    -------
-    * transformation ((list) sensitivityFactor) :returns: (DensityClass)
-    * setDensity ((DensityClass) DensityClass)
-    * setTemperatureProfile((list) templist)
-    * total()
+    Methods
+    =======
+        * transformation ((list) sensitivityFactor) :returns: (DensityClass)
+        * setDensity ((DensityClass) DensityClass)
+        * setTemperatureProfile((list) templist)
+        * total()
 
     """
     def __init__(self, x = [], listH2 = [], listCH4 = [], listCO = [], listCO2 = [],listTemp=[], boolDensity = True):
@@ -45,9 +44,7 @@ class DensityClass:
         Transforms density [particles/m3] to pressure [mbar] and pressure to density with a given sensitivity factor for
          each considered gas specie (H2,CH4,CO and CO2).
 
-         Parameters:
-         ----------
-        :param sensitivityFactor: (optional, list) Sensitivity factors to use in the transformation between density and
+        @param sensitivityFactor: (optional, list) Sensitivity factors to use in the transformation between density and
          pressure. Default value is [1,1,1,1]
 
         """
@@ -74,9 +71,8 @@ class DensityClass:
     def setDensity(self, densityObject):
         """
         Copies the values of the attributes density, H2, CH4,CO and CO2 of an input DensityClass object.
-        Parameters:
-        ----------
-        :param densityObject: (DensityClass) Object to copy
+
+        @param densityObject: (DensityClass) Object to copy
         """
         self.density = densityObject.density # True = Density, False = Pressure
         self.X = densityObject.X
@@ -89,9 +85,8 @@ class DensityClass:
     def setTemperatureProfile(self,tempList):
         """
        Sets the temperature profile.
-        Parameters:
-        ----------
-        :param tempList: (list) VapPressure profile. Must be defined in the positions given by X.
+
+        @param tempList: (list) VapPressure profile. Must be defined in the positions given by X.
         """
         self.Temperature = tempList
 

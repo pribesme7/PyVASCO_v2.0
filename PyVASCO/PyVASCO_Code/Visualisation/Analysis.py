@@ -3,6 +3,7 @@ kB = 1.3806488e-23
 
 
 def _UploadData(dir):
+
     try:
         f=open(dir,'r')
         Array=[]
@@ -32,6 +33,13 @@ def _UploadData(dir):
 
 
 def runAnalysis(inst, dir1, dir2):
+    """
+    Loads data from different sources (directories) and plots it together in the Tab 'Analysis and Comparison' of the 'Analysis' tab in PyVASCO. 
+    @param  inst: Density profile
+    @param  dir1: Directory where there is stored data to upload and compare with inst
+    @param  dir2: Directory where there is stored data to upload and compare with inst
+    @return:  True
+    """
     labelStyle = {'color': '#FFF', 'font-size': '14pt' , 'height': '10pt'}
     inst.AnalysisPlotWidget.setLabel('left', "Pressure (mbar)", **labelStyle)
     Plots = [ inst.Plot1, inst.Plot2, inst.Plot3, inst.Plot4, inst.Plot5, inst.Plot6, inst.Plot7, inst.Plot8]

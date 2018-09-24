@@ -4,30 +4,31 @@ import numpy as np
 import os
 import pandas as pd
 import pickle
-########################################################################################################################
-#
-########################################################################################################################
+
 
 
 def runTDISSimulation(Current):
     """
-    Simulation for the TDIS. See user manual for more details. \n
-    Description:
-    -----------
+    Simulation for the TDIS. See user manual for more details. 
+    
+    Description
+    ===========
+    
     Computes the maximum pressure as a function of the half-gap, for a given Beam current, and for a fix collection of
     rising received electron dose values, taking into account the reduction of the ESD as a function of the dose and the
     decrease of the Electron flux coming from Electron cloud on the walls due to the reduction of the SEY as a function
     of the received electron dose. This simulation assumes that the SEY is homogeneous in the TDIS chamber.\n
 
-    Parameters:
-    ----------
-    :param Current: (float) Proton beam current
+    Parameters
+    ==========
+    
+    @param Current: (float) Proton beam current
     """
     Config.useESDCurve = True
     Config.uploadElectronFluxFromSEY = True
     print("Config.uploadElectronFluxFromSEY", Config.uploadElectronFluxFromSEY)
-    halfGapRange = [4,6,8,10,15,20,25,30,35,40,45,50] #[4,10,50]#
-    eDoseRange = np.array([9.0e15,1.9e16,4e16,9e16,3.7e17,6.24e18])                                  #[1e13, 1e15, 1e18])#, 1e17, 1e18])
+    halfGapRange = [4,6,8,10,15,20,25,30,35,40,45,50] 
+    eDoseRange = np.array([9.0e15,1.9e16,4e16,9e16,3.7e17,6.24e18])                                  
     # eDose range selected in order to obtain SEYs close to 1.6,1.5,1.4,1.3,1.2 and 1.1
     data = {}
     for eDose in eDoseRange:
@@ -50,24 +51,23 @@ def runTDISSimulation(Current):
 def runTDISSimulation_nonHomogeneousSEY(Current):
     """
     Simulation for the TDIS. See user manual for more details. \n
-    Description:
-    -----------
+    
+    Description
+    ===========
     Computes the maximum pressure as a function of the half-gap, for a given Beam current, for the non-homogeneous
     SEY distributions in the TDIS chambers (described in Config). If a curve of ESD as a function of dose is available for
     the material of the beam screen of the TDIS chamber, the ESD corresponding to the SEY considered in the beam screen
     is used in the computation of the pressure profile. \n
 
-    Parameters:
-    ----------
-    :param Current: (float) Proton beam current
+     Parameters
+     ==========
+    @param Current: (float) Proton beam current
     """
     Config.TotalOutgassingForMaterials = ["BCu","BCu2"]
     for mat in [f for f in os.listdir(Config.MaterialFolder) if f.startswith("TDIS_BCu2") ]:
         Config.AddMaterial(mat)
     Config.AddMaterial("TDIS_NEG0.csv")
-    #Config.AddMaterial( "TDIS_BCu2.csv")
-    #Config.AddMaterial("TDIS_NEG.csv")
-    #Config.AddMaterial("TDIS_SSteel.csv")
+
 
 
     Config.useESDCurve = False
@@ -82,9 +82,7 @@ def runTDISSimulation_nonHomogeneousSEY(Current):
         listMaxPressure = []
 
         for g in halfGapRange:
-            with open(Config.logFile, "a") as f:
-                f.write("HG " + str(g) + " mm, "+Config.CasesEFluxSEY[c][3] )
-                f.write(" --> GetSegments")
+           
             print "Half Gap = ", g , " mm"
             Config.halfGap = g
             Config.TDISFile =Config.DataFolder + "Input/TDIS_dynamic_HG" + str(int(g))+"mm_New.csv"
@@ -101,7 +99,7 @@ def runTDISSimulation_nonHomogeneousSEY(Current):
                     sey = Config.CasesEFluxSEY[c][0]
                     print [element for element in Config.CasesEFluxSEY[c][2] if Segment.Material+"_" in element]
                     hg_vs_eCurrent = pd.read_csv([element for element in Config.CasesEFluxSEY[c][2] if Segment.Material+"_" in element][0])
-                    #print hg_vs_eCurrent
+                    
                     print "EFlux files", [element for element in Config.CasesEFluxSEY[c][2] if Segment.Material+"_" in element]
                     print "EFlux from ",[element for element in Config.CasesEFluxSEY[c][2] if Segment.Material+"_" in element][0]
 
@@ -140,8 +138,7 @@ def runTDISSimulation_nonHomogeneousSEY(Current):
                 else:
                     continue
             print "To Calculate --> Segments[7].Material =",Segments[7].Material, "Config.Materials[Segments[7].Material].EtaE", Config.Materials[Segments[7].Material].EtaE, "Segments[7].ElectronFlux =", Segments[7].ElectronFlux
-            with open(Config.logFile,"a") as f:
-                f.write("--> In Calculate")
+            
             PressureProfile = Calculate(Segments, EndPump, EndSource, Current=Current).transformation()
 
             pickle.dump([PressureProfile.H2,PressureProfile.CH4,PressureProfile.CO,PressureProfile.CO2],open("C:\Users\paribesm\PyCharmProjects\TDIS\Output\VASCO/pressure_" + str(g) + "mm_" + c + ".p","w"))
@@ -165,11 +162,11 @@ def ECLOUD_sim_Mat_to_csv(fname,outfname,tank="12"):
     as 'current_T1T2' or 'current_T3', an output file of name 'outfname' in CSV format containing a column with the
     simulated Half-Gaps and another with the impinging electron current in the TDIS chambers (in A).
 
-    Parameters:
-    ----------
-    :param fname: (str) Name of the input MAT file
-    :param outfname: (str) Name of the output CSV file
-    :param tank: (str) '12' --> Tanks 1 and 2 or '3' -- > Tank 3 of the TDIS
+     Parameters
+     ==========
+    @param fname: (str) Name of the input MAT file
+    @param outfname: (str) Name of the output CSV file
+    @param tank: (str) '12' --> Tanks 1 and 2 or '3' -- > Tank 3 of the TDIS
 
     """
     import scipy.io as sio

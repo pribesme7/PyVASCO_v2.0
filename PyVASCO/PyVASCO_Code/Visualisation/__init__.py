@@ -125,8 +125,16 @@ def ReadComponent(File):
 def ReWrite(File, Data,vertical_labels= ["d [mm]", "L [mm]", "T [K]", "Material", "Pump", 'Gas source', 'Photon flux [photons/m/s]',
                        'Electron flux [electrons/m/s]'], horizontal_labels = [""] ):
     f = open(File, "w")
-    name = os.path.split(str(File))[-1].split("_New")[0]
-    f.write("%s,%s \n" % (name, ",".join(horizontal_labels)))
+    name = os.path.split(str(File))[-1].split("_New")[0].split(".csv")[0]
+    if type(horizontal_labels) == list :
+        f.write("%s,%s \n" % (name, ",".join(horizontal_labels)))
+    else:
+        f.write("%s,%s \n" % (name, str(horizontal_labels)))
+
     for i in range(len(vertical_labels)):
-        f.write("%s,%s \n" % (vertical_labels[i], ",".join(Data[i])))
+        if type(Data[i]) == list :
+            f.write("%s,%s \n" % (vertical_labels[i], ",".join(Data[i])))
+        else:
+            f.write("%s,%s \n" % (vertical_labels[i], str(Data[i])))
     f.close()
+    return

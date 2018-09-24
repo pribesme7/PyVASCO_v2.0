@@ -1,8 +1,9 @@
 
 def UploadData_3(dir):
+
     #with open(dir,'r') as csvfile:
 	    #spamreader = csv.reader(csvfile, delimiter=' ?, quotechar =')
-    
+
     f = open(dir, 'r') 	
     Array=[]
     

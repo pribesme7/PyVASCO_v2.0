@@ -20,7 +20,7 @@ from __init__ import MyMessageBox,ReadComponent,ReWrite
 
 class MySimulationsWindow(QMainWindow):
     """
-    'New MySimulations' Window launched by the action 'MySimulations' in the menu 'Add' of PyVASCO.
+    'My Simulations' Window launched by the action 'My Simulations' in the menu 'Add and Edit' of PyVASCO.
     """
     def __init__(self, parent=None):
         super(MySimulationsWindow, self).__init__(parent)
@@ -35,14 +35,17 @@ class MySimulationsWindow(QMainWindow):
 
     def create_widgets(self):
         """
-       Calls the methods 'create_tab1()' and 'create_tab2()' .
-       """
+        Calls the methods 'create_tab1()' and 'create_tab2()' .
+        """
         self.create_tab1()
         self.create_tab2()
 
 
 
     def create_tab1(self):
+        """
+        Creates and initializes all widgets in tab 1.
+        """
         # Show registered MySimulationss
         tab1Widget = QWidget()
         tab1Layout = QGridLayout()
@@ -84,7 +87,7 @@ class MySimulationsWindow(QMainWindow):
 
     def create_tab2(self):
         """
-        Creates and initializes all widgets in tab 1.
+        Creates and initializes all widgets in tab 2.
         """
         tab2Widget = QWidget()
 
@@ -170,7 +173,7 @@ class MySimulationsWindow(QMainWindow):
 
     def SaveInput(self):
         """
-        Creates a file in the corresponding input folder for the Input defined in the tab 'Write New Input' of the 'New Input' window.
+        Creates a file in the corresponding input folder for the Input defined in the tab 'Write New Simulation' of the 'My simulations' window.
         """
 
         self.InputName = self.InputNameEdit.text()
@@ -194,15 +197,25 @@ class MySimulationsWindow(QMainWindow):
                 print cols
                 f.write(labels[i] + "," + cols)
             f.close()
-
+            self.close()
+            self.__init__()
+            self.show()
         else:
 
             self.msg.setIcon(QMessageBox.Warning)
             self.msg.setText("This Input already exists! Do you want to overwrite it?")
             self.msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
             self.msg.show()
+            self.close()
+            self.__init__()
+            self.show()
 
     def msgbtn(self, i):
+        """
+        If the user answers 'Yes', the simulation is overwritten.
+        @param i: Signal ('Yes' or 'No') coming from the warning message if the user tries to overwrite an existing file.
+        @return: None
+        """
         if i.text() == "&Yes":
             f = open(Config.DataFolder + "Input/" + self.InputName + '_New.csv', "w")
             f.write(self.InputName + "," + ",".join(self.Segments) + " \n")
@@ -227,7 +240,11 @@ class MySimulationsWindow(QMainWindow):
             pass
 
     def CreateList(self, Dir):
-
+        """
+        Creates a list with all the files stored in Dir
+        @param Dir: Directory from which the items for the list are extrated.
+        @return: listWidget (QListWidget)
+        """
         listWidget = QListWidget()
         listWidget.resize(300, 120)
 
@@ -254,17 +271,24 @@ class MySimulationsWindow(QMainWindow):
         self.MySimulationsSavePushButton.clicked.connect(self.SaveChanges)
 
     def SaveChanges(self):
+        """
+        Saves changes in an existing simulation
+        @return:
+        """
         Data = []
         for i in range(self.MySimulationsTableWidget.rowCount()):
             column = []
             for j in range(self.MySimulationsTableWidget.columnCount()):
-                column.append(str(self.MySimulationsTableWidget.item(i,j).text()))
-            Data.append(column)
+                column.append(str(self.MySimulationsTableWidget.item(i,j).text()).replace(" ", ""))
+            Data.append(filter(None,column))
         name = Config.DataFolder + "Input/" + self.MySimulationsNameEdit.text() + "_New.csv"
         ReWrite(name,Data,vertical_labels= ["d [mm]", "L [mm]", "T [K]", "Material", "Pump", 'Gas source', 'Photon flux [photons/m/s]','Electron flux [electrons/m/s]'],horizontal_labels = ["S%i" % (i) for i in range(len(Data[0]) - 1)] + [""])
 
     def edit_current(self):
-
+        """
+        Allows the user to change the name of the items of the list
+        @return:
+        """
         index = self.SimulationsList.currentIndex()
         if index.isValid():
             item = self.SimulationsList.itemFromIndex(index)
@@ -277,7 +301,11 @@ class MySimulationsWindow(QMainWindow):
 
 
     def saveNameChanged(self):
-
+        """
+        Saves the new name assigned to any item of the list and changes the name of the correspondig simulation to its
+        new name
+        @return:
+        """
         index = self.SimulationsList.currentIndex()
         self.newName = self.SimulationsList.itemFromIndex(index).text()
         os.rename(Config.DataFolder + "Input/" +  self.oldName + "_New.csv",Config.DataFolder + "Input/" +  str(self.newName) + "_New.csv")
@@ -287,15 +315,21 @@ class MySimulationsWindow(QMainWindow):
 
 
     def populateTable(self):
+        """
+         Fills the table where the contents of a simulation are shown on selecting an item from the list.
+        @return:
+        """
         item = self.SimulationsList.currentItem().text()
         self.MySimulationsNameEdit.setText(item.split("_")[0])
         Data = ReadComponent(Config.DataFolder + "Input/"+ item + "_New.csv" )
-        self.MySimulationsTableWidget.setColumnCount(len(Data[0]))
-        self.MySimulationsTableWidget.setHorizontalHeaderLabels(["S%i"%(i) for i in range(len(Data[0])-1) ] + [""])
+        self.MySimulationsTableWidget.setColumnCount(len(Data[0])+1)
+        self.MySimulationsTableWidget.setHorizontalHeaderLabels(["S%i"%(i) for i in range(len(Data[0])) ] + [""])
         for i in range(self.MySimulationsTableWidget.rowCount()):
-            for j in  range(len(Data[0])):
-                self.MySimulationsTableWidget.setItem(i, j, QTableWidgetItem(str(Data[i][j])))
-
+            for j in range(len(Data[0])+1):
+                try:
+                    self.MySimulationsTableWidget.setItem(i, j, QTableWidgetItem(str(Data[i][j])))
+                except:
+                    self.MySimulationsTableWidget.setItem(i, j, QTableWidgetItem(""))
 
 
 if __name__ == "__main__":

@@ -19,10 +19,6 @@
       <th bgcolor="#70b0f0" class="navbar-select"
           >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
 
-  <!-- Index link -->
-      <th>&nbsp;&nbsp;&nbsp;<a
-        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
-
   <!-- Help link -->
       <th>&nbsp;&nbsp;&nbsp;<a
         href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
@@ -31,7 +27,7 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            >PyVASCO</th>
+            ><a class="navbar" target="_top" href="http://www.PYVASCO_v2/">PyVASCO</a></th>
           </tr></table></th>
   </tr>
 </table>
@@ -41,8 +37,6 @@
     <td>
       <table cellpadding="0" cellspacing="0">
         <!-- hide/show private -->
-        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
-    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
         <tr><td align="right"><span class="options"
             >[<a href="frames.html" target="_top">frames</a
             >]&nbsp;|&nbsp;<a href="class-tree.html"
@@ -57,47 +51,38 @@
 </b></center><br />
 <h1 class="epydoc">Class Hierarchy</h1>
 <ul class="nomargin-top">
-    <li> <strong class="uidlink"><a href="PyVASCO.Computation.dataDensity.DensityClass-class.html">PyVASCO.Computation.dataDensity.DensityClass</a></strong>:
-      <em class="summary">Parameters: ---------- :param x: (list) X-coordinates of a 
-        density/pressure profile :param listH2: (list) Density/pressure of 
-        hydrogen (H2) in the positions x :param listCH4: (list) 
-        Density/pressure of methane (CH4) in the positions x :param listCO:
-        (list) Density/pressure of carbon monoxide (CO) in the positions x 
-        :param listCO2: (list) Density/pressure of carbon dioxide (CO2) in 
-        the positions x :param listTemp: (list) List of the temperature in 
-        the positions x :param boolDensity: (bool) If True --&gt; Density, 
-        else: Pressure</em>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Computation.dataDensity.DensityClass-class.html">PyVASCO_Code.Computation.dataDensity.DensityClass</a></strong>:
+      <em class="summary">@param x: (list) X-coordinates of a density/pressure profile
+@param listH2: (list) Density/pressure of hydrogen (H2) in the positions x
+@param listCH4: (list) Density/pressure of methane (CH4) in the positions x
+@param listCO: (list) Density/pressure of carbon monoxide (CO) in the positions x
+@param listCO2: (list) Density/pressure of carbon dioxide (CO2) in the positions x
+@param listTemp: (list) List of the temperature in the positions x
+@param boolDensity: (bool) If True --&gt; Density, else: Pressure</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Components.ESD.ESD-class.html">PyVASCO.Components.ESD.ESD</a></strong>:
-      <em class="summary">Parameters:
-----------
-**name** (str): Name of the directory containing a curve ESD vs.</em>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Components.ESD.ESD-class.html">PyVASCO_Code.Components.ESD.ESD</a></strong>:
+      <em class="summary"><b>name</b> (str): Name of the directory containing a curve ESD vs.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Components.Gassource.Gassource-class.html">PyVASCO.Components.Gassource.Gassource</a></strong>:
-      <em class="summary">Parameters: ---------- :param File: (str) Name of the directory 
-        containing a gas source.</em>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Components.Gassource.Gassource-class.html">PyVASCO_Code.Components.Gassource.Gassource</a></strong>:
+      <em class="summary">Parameters
+==========
+@param File: (str) Name of the directory containing a gas source.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Components.Material.Material-class.html">PyVASCO.Components.Material.Material</a></strong>:
-      <em class="summary">Parameters:
-----------
-**File** (str): Name of the directory containing the Material</em>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Components.Material.Material-class.html">PyVASCO_Code.Components.Material.Material</a></strong>:
+      <em class="summary"><b>File</b> (str): Name of the directory containing the Material</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Components.Pump.Pump-class.html">PyVASCO.Components.Pump.Pump</a></strong>:
-      <em class="summary">Properties:
-----------
- **File** (str): Name of the directory containing the pumping speeds for H2, CH4, CO and CO2 (in l/s).</em>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Components.Pump.Pump-class.html">PyVASCO_Code.Components.Pump.Pump</a></strong>:
+      <em class="summary">Properties
+==========
+@var File: (str) Name of the directory containing the pumping speeds for H2, CH4, CO and CO2 (in l/s).</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Computation.Core2.Segment-class.html">PyVASCO.Computation.Core2.Segment</a></strong>:
-      <em class="summary">Parameters:
-----------
-    **Array** (numpy.array) : Array containing the following properties of a segment: the length, the diameter,
-    the temperature, the material, the name, the attached pumps, the gas source (if any) located at the end of the
-    segment, the photon flux and the electron flux.</em>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Computation.Core2.Segment-class.html">PyVASCO_Code.Computation.Core2.Segment</a></strong>:
+      <em class="summary">Parameters
+==========</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Components.TDI.TDIS-class.html">PyVASCO.Components.TDI.TDIS</a></strong>:
-      <em class="summary">Properties: 
-----------
-**nfile** (str): Name of the file containing the half-gap vs.</em>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Components.TDI.TDIS-class.html">PyVASCO_Code.Components.TDI.TDIS</a></strong>:
+      <em class="summary">Properties
+==========</em>
     </li>
     <li> <strong class="uidlink">object</strong>:
       <em class="summary">The most base type</em>
@@ -106,6 +91,10 @@
       <em class="summary">int(x=0) -&gt; int or long int(x, base=10) -&gt; int or long</em>
     <ul>
     <li> <strong class="uidlink"><a href="PyQt4.QtGui.QMessageBox.ButtonRole-class.html">PyQt4.QtGui.QMessageBox.ButtonRole</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="PyQt4.QtGui.QAbstractSpinBox.ButtonSymbols-class.html">PyQt4.QtGui.QAbstractSpinBox.ButtonSymbols</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="PyQt4.QtGui.QAbstractSpinBox.CorrectionMode-class.html">PyQt4.QtGui.QAbstractSpinBox.CorrectionMode</a></strong>
     </li>
     <li> <strong class="uidlink"><a href="PyQt4.QtGui.QDialog.DialogCode-class.html">PyQt4.QtGui.QDialog.DialogCode</a></strong>
     </li>
@@ -118,6 +107,8 @@
     <li> <strong class="uidlink"><a href="PyQt4.QtGui.QWidget.RenderFlag-class.html">PyQt4.QtGui.QWidget.RenderFlag</a></strong>
     </li>
     <li> <strong class="uidlink"><a href="PyQt4.QtGui.QMessageBox.StandardButton-class.html">PyQt4.QtGui.QMessageBox.StandardButton</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="PyQt4.QtGui.QAbstractSpinBox.StepEnabledFlag-class.html">PyQt4.QtGui.QAbstractSpinBox.StepEnabledFlag</a></strong>
     </li>
     </ul>
     </li>
@@ -133,6 +124,18 @@
     <li> <strong class="uidlink">PyQt4.QtGui.QWidget</strong>:
       <em class="summary">QWidget(QWidget parent=None, Qt.WindowFlags flags=0)</em>
     <ul>
+    <li> <strong class="uidlink">PyQt4.QtGui.QAbstractSpinBox</strong>:
+      <em class="summary">QAbstractSpinBox(QWidget parent=None)</em>
+    <ul>
+    <li> <strong class="uidlink">PyQt4.QtGui.QDoubleSpinBox</strong>:
+      <em class="summary">QDoubleSpinBox(QWidget parent=None)</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.ScientificDoubleSpinBox-class.html">PyVASCO_Code.Visualisation.ScientificDoubleSpinBox</a></strong>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
     <li> <strong class="uidlink">PyQt4.QtGui.QDialog</strong>:
       <em class="summary">QDialog(QWidget parent=None, Qt.WindowFlags flags=0)</em>
     <ul>
@@ -145,7 +148,7 @@
         QWidget parent=None, Qt.WindowFlags 
         flags=Qt.Dialog|Qt.MSWindowsFixedSizeDialogHint)</em>
     <ul>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.MyMessageBox-class.html">PyVASCO.Visualisation.MyMessageBox</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.MyMessageBox-class.html">PyVASCO_Code.Visualisation.MyMessageBox</a></strong>:
       <em class="summary">Resizeble message box.</em>
     </li>
     </ul>
@@ -155,37 +158,53 @@
     <li> <strong class="uidlink">PyQt4.QtGui.QMainWindow</strong>:
       <em class="summary">QMainWindow(QWidget parent=None, Qt.WindowFlags flags=0)</em>
     <ul>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.ExternalDataWindow.ExDataWindow-class.html">PyVASCO.Visualisation.ExternalDataWindow.ExDataWindow</a></strong>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.AnalysisWindow.AnalysisWindow-class.html">PyVASCO_Code.Visualisation.AnalysisWindow.AnalysisWindow</a></strong>:
+      <em class="summary">'Analysis' Window launched by the action 'Analysis' in the menu 
+        'Analysis' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewESDcurve.NewESDWindow-class.html">PyVASCO.Visualisation.NewESDcurve.NewESDWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.CryoWindow.CryoWindow-class.html">PyVASCO_Code.Visualisation.CryoWindow.CryoWindow</a></strong>:
+      <em class="summary">'Cryogenics' Window launched by the action 'Cryogenics' in the menu
+        'Add and Edit' of PyVASCO.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.ExternalDataWindow.ExDataWindow-class.html">PyVASCO_Code.Visualisation.ExternalDataWindow.ExDataWindow</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.MySimulationsWindow.MySimulationsWindow-class.html">PyVASCO_Code.Visualisation.MySimulationsWindow.MySimulationsWindow</a></strong>:
+      <em class="summary">'My Simulations' Window launched by the action 'My Simulations' in 
+        the menu 'Add and Edit' of PyVASCO.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewESDcurve.NewESDWindow-class.html">PyVASCO_Code.Visualisation.NewESDcurve.NewESDWindow</a></strong>:
       <em class="summary">'New ESD curve' Window launched by the action 'ESD curve' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewGasSourceWindow.NewGSourceWindow-class.html">PyVASCO.Visualisation.NewGasSourceWindow.NewGSourceWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewGasSourceWindow.NewGSourceWindow-class.html">PyVASCO_Code.Visualisation.NewGasSourceWindow.NewGSourceWindow</a></strong>:
       <em class="summary">'New Gas Source' Window launched by the action 'Gassource' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewInput.NewInputWindow-class.html">PyVASCO.Visualisation.NewInput.NewInputWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewInput.NewInputWindow-class.html">PyVASCO_Code.Visualisation.NewInput.NewInputWindow</a></strong>:
       <em class="summary">'New Input File' Window launched by the action 'Input file' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewMaterialWindow.NewMatWindow-class.html">PyVASCO.Visualisation.NewMaterialWindow.NewMatWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewMaterialWindow.NewMatWindow-class.html">PyVASCO_Code.Visualisation.NewMaterialWindow.NewMatWindow</a></strong>:
       <em class="summary">'New Material' Window launched by the action 'Material' in the menu
-        'Add' of PyVASCO.</em>
+        'Add and Edit' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewPumpWindow.NewPumpWindow-class.html">PyVASCO.Visualisation.NewPumpWindow.NewPumpWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewPumpWindow.NewPumpWindow-class.html">PyVASCO_Code.Visualisation.NewPumpWindow.NewPumpWindow</a></strong>:
       <em class="summary">'New Pump' Window launched by the action 'Pump' in the menu 'Add' 
         of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewSEYCurve.NewSEYWindow-class.html">PyVASCO.Visualisation.NewSEYCurve.NewSEYWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewSEYCurve.NewSEYWindow-class.html">PyVASCO_Code.Visualisation.NewSEYCurve.NewSEYWindow</a></strong>:
       <em class="summary">'New SEY curve' Window launched by the action 'SEY curve' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.PropertyWindow.PropWindow-class.html">PyVASCO.Visualisation.PropertyWindow.PropWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.PropertyWindow.PropWindow-class.html">PyVASCO_Code.Visualisation.PropertyWindow.PropWindow</a></strong>:
       <em class="summary">'Properties' Window launched by the action 'Properties' in the menu
         'File' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.MainWindow.Window-class.html">PyVASCO.Visualisation.MainWindow.Window</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.ShowWindow.ShowWindow-class.html">PyVASCO_Code.Visualisation.ShowWindow.ShowWindow</a></strong>:
+      <em class="summary">'New Material' Window launched by the action 'Material' in the menu
+        'Add' of PyVASCO.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.MainWindow.Window-class.html">PyVASCO_Code.Visualisation.MainWindow.Window</a></strong>:
       <em class="summary">Main window of PyVASCO.</em>
     </li>
     </ul>
@@ -202,6 +221,10 @@
       <em class="summary">QMessageBox.StandardButtons(QMessageBox.StandardButtons) 
         QMessageBox.StandardButtons(int) QMessageBox.StandardButtons()</em>
     </li>
+    <li> <strong class="uidlink"><a href="PyQt4.QtGui.QAbstractSpinBox.StepEnabled-class.html">PyQt4.QtGui.QAbstractSpinBox.StepEnabled</a></strong>:
+      <em class="summary">QAbstractSpinBox.StepEnabled(QAbstractSpinBox.StepEnabled) 
+        QAbstractSpinBox.StepEnabled(int) QAbstractSpinBox.StepEnabled()</em>
+    </li>
     <li> <strong class="uidlink">sip.wrapper</strong>
     <ul>
     <li> <strong class="uidlink">PyQt4.QtCore.QObject</strong>:
@@ -210,6 +233,18 @@
     <li> <strong class="uidlink">PyQt4.QtGui.QWidget</strong>:
       <em class="summary">QWidget(QWidget parent=None, Qt.WindowFlags flags=0)</em>
     <ul>
+    <li> <strong class="uidlink">PyQt4.QtGui.QAbstractSpinBox</strong>:
+      <em class="summary">QAbstractSpinBox(QWidget parent=None)</em>
+    <ul>
+    <li> <strong class="uidlink">PyQt4.QtGui.QDoubleSpinBox</strong>:
+      <em class="summary">QDoubleSpinBox(QWidget parent=None)</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.ScientificDoubleSpinBox-class.html">PyVASCO_Code.Visualisation.ScientificDoubleSpinBox</a></strong>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
     <li> <strong class="uidlink">PyQt4.QtGui.QDialog</strong>:
       <em class="summary">QDialog(QWidget parent=None, Qt.WindowFlags flags=0)</em>
     <ul>
@@ -222,7 +257,7 @@
         QWidget parent=None, Qt.WindowFlags 
         flags=Qt.Dialog|Qt.MSWindowsFixedSizeDialogHint)</em>
     <ul>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.MyMessageBox-class.html">PyVASCO.Visualisation.MyMessageBox</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.MyMessageBox-class.html">PyVASCO_Code.Visualisation.MyMessageBox</a></strong>:
       <em class="summary">Resizeble message box.</em>
     </li>
     </ul>
@@ -232,37 +267,53 @@
     <li> <strong class="uidlink">PyQt4.QtGui.QMainWindow</strong>:
       <em class="summary">QMainWindow(QWidget parent=None, Qt.WindowFlags flags=0)</em>
     <ul>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.ExternalDataWindow.ExDataWindow-class.html">PyVASCO.Visualisation.ExternalDataWindow.ExDataWindow</a></strong>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.AnalysisWindow.AnalysisWindow-class.html">PyVASCO_Code.Visualisation.AnalysisWindow.AnalysisWindow</a></strong>:
+      <em class="summary">'Analysis' Window launched by the action 'Analysis' in the menu 
+        'Analysis' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewESDcurve.NewESDWindow-class.html">PyVASCO.Visualisation.NewESDcurve.NewESDWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.CryoWindow.CryoWindow-class.html">PyVASCO_Code.Visualisation.CryoWindow.CryoWindow</a></strong>:
+      <em class="summary">'Cryogenics' Window launched by the action 'Cryogenics' in the menu
+        'Add and Edit' of PyVASCO.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.ExternalDataWindow.ExDataWindow-class.html">PyVASCO_Code.Visualisation.ExternalDataWindow.ExDataWindow</a></strong>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.MySimulationsWindow.MySimulationsWindow-class.html">PyVASCO_Code.Visualisation.MySimulationsWindow.MySimulationsWindow</a></strong>:
+      <em class="summary">'My Simulations' Window launched by the action 'My Simulations' in 
+        the menu 'Add and Edit' of PyVASCO.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewESDcurve.NewESDWindow-class.html">PyVASCO_Code.Visualisation.NewESDcurve.NewESDWindow</a></strong>:
       <em class="summary">'New ESD curve' Window launched by the action 'ESD curve' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewGasSourceWindow.NewGSourceWindow-class.html">PyVASCO.Visualisation.NewGasSourceWindow.NewGSourceWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewGasSourceWindow.NewGSourceWindow-class.html">PyVASCO_Code.Visualisation.NewGasSourceWindow.NewGSourceWindow</a></strong>:
       <em class="summary">'New Gas Source' Window launched by the action 'Gassource' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewInput.NewInputWindow-class.html">PyVASCO.Visualisation.NewInput.NewInputWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewInput.NewInputWindow-class.html">PyVASCO_Code.Visualisation.NewInput.NewInputWindow</a></strong>:
       <em class="summary">'New Input File' Window launched by the action 'Input file' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewMaterialWindow.NewMatWindow-class.html">PyVASCO.Visualisation.NewMaterialWindow.NewMatWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewMaterialWindow.NewMatWindow-class.html">PyVASCO_Code.Visualisation.NewMaterialWindow.NewMatWindow</a></strong>:
       <em class="summary">'New Material' Window launched by the action 'Material' in the menu
-        'Add' of PyVASCO.</em>
+        'Add and Edit' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewPumpWindow.NewPumpWindow-class.html">PyVASCO.Visualisation.NewPumpWindow.NewPumpWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewPumpWindow.NewPumpWindow-class.html">PyVASCO_Code.Visualisation.NewPumpWindow.NewPumpWindow</a></strong>:
       <em class="summary">'New Pump' Window launched by the action 'Pump' in the menu 'Add' 
         of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.NewSEYCurve.NewSEYWindow-class.html">PyVASCO.Visualisation.NewSEYCurve.NewSEYWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.NewSEYCurve.NewSEYWindow-class.html">PyVASCO_Code.Visualisation.NewSEYCurve.NewSEYWindow</a></strong>:
       <em class="summary">'New SEY curve' Window launched by the action 'SEY curve' in the 
         menu 'Add' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.PropertyWindow.PropWindow-class.html">PyVASCO.Visualisation.PropertyWindow.PropWindow</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.PropertyWindow.PropWindow-class.html">PyVASCO_Code.Visualisation.PropertyWindow.PropWindow</a></strong>:
       <em class="summary">'Properties' Window launched by the action 'Properties' in the menu
         'File' of PyVASCO.</em>
     </li>
-    <li> <strong class="uidlink"><a href="PyVASCO.Visualisation.MainWindow.Window-class.html">PyVASCO.Visualisation.MainWindow.Window</a></strong>:
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.ShowWindow.ShowWindow-class.html">PyVASCO_Code.Visualisation.ShowWindow.ShowWindow</a></strong>:
+      <em class="summary">'New Material' Window launched by the action 'Material' in the menu
+        'Add' of PyVASCO.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="PyVASCO_Code.Visualisation.MainWindow.Window-class.html">PyVASCO_Code.Visualisation.MainWindow.Window</a></strong>:
       <em class="summary">Main window of PyVASCO.</em>
     </li>
     </ul>
@@ -287,9 +338,6 @@
       <th bgcolor="#70b0f0" class="navbar-select"
           >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
 
-  <!-- Index link -->
-      <th>&nbsp;&nbsp;&nbsp;<a
-        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
 
   <!-- Help link -->
       <th>&nbsp;&nbsp;&nbsp;<a
@@ -299,14 +347,14 @@
       <th class="navbar" align="right" width="100%">
         <table border="0" cellpadding="0" cellspacing="0">
           <tr><th class="navbar" align="center"
-            >PyVASCO</th>
+            ><a class="navbar" target="_top" href="http://www.PYVASCO_v2/">PyVASCO</a></th>
           </tr></table></th>
   </tr>
 </table>
 <table border="0" cellpadding="0" cellspacing="0" width="100%%">
   <tr>
     <td align="left" class="footer">
-    Generated by Epydoc 3.0.1 on Tue Jul 10 17:28:53 2018
+    Generated by Epydoc 3.0.1 on Mon Sep 24 16:38:12 2018
     </td>
     <td align="right" class="footer">
       <a target="mainFrame" href="http://epydoc.sourceforge.net"

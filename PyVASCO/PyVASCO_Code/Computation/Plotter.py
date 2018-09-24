@@ -19,21 +19,19 @@ import Computation
 def GetSolutions(Ms,bs,Ls,Ps,SegTemp,Num=Config.NumPointsVacProfile ,Xinit=0, As = np.array([ 1.57603615,  0.55867918,  0.42280604,  0.33730696])):
     """
     Computes the dynamic pressure profile considering a Multi-Gas model with 4 main gas species (H2, CH4, CO, CO2).
-    See Refs. [1,2] in Docs/References.
-    Parameters:
-    ----------
-        :param Ms: (ndarray) : Matrix for equation y' = My + b
-        :param bs: (ndarray) : Vector for equation y' = My + b
-        :param Ls: (ndarray) : Length of the segment  [m]
-        :param Ps: (list) : Integration constants which satisfy the imposed boundary conditions.ß
-        :param Num: (int) : Number of points to in the solution
-        :param Xinit: (int) : Initial position of the studied sector of the accelerator, with respect to  IP1 (ATLAS)
-    Returns:
-    --------
-        :return Solutions: (list) : Dynamic density profile of the studied sector of the accelerator. Each element of the
+    See Refs. [1,2] in docs/.
+
+        @param Ms: (ndarray) : Matrix for equation y' = My + b
+        @param bs: (ndarray) : Vector for equation y' = My + b
+        @param Ls: (ndarray) : Length of the segment  [m]
+        @param Ps: (list) : Integration constants which satisfy the imposed boundary conditions.
+        @param Num: (int) : Number of points to in the solution
+        @param Xinit: (int) : Initial position of the studied sector of the accelerator, with respect to  IP1 (ATLAS)
+
+        @return Solutions: (list) : Dynamic density profile of the studied sector of the accelerator. Each element of the
         list Solutions is a list [s , n], where
-            * :param s: (float) : position along the beampipe [m]
-            * :param n: (float) : Density at position s [m**-3]
+            * @return s: (float) : position along the beampipe [m]
+            * @return n: (float) : Density at position s [m**-3]
     """
 
     TotalLength=0
@@ -120,20 +118,18 @@ def GetSolutions(Ms,bs,Ls,Ps,SegTemp,Num=Config.NumPointsVacProfile ,Xinit=0, As
             i+=1
             seg+=1
 
-    print "In GetSolutions =", TempProfile
+    #print "In GetSolutions =", TempProfile
     return Solutions,TempProfile
 
 def PlotSegments():
     """
     Generates a list of QPolygonF objects which can be plotted using PyQt plotting library. \n
 
-    Returns:
-    -------
-        :param Poligons: (list) : Each element of the list has the form [QPolygonF(Vertices), Color, 1, Name], where\n
-            * :param QPolygonF: (QPolygonF) : Polygon built from the vertices of a segment \n
-            * :param Color: (list) : RGB color of the segment. It is computed according to the properties of temperature,
+        @return Poligons: (list) : Each element of the list has the form [QPolygonF(Vertices), Color, 1, Name], where\n
+            * @return QPolygonF: (QPolygonF) : Polygon built from the vertices of a segment \n
+            * @return Color: (list) : RGB color of the segment. It is computed according to the properties of temperature,
                                     average Outgassing and the average effective pumping speed. \n
-            * :param Name: (string) : Name of the segment. \n
+            * @return Name: (string) : Name of the segment. \n
     """
 
     Segments, EndPump, EndSource, GeometryParameters= GetSegments()

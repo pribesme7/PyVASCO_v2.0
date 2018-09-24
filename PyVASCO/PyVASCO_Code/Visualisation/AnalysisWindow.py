@@ -18,7 +18,7 @@ from Visualisation import MyMessageBox
 
 class AnalysisWindow(QMainWindow):
     """
-    'New Material' Window launched by the action 'Material' in the menu 'Add' of PyVASCO.
+    'Analysis' Window launched by the action 'Analysis' in the menu 'Analysis' of PyVASCO.
     """
     def __init__(self, parent=None):
         super(AnalysisWindow, self).__init__(parent)
@@ -31,7 +31,7 @@ class AnalysisWindow(QMainWindow):
 
     def create_widgets(self):
         """
-       Calls the methods 'create_tab1()' and 'create_tab2()' .
+       Calls the methods 'create_tab4()', 'create_tab5()' and 'create_tab7()' .
        """
         self.create_tab4()
         self.create_tab5()
@@ -41,7 +41,7 @@ class AnalysisWindow(QMainWindow):
     def create_tab4(self):
         """
         Place and initialize all the widgets in Tab 4, labeled 'Analysis Configuration',  of PyVASCO.
-       : return: None
+       @return: None
        """
         tab4Widget=QWidget()
 
@@ -153,7 +153,7 @@ class AnalysisWindow(QMainWindow):
         frame3Layout.addWidget(self.runAnalysisButton,0,0)
         Frame3.setLayout(frame3Layout)
 
-        #layout.addStretch()
+
 
         tab4Layout.addWidget(Frame1)
         tab4Layout.addWidget(Frame2)
@@ -168,7 +168,7 @@ class AnalysisWindow(QMainWindow):
     def create_tab5(self):
         """
         Place and initialize all the widgets in Tab 4, labeled 'Analysis and Comparison',  of PyVASCO.
-        :return: None
+        @return: None
         """
         tab5Widget=QWidget()
 
@@ -182,35 +182,20 @@ class AnalysisWindow(QMainWindow):
         self.AnalysisPlotWidget.getPlotItem().getAxis("left").setWidth(90)
         self.AnalysisPlotWidget.getPlotItem().getAxis("left").setStyle(tickTextOffset=16)
         self.AnalysisPlotWidget.getAxis('left').tickFont=b
-        #self.AnalysisPlotWidget.getPlotItem().getAxis("bottom").setWidth(890)
         self.AnalysisPlotWidget.getPlotItem().getAxis("bottom").setStyle(tickTextOffset=16)
         self.AnalysisPlotWidget.getPlotItem().getAxis('bottom').tickFont=b
         self.AnalysisPlotWidget.setLabel('left', "Pressure (mbar)", **labelStyle)
         self.AnalysisPlotWidget.setLabel('bottom', "Axis alongbeam line (m)", **labelStyle)
         self.AnalysisPlotWidget.showGrid(True, True, 0.5)
-        #self.AnalysisPlotWidget.setLogMode(False, True)
+
         self.logAnalysis()
 
         self.AnalysisPlotWidget.addLegend()
-        #critCurrent2PlotWidget=pg.PlotWidget(name='Critical Current 2')
+
         l.addWidget(self.AnalysisPlotWidget)
-        #l.addWidget(critCurrent2PlotWidget)
 
-        #uploadDir = Config.Upload1
-
-        '''
-        x_Val_ida  = [x  for x in x_Val_ida ]
-        y_val1_ida  = [1.5*x*300*1.3806488e-23*0.01  for x in y_val1_ida ]
-        y_val2_ida  = [1.5*x*300*1.3806488e-23*0.01  for x in y_val2_ida ]
-        y_val3_ida  = [1.5*x*300*1.3806488e-23*0.01  for x in y_val3_ida ]
-        y_val4_ida  = [1.5*x*300*1.3806488e-23*0.01  for x in y_val4_ida ]
-
-        '''
         width_Analysis = 3
-        #self.Plot1 = self.AnalysisPlotWidget.plot(fillLevel=0, brush = (50,50,200,100), name = 'Total Density (without beam)')
-        #self.Plot2 = self.AnalysisPlotWidget.plot(fillLevel=0, brush =Config.ColorPalette['ColorCH4'], name = 'Total Density (only SR)')
-        #self.Plot3 = self.AnalysisPlotWidget.plot(fillLevel=0, brush =Config.ColorPalette['ColorCO'], name = 'Total Density (with SR and EC)')
-        #self.Plot4 = self.AnalysisPlotWidget.plot(pen= pg.mkPen(color=Config.ColorPalette['ColorCO2'],  width=width_Analysis), name = 'Total Density (without beam)')
+
         self.Plot1 = self.AnalysisPlotWidget.plot(pen= pg.mkPen(color=Config.ColorPalette['ColorH2'],  width=width_Analysis), name = 'Upload1: Plot1')
         self.Plot2 = self.AnalysisPlotWidget.plot(pen= pg.mkPen(color=Config.ColorPalette['ColorCH4'],  width=width_Analysis), name = 'Upload1: Plot2')
         self.Plot3 = self.AnalysisPlotWidget.plot(pen= pg.mkPen(color=Config.ColorPalette['ColorCO'],  width=width_Analysis), name = 'Upload1: Plot3')
@@ -233,22 +218,18 @@ class AnalysisWindow(QMainWindow):
     def create_tab7(self):
         """
         Place and initialize all the widgets in Tab 4, labeled 'TDIS',  of PyVASCO.
-        :return: None
+        @return: None
         """
         # TDIS
         tab7Widget = QWidget()
-        # view = QWidget()
-        # l = QVBoxLayout()
-        # view.setLayout(l)
+
 
         # FRAMES :
         Frame1 = QGroupBox("TDIS simulation parameters")
         Frame2 = QGroupBox("Results")
 
         #  Widgets for Frame1: Simulation menu
-        self.TDISSimulationMode = QLabel("Select Simulation Mode:")
-        self.TDISScrubbingRadioButton = QRadioButton("Scrubbing. Assumed Homogeneous SEY")
-        self.TDISCaseStudyRadioButton = QRadioButton("Non-Homogeneous SEY distribution")
+
 
         self.TDISBeamCurrentLabel = QLabel("Beam Current [A] :")
         self.TDISBeamCurrentEdit = QLineEdit("0.5")
@@ -270,10 +251,9 @@ class AnalysisWindow(QMainWindow):
         self.TDISPlotWidget.getPlotItem().getAxis('bottom').tickFont = b
         self.TDISPlotWidget.getPlotItem().getAxis("left").enableAutoSIPrefix(enable=False)
         self.TDISPlotWidget.getPlotItem().getAxis("bottom").enableAutoSIPrefix(enable=False)
-        #self.TDISPlotWidget.getPlotItem().getAxis("bottom").setWidth(120)
         self.TDISPlotWidget.getPlotItem().getAxis('left').setStyle(tickTextOffset=16)
         self.TDISPlotWidget.getPlotItem().getAxis('left').tickFont = b
-        #self.TDISPlotWidget.getAxis("left").setWidth(120)
+
 
 
         self.TDISLegend = self.TDISPlotWidget.addLegend()
@@ -291,14 +271,12 @@ class AnalysisWindow(QMainWindow):
 
         # Frame 1
         frame1Layout = QGridLayout()  # how the items within one frame are aligned
-        frame1Layout.addWidget(self.TDISSimulationMode, 0, 0)
-        frame1Layout.addWidget(self.TDISScrubbingRadioButton, 1, 0)
-        frame1Layout.addWidget(self.TDISCaseStudyRadioButton, 1, 1)
 
-        frame1Layout.addWidget(self.TDISBeamCurrentLabel, 2, 0)
-        frame1Layout.addWidget(self.TDISBeamCurrentEdit, 2, 1)
-        # frame1Layout.addWidget(self.TDISUseTotalQCheckBox,3,1)
-        frame1Layout.addWidget(self.TDISPushButton, 3, 2)
+
+        frame1Layout.addWidget(self.TDISBeamCurrentLabel, 0, 0)
+        frame1Layout.addWidget(self.TDISBeamCurrentEdit, 0, 1)
+
+        frame1Layout.addWidget(self.TDISPushButton, 1, 0,1,2)
 
         Frame1.setLayout(frame1Layout)
 
@@ -329,9 +307,7 @@ class AnalysisWindow(QMainWindow):
 
         # Tab7:
 
-        # self.tdiHalfGapEdit.textChanged.connect(self.updateHalfGap)
-        # self.tdiRadioButton.connect(self.setTDIOption)
-        # self.TDISUseTotalQCheckBox.stateChanged.connect(self.UseTotalOutgassing)
+
         self.TDISPushButton.clicked.connect(self.runTDISSimulation)
 
     def logAnalysis(self):
@@ -369,7 +345,7 @@ class AnalysisWindow(QMainWindow):
         """
         When clicked, changes the text of the button 'Run Simulation' in Tab 'Data' to 'Running' and raises a warning
         message in case of unsuccessful simulation.
-        :return: None
+        @return: None
         """
         self.runAnalysisButton.setText('Runnning...')
         flag = Analysis.runAnalysis(self, Config.Upload1, Config.Upload2)
@@ -381,20 +357,14 @@ class AnalysisWindow(QMainWindow):
     def runTDISSimulation(self):
         """
         Runs the simulation on the TDIS and plots the result in the tab 'TDIS'. See the user manual for more details.
-        :return: None
+        @return: None
         """
         try:
             Current = float(self.TDISBeamCurrentEdit.text())
         except:
             QMessageBox.warning(self, "Invalid value for Beam Current", "Beam Current must be a number!", QMessageBox.Ok)
-        if self.TDISScrubbingRadioButton.isChecked():
-            halfGapRange, data= PressureRiseDifferentSEY.runTDISSimulation(Current)
-            print("Config.uploadElectronFluxFromSEY", Config.uploadElectronFluxFromSEY)
 
-        elif self.TDISCaseStudyRadioButton.isChecked():
-            halfGapRange,data = PressureRiseDifferentSEY.runTDISSimulation_nonHomogeneousSEY(Current)
-        else:
-            raise ValueError("Check one of the two simulation options! ")
+        halfGapRange, data = PressureRiseDifferentSEY.runTDISSimulation_nonHomogeneousSEY(Current)
         self.TDISPlot(halfGapRange, data)
 
 
@@ -403,9 +373,9 @@ class AnalysisWindow(QMainWindow):
         Plots the result of the TDIS Simulation. \n
         Parameters:
         -----------
-        :param halfGapRange: (list) : List of Half-Geps considered in the simulation. See the user manual for more details.
-        :param data: Maximum pressure as a function of the Half-Gap for different simulated SEY. See the user manual for more details.
-        :return:
+        @param  halfGapRange: (list) : List of Half-Geps considered in the simulation. See the user manual for more details.
+        @param  data: Maximum pressure as a function of the Half-Gap for different simulated SEY. See the user manual for more details.
+        @return:
         """
         print("TDIS plot")
         try:
@@ -444,9 +414,7 @@ class AnalysisWindow(QMainWindow):
         self.TDISLegend.addItem(self.plotTDIS5, name= str(keys[4]))
         self.names.append(str(keys[4]))
 
-        #self.plotTDIS6.setData(x=halfGapRange, y=data[keys[5]])
-        #self.TDISLegend.addItem(self.plotTDIS6, name= str(keys[5]))
-        #self.names.append("SEY " + str(keys[5]))
+
 
 
 

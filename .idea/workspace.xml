@@ -1,12 +1,401 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../PyDynVac/pyVASCO/__init__.py" description="Segments = GetSegments(Slots=Slots,SynProfile=SynP..." line="946" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5b10eb4d-4ded-418f-84bb-b880d3e3b69b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/CryoWindow.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/1Segment_bm.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/320_module_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/34_Module_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/34mm_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/3SegmentSG.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/3SegmentSG_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/3Segments_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/58_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/ATLAS-ex-220109.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/ATLAS-ex-220109_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/CCDTL#3_results_com.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/CCDTL#3_results_com_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case10_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case11_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case12_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case14_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case15.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case15_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case1_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case2_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case3_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case4_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case5_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case6_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case7_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case8_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case9_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Cone.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Cone_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Cone_original.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Cone_original_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/ESD/ESD_BCu2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/ESD/ESD_M50.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/ESD/ESD_M52.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/ESD/ESD_and_SEY_unbaked_copper.xlsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/G1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/G2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/G3.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/G4.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/G5.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/G6.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/G7.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/IUVSTA_Taiwan2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/BeamScreen_Cold_higherDesorption.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/BeamScreen_higherDesorption.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/Cu.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/DoubleModule_BeamStopper.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M0.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M10.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M11.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M12.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M13.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M14.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M15.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M16.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M17.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M18.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M19.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M20.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M21.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M22.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M23.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M24.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M25.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M26.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M27.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M28.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M29.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M2_M.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M3.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M30.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M31.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M32.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M33.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M34.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M35.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M36.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M37.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M38.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M39.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M4.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M40.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M41.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M42.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M43.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M44.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M45.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M46.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M47.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M48.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M49.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M5.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M50.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M51.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M52.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M53.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M54.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M55.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M56.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M57.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M58.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M59.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M6.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M60.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M61.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M7.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M8.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M9.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/M_bench2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/Mat1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/Module_R.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/Module_R2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/N1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/N2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/NEG2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/NEG_R.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/NEG_R_nr2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/NEG_R_nr2_2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/NEG_old.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/NEG_wrong.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/IonPump.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P10.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P11.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P12.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P13.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P14.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P15.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P16.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P17.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P18.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P19.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P20.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P3.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P4.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P5.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P6.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P7.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P8.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P9.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/PTest01.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P_bench.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/TestPump/TestPump_1E-9.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/TestPump/TestPump_Nominal.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/TestPump2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/VPIA_old.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/VPIB_old.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Q1_Q4Ida.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Q1_Q4Ida_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Q5_Q1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Q5_Q1_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Roberto_Outgassing.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/SEY/SEY_M50.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/SEY/SEY_M52.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Setup 113.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Setup 113_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Test02_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Test_3_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Test_RecursivePumps_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Test_cyo_New.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API.epydoc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.ESD-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.ESD-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.ESD.ESD-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Gassource-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Gassource-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Gassource.Gassource-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Material-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Material-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Material.Material-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Pump-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Pump-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.Pump.Pump-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.TDI-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.TDI-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Components.TDI.TDIS-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Core-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Core-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Core2-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Core2-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Core2.Segment-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.External_Input-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.External_Input-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.External_Input_test-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.External_Input_test-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Plotter-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Plotter-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Singlegas-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.Singlegas-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.dataDensity-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.dataDensity-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.dataDensity.DensityClass-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.test_dataDensity-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Computation.test_dataDensity-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.InputFormat-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.InputFormat-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.InputFormat.InputTransform-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.InputFormat.InputTransform-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.Analysis-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.Analysis-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.ExternalDataWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.ExternalDataWindow-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.ExternalDataWindow.ExDataWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.MainWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.MainWindow-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.MainWindow.Window-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.MyMessageBox-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewESDcurve-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewESDcurve-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewESDcurve.NewESDWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewGasSourceWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewGasSourceWindow-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewGasSourceWindow.NewGSourceWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewInput-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewInput-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewInput.NewInputWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewMaterialWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewMaterialWindow-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewMaterialWindow.NewMatWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewPumpWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewPumpWindow-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewPumpWindow.NewPumpWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewSEYCurve-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewSEYCurve-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.NewSEYCurve.NewSEYWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.PressureRiseDifferentSEY-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.PressureRiseDifferentSEY-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.PropertyWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.PropertyWindow-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.PropertyWindow.PropWindow-class.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.Scrubbing-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyVASCO.Visualisation.Scrubbing-pysrc.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/api-objects.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/redirect.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Components-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Components.ESD-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Components.Gassource-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Components.Material-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Components.Pump-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Components.TDI-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.Core-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.Core2-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.External_Input-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.External_Input_test-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.Plotter-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.Singlegas-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.dataDensity-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Computation.test_dataDensity-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.InputFormat-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.InputFormat.InputTransform-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.Analysis-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.ExternalDataWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.MainWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.NewESDcurve-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.NewGasSourceWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.NewInput-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.NewMaterialWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.NewPumpWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.NewSEYCurve-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.PressureRiseDifferentSEY-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.PropertyWindow-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-PyVASCO.Visualisation.Scrubbing-module.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case1.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case10.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case11.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case12.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case12.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case13.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case14.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case15.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case2.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case3.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case4.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case5.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case6.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case7.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case8.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/Case9.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/ComparisonIdaVac-VASCO.xlsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/FormatCorrecter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_12-01-2018_14-10-51.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_Density_profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_Density_profile.xlsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_Dynamic_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_Dynamic_current.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_New_12-01-2018_14-31-03.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Atlas_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case11_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case11_Density_profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case11_Dynamic_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case11_Dynamic_current.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case11_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case12_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case13_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case14_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case15_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case15_Density_profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case15_Dynamic_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case15_Dynamic_current.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case15_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case1_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case1_Dynamic_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case1_New_simulation.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case3_12-01-2018_14-02-10.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case3_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case3_Dynamic_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case4_12-01-2018_14-05-06.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case4_12-01-2018_14-07-45.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case4_12-01-2018_14-41-19.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case5_12-01-2018_14-10-06.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case5_12-01-2018_14-41-52.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case6_12-01-2018_14-43-34.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case6_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case6_Density_profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case6_Dynamic_Current.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case6_Dynamin_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case6_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case7_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case7_Density_profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case7_Dynamic_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case7_Dynamic_current.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case7_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case8_Density_profile.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case8_Density_profile.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case8_Dynamic_current.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case8_Dynamic_current.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Case8_simulation.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/IdaVacResults/Pressure_raise.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/VASCO_results/Atlas.eps" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/VASCO_results/Atlas.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/VASCO_results/Atlas_com.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Comparison_with_VASCO/VASCO_results/Atlas_out.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/UserGuide.pdf" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/UserGuide.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/ESD.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/ESD.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Gassource.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Gassource.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Material.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Material.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Pump.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Pump.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/TDI.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/TDI.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Plotter.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Plotter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/dataDensity.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/dataDensity.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Config.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/InputFormat/InputTransform.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/InputFormat/InputTransform.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/UploadData/UploadData.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/UploadData/UploadData.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Analysis.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Analysis.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/AnalysisWindow.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/AnalysisWindow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MainWindow.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MainWindow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewGasSourceWindow.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewGasSourceWindow.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewPumpWindow.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewPumpWindow.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/PressureRiseDifferentSEY.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/PressureRiseDifferentSEY.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Scrubbing.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Scrubbing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/__init__.py" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/API.epydoc" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/API.epydoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QDialog.DialogCode-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QDialog.DialogCode-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMainWindow.DockOption-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMainWindow.DockOption-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMainWindow.DockOptions-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMainWindow.DockOptions-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.ButtonRole-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.ButtonRole-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.Icon-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.Icon-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.StandardButton-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.StandardButton-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.StandardButtons-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QMessageBox.StandardButtons-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QPaintDevice.PaintDeviceMetric-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QPaintDevice.PaintDeviceMetric-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QWidget.RenderFlag-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QWidget.RenderFlag-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QWidget.RenderFlags-class.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/PyQt4.QtGui.QWidget.RenderFlags-class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/class-tree.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/class-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/help.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/help.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/identifier-index.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/identifier-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/module-tree.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/module-tree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-everything.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc-everything.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API/toc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Documentation.html" afterPath="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/Documentation.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,87 +404,72 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="8">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="Atlas_New.csv" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Atlas_New.csv">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="17">
-                    <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="5" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="PyVASCO.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/PyVASCO.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="NewESDcurve.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewESDcurve.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            <state relative-caret-position="17">
+              <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pump.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Pump.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <element signature="e#1#32#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/__init__.py">
+      <file leaf-file-name="TDI.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/TDI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="127" column="56" lean-forward="true" selection-start-line="127" selection-start-column="56" selection-end-line="127" selection-end-column="56" />
+            <state relative-caret-position="425">
+              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
               <folding>
-                <element signature="e#0#83#0" expanded="true" />
+                <element signature="e#118#136#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MainWindow.py">
+      <file leaf-file-name="Core2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="1011" column="46" lean-forward="false" selection-start-line="1011" selection-start-column="46" selection-end-line="1011" selection-end-column="46" />
+            <state relative-caret-position="283">
+              <caret line="666" column="22" lean-forward="false" selection-start-line="666" selection-start-column="22" selection-end-line="666" selection-end-column="22" />
               <folding>
-                <element signature="e#638#669#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySimulationsWindow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py">
+      <file leaf-file-name="ESD.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/ESD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="263" column="241" lean-forward="false" selection-start-line="263" selection-start-column="241" selection-end-line="263" selection-end-column="241" />
+            <state relative-caret-position="153">
+              <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewMaterialWindow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py">
+      <file leaf-file-name="Gassource.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Gassource.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#1201#2101#0" expanded="false" />
-                <element signature="e#7234#9918#0" expanded="false" />
-                <element signature="e#9959#10348#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="69" lean-forward="false" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,40 +477,22 @@
       <file leaf-file-name="Material.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Material.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="75" column="56" lean-forward="true" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test02_New.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Test02_New.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QListWidget.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-1958312250/PyQt4/QtGui/QListWidget.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="125" column="8" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowWindow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/ShowWindow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="195" column="25" lean-forward="true" selection-start-line="184" selection-start-column="4" selection-end-line="195" selection-end-column="25" />
+            <state relative-caret-position="357">
+              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputTransform.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/InputFormat/InputTransform.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+              <folding>
+                <element signature="e#173#183#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,26 +509,54 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GetMa</find>
-      <find>Folder</find>
-      <find>Material</find>
-      <find>Create</find>
-      <find>addA</find>
-      <find>&quot;../Data/Input/&quot;</find>
-      <find>create</find>
+      <find>Calculate(</find>
+      <find>ESD</find>
+      <find>logFile</find>
+      <find>GetMA</find>
+      <find>add</find>
+      <find>GeometryPl</find>
+      <find>populate</find>
+      <find>populateTa</find>
+      <find>edit_cu</find>
+      <find>popula</find>
+      <find>create_conne</find>
+      <find>edit_c</find>
+      <find>save</find>
       <find>createL</find>
-      <find>write</find>
-      <find>pop</find>
-      <find>conne</find>
-      <find>CH</find>
-      <find>&quot;Materials</find>
-      <find>reWr</find>
-      <find>ver</find>
-      <find>view</find>
+      <find>populateT</find>
+      <find>edit_curren</find>
+      <find>saveC</find>
+      <find>:param</find>
+      <find>:param</find>
+      <find>efor</find>
+      <find>efo</find>
+      <find>**</find>
+      <find>return</find>
+      <find>@return</find>
+      <find>:return</find>
+      <find>Exch</find>
+      <find>eforma</find>
+      <find>*</find>
+      <find>Calculate</find>
+      <find>format</find>
     </findStrings>
     <replaceStrings>
       <replace>MySimulations</replace>
       <replace>Config.DataFolder + &quot;Input/&quot;</replace>
+      <replace>GasSourcesList</replace>
+      <replace>GasSource</replace>
+      <replace>CH4</replace>
+      <replace>Frame4</replace>
+      <replace>CO</replace>
+      <replace>CO2</replace>
+      <replace>@return:</replace>
+      <replace>@param</replace>
+      <replace>@param</replace>
+      <replace>@param</replace>
+      <replace>@return</replace>
+      <replace>-</replace>
+      <replace>-</replace>
+      <replace>@return</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -182,22 +566,53 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py" />
-        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Config.py" />
         <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/TestSimple_New.csv" />
-        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/__init__.py" />
-        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py" />
         <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/TestMaterial.csv" />
-        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/GTest5.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/CryoTest_New.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/__init__.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/CryoTest2_New.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/CryoTest3_New.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/SimpleTest2_New.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/BeamScreenCold.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/__init__.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/__init__.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/GTest.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/PTestGS.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Config.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Cryogenics/CryoTest.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/CryoTest.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/ESDTest.csv" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API.epydoc" />
         <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MainWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/CryoWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Analysis.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/AnalysisWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewGasSourceWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewPumpWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/PressureRiseDifferentSEY.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Scrubbing.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/UploadData/UploadData.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/dataDensity.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Plotter.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Material.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Gassource.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/ESD.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/TDI.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Pump.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/InputFormat/InputTransform.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core.py" />
+        <option value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="2210" />
-    <option name="height" value="1010" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -215,7 +630,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,19 +646,6 @@
               <item name="PyVASCO_v2.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
               <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyVASCO_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="Input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyVASCO_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
               <item name="PyVASCO_Code" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -252,43 +653,13 @@
               <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
               <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
               <item name="PyVASCO_Code" type="462c0819:PsiDirectoryNode" />
-              <item name="Computation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyVASCO_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO_Code" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyVASCO_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO_Code" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="Input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyVASCO_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO_Code" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="Input" type="462c0819:PsiDirectoryNode" />
-              <item name="Materials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyVASCO_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyVASCO_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO" type="462c0819:PsiDirectoryNode" />
-              <item name="PyVASCO_Code" type="462c0819:PsiDirectoryNode" />
-              <item name="Visualisation" type="462c0819:PsiDirectoryNode" />
+              <item name="UploadData" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,6 +670,9 @@
     <option name="myPyQtBackend" value="PyQt4" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\paribesm\PyCharmProjects\PyVASCO_v2.0\PyVASCO\PyVASCO_Code\docs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\paribesm\PyCharmProjects\PyVASCO_v2.0\PyVASCO\PyVASCO_Code\Data\Input" />
     </key>
@@ -316,6 +690,23 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.PyVASCO">
+    <configuration name="CryoWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PyVASCO_v2.0" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/CryoWindow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="MySimulationsWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -329,6 +720,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyVASCO_v2.0" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="NewPumpWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PyVASCO_v2.0" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewPumpWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -350,38 +758,45 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="ShowWindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyVASCO_v2.0" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/ShowWindow.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PyVASCO/PyVASCO_Code/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.PyVASCO" />
       <item index="1" class="java.lang.String" itemvalue="Python.MySimulationsWindow" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ShowWindow" />
+      <item index="2" class="java.lang.String" itemvalue="Python.NewPumpWindow" />
+      <item index="3" class="java.lang.String" itemvalue="Python.__init__" />
+      <item index="4" class="java.lang.String" itemvalue="Python.CryoWindow" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.PyVASCO" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MySimulationsWindow" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ShowWindow" />
+        <item index="1" class="java.lang.String" itemvalue="Python.CryoWindow" />
+        <item index="2" class="java.lang.String" itemvalue="Python.__init__" />
+        <item index="3" class="java.lang.String" itemvalue="Python.MySimulationsWindow" />
+        <item index="4" class="java.lang.String" itemvalue="Python.NewPumpWindow" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -405,38 +820,44 @@
       <option name="project" value="LOCAL" />
       <updated>1535038372648</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add and edit for materials">
+      <created>1535105752542</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1535105752542</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21145834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Job Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3991323" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54013014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28854167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -445,22 +866,96 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Select data and docs to send to origin" />
     <MESSAGE value="Add view and editing of your simulations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add view and editing of your simulations" />
+    <MESSAGE value="Add and edit for materials" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and edit for materials" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py</url>
-          <line>371</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py</url>
-          <line>265</line>
+          <line>198</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewPumpWindow.py</url>
+          <line>362</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewGasSourceWindow.py</url>
+          <line>254</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core.py</url>
+          <line>594</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py</url>
+          <line>417</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py</url>
+          <line>395</line>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Material.py</url>
+          <line>156</line>
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/CryoWindow.py</url>
+          <line>248</line>
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewESDcurve.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="228" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewESDcurve.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="229" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MainWindow.py</url>
+          <line>805</line>
+          <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MainWindow.py</url>
+          <line>809</line>
+          <option name="timeStamp" value="247" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Scrubbing.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="249" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/ESD.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="254" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewPumpWindow.py</url>
+          <line>256</line>
+          <option name="timeStamp" value="256" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py</url>
+          <line>272</line>
+          <option name="timeStamp" value="259" />
+        </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -468,24 +963,36 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="23" />
+      <option name="time" value="261" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/BeamScreenCold.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/VapPressure/VaporPressure.csv">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/BeamScreen.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/VapPressure/VaporPressure.p">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -494,173 +1001,407 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/site-packages/pyqtgraph/graphicsItems/PlotCurveItem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="343" column="77" lean-forward="true" selection-start-line="343" selection-start-column="77" selection-end-line="343" selection-end-column="77" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1101">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Case3_New.csv">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Gassource/GTest.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="8" selection-end-column="21" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Atlas_New.csv">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/P20.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Pumps/PTestGS.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/site-packages/pyqtgraph/graphicsItems/ViewBox/ViewBox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="885" column="0" lean-forward="false" selection-start-line="885" selection-start-column="0" selection-end-line="885" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="1598" column="0" lean-forward="false" selection-start-line="1598" selection-start-column="0" selection-end-line="1598" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Cryogenics/Default.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="38" column="71" lean-forward="false" selection-start-line="38" selection-start-column="71" selection-end-line="38" selection-end-column="71" />
-          <folding />
+        <state relative-caret-position="100">
+          <caret line="102" column="18" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/-1958312250/PyQt4/QtGui/QListWidget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="125" column="8" lean-forward="false" selection-start-line="125" selection-start-column="8" selection-end-line="125" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Continuum/Anaconda2/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Test02_New.csv">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Cryogenics/CryoTest.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="32" />
-          <folding />
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/TestSimple_New.csv">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/CryoTest.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/ESDTest.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewInput.py">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/PyVASCO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="33" />
+        <state relative-caret-position="357">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="e#1#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/docs/API.epydoc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/PressureRiseDifferentSEY.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/PropertyWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1265">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/PyVASCO.py">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Scrubbing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        <state relative-caret-position="646">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
-            <element signature="e#1#32#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/PyVASCO.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/ShowWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="195" column="25" lean-forward="true" selection-start-line="184" selection-start-column="4" selection-end-line="195" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Material.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="75" column="56" lean-forward="true" selection-start-line="75" selection-start-column="56" selection-end-line="75" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/TestMaterial2.csv">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/test_dataDensity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="28" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Singlegas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="263" column="241" lean-forward="false" selection-start-line="263" selection-start-column="241" selection-end-line="263" selection-end-column="241" />
+        <state relative-caret-position="98">
+          <caret line="131" column="21" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/External_Input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-245">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/dataDensity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-313">
+          <caret line="87" column="6" lean-forward="false" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/UploadData/UploadData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/Analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/AnalysisWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3315">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/__init__.py">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/CryoWindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="127" column="56" lean-forward="true" selection-start-line="127" selection-start-column="56" selection-end-line="127" selection-end-column="56" />
+        <state relative-caret-position="181">
+          <caret line="164" column="7" lean-forward="false" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="7" />
           <folding>
-            <element signature="e#0#83#0" expanded="true" />
+            <element signature="e#23#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/Materials/TestMaterial.csv">
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/ExternalDataWindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+        <state relative-caret-position="-26">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1201#2101#0" expanded="false" />
-            <element signature="e#7234#9918#0" expanded="false" />
-            <element signature="e#9959#10348#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MainWindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="1011" column="46" lean-forward="false" selection-start-line="1011" selection-start-column="46" selection-end-line="1011" selection-end-column="46" />
+        <state relative-caret-position="181">
+          <caret line="602" column="7" lean-forward="false" selection-start-line="602" selection-start-column="5" selection-end-line="602" selection-end-column="7" />
           <folding>
             <element signature="e#638#669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/MySimulationsWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="286" column="7" lean-forward="false" selection-start-line="286" selection-start-column="5" selection-end-line="286" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewMaterialWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="268" column="8" lean-forward="false" selection-start-line="268" selection-start-column="8" selection-end-line="268" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewPumpWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="45" column="57" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="45" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewGasSourceWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="256" column="26" lean-forward="false" selection-start-line="256" selection-start-column="26" selection-end-line="256" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Gassource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="69" lean-forward="false" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/ESD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/TDI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="e#118#136#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Pump.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/InputFormat/InputTransform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="e#173#183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="343" column="17" lean-forward="true" selection-start-line="343" selection-start-column="17" selection-end-line="343" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Components/Material.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Visualisation/NewESDcurve.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/example_input_file.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Data/Input/example_input_file_New.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PyVASCO/PyVASCO_Code/Computation/Core2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="666" column="22" lean-forward="false" selection-start-line="666" selection-start-column="22" selection-end-line="666" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

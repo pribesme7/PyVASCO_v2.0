@@ -7,30 +7,32 @@ import os
 
 class Material:
     """
-    Parameters:
-    ----------
-    **File** (str): Name of the directory containing the Material \n
+    Parameters
+    ==========
+    
+    B{File} (str): Name of the directory containing the Material \n
 
-    Attributes:
-    ----------
-    **File** (str) : Name of the directory containing the Material \n
-    **Name** (str) : Name of the Material, typically M + Number \n
-    **Sticking** (numpy.array) : Sticking coefficient for the different gas species \n
-    **EtaI** (numpy.ndarray) : Ion induced gas desorption coefficients for the different gas species \n
-    **EtaE** (numpy.ndarray) : Electron induced gas desorption coefficients for the different gas species \n
-    **EtaPh** (numpy.ndarray) : Photon induced gas desorption coefficients for the different gas species \n
-    **OutGassing** (numpy.array) : Thermal outgassing per unit length for the different gas species \n
-    **LinearPumping** (numpy.array) : Wall pumping speed (for example getter coating) per unit length for the different
+    Attributes
+    ==========
+    
+    B{File} (str) : Name of the directory containing the Material \n
+    B{Name}(str) : Name of the Material, typically M + Number \n
+    B{Sticking} (numpy.array) : Sticking coefficient for the different gas species \n
+    B{EtaI} (numpy.ndarray) : Ion induced gas desorption coefficients for the different gas species \n
+    B{EtaE} (numpy.ndarray) : Electron induced gas desorption coefficients for the different gas species \n
+    B{EtaPh} (numpy.ndarray) : Photon induced gas desorption coefficients for the different gas species \n
+    B{OutGassing} (numpy.array) : Thermal outgassing per unit length for the different gas species \n
+    B{LinearPumping} (numpy.array) : Wall pumping speed (for example getter coating) per unit length for the different
     gas species\n
-    **esdLoaded** (bool): True if the ESD vs. electron dose for the material has to be loaded; False otherwise
-    **seyLoaded** (bool): True if the ESD vs. electron dose for the material has to be loaded; False otherwise
+    B{esdLoaded} (bool): True if the ESD vs. electron dose for the material has to be loaded; False otherwise \n
+    B{seyLoaded} (bool): True if the ESD vs. electron dose for the material has to be loaded; False otherwise \n
 
 
-    Methods:
-    --------
-    * LoadESDCurve()
-    * LoadSEYCurve()
-    * showAll_Material()
+    Methods
+    =======
+        - LoadESDCurve()
+        - LoadSEYCurve()
+        - showAll_Material()
 
     """
     Name = ''
@@ -47,13 +49,15 @@ class Material:
         self.File = File
         LArray = []
         with open(File) as f:
+            i = 0
             for line in f.readlines():
-                lsplit = line.split(',')
+                lsplit = line.strip("\n").split(',')
                 LArray.append(lsplit)
 
                 if len(lsplit) < 4:
                     isSingleGas = True
                     break
+                i += 1
 
         if isSingleGas:
             pass
@@ -80,11 +84,12 @@ class Material:
             self.esdLoaded = False
             self.seyLoaded = False
             self.LoadESDCurve()
+            self.LoadCryoSticking()
             #self.LoadSEYCurve()
 
     def LoadESDCurve(self):
         """
-        If esdLoaded is True, loads the ESD vs. electron dose curve for the Material.
+            If esdLoaded is True, loads the ESD vs. electron dose curve for the Material.
         """
 
         ESDFolder = "/".join(self.File.split("/")[:-2]) + "/ESD/"
@@ -103,7 +108,7 @@ class Material:
 
     def LoadSEYCurve(self,tdiFile):
         """
-        If seyLoaded is True, loads the SEY vs. electron dose curve for the Material.
+            If seyLoaded is True, loads the SEY vs. electron dose curve for the Material.
         """
 
         SEYFolder = "/".join(self.File.split("/")[:-2]) + "/SEY/"
@@ -119,10 +124,52 @@ class Material:
             self.seyLoaded = False
             print " No SEY curve for this Material"
 
+    def LoadCryoSticking(self):
+        """
+        Loads the cryogenic behavior of the sticking coefficient
+        """    
+    
+        self.CryoSticking = []
+        CryoFolder = "/".join(self.File.split("/")[:-2]) + "/Cryogenics/"
+        if self.Name in os.listdir(CryoFolder):
+            f = open(CryoFolder + self.Name + ".csv")
+            lines = f.readlines()
+            f.close()
+        else:
+            f = open(CryoFolder + "Default.csv" )
+            lines = f.readlines()
+            f.close()
+
+        i = 0
+        while i < len(lines):
+            t =  [l for l in lines[i].strip("\n").split(",")[1:] if l != ""]
+            i += 1
+            alpha = [l for l in lines[i].strip("\n").split(",")[1:] if l != ""]
+            i +=1
+            if len(t) == 1:
+                self.CryoSticking.append([float(t[0]), [], float(t[-1])])
+            else:
+                self.CryoSticking.append([float(t[0]),[[float(temp) for temp in  t] , [float(alph) for alph in alpha]],float(t[-1])])
+
+    def GetSticking(self,T):
+        """
+        Gets the sticking coefficient of a material as a function of the temperature.
+        @param T: (float) Temperature
+        @return: alpha (array). Sticking coefficient at temperature T for the different relevant gases
+        """
+        alpha = []
+        for i in range(4):
+            if T <= self.CryoSticking[i][0]:
+                alpha.append(1.)
+            elif T >= self.CryoSticking[i][2]:
+                alpha.append(self.Sticking[i])
+            else:
+                alpha.append(np.interp(T, self.CryoSticking[i][1][0],self.CryoSticking[i][1][1] ))
+        return alpha
+
 
     def showAll_Material(self,MaterialsArray):
         """
-        :param MaterialsArray:
         """
         for M in MaterialsArray:
             dir_Pumps = self.PumpFolder + 'P0' + '.csv'

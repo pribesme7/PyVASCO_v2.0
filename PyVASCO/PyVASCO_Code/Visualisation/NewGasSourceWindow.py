@@ -13,7 +13,7 @@ from Config import Config
 import unit
 from Components.Gassource import Gassource
 from Visualisation import MyMessageBox
-
+from Visualisation import MyMessageBox,ReadComponent,ReWrite
 
 class NewGSourceWindow(QMainWindow):
     """
@@ -26,41 +26,14 @@ class NewGSourceWindow(QMainWindow):
         self.setCentralWidget(self.tabWidget)
         self.create_connections()
         self.setWindowTitle("New Gas Source")
-        self.initiate_window()
+
 
     def create_widgets(self):
         """
        Calls the methods 'create_tab1()' and 'create_tab2()' .
        """
-        self.create_tab1()
+        self.create_tab3()
         self.create_tab2()
-
-    def create_tab1(self):
-        """
-       Creates and initializes all widgets in tab 1.
-       """
-        tab1Widget = QWidget()
-
-        Frame1 = QGroupBox("Load Data")
-        # widgets for FRAME 1
-        infoLabel = QLabel("Select new Gas Source from file")
-
-        self.GasSourceEdit = QLineEdit()
-        self.GasSourceButton = QPushButton("Directory")
-        self.SaveGasSourceButton = QPushButton("Save Gas Source")
-
-        frame1Layout = QGridLayout()  # how the items within one frame are aligned
-        frame1Layout.addWidget(infoLabel, 0, 0)
-        frame1Layout.addWidget(self.GasSourceButton, 1,0)
-        frame1Layout.addWidget(self.GasSourceEdit, 1,1)
-        frame1Layout.addWidget(self.SaveGasSourceButton, 2, 1)
-
-        Frame1.setLayout(frame1Layout)
-
-        tab1Layout = QVBoxLayout()
-        tab1Layout.addWidget(Frame1)
-        tab1Widget.setLayout(tab1Layout)
-        self.tabWidget.addTab(tab1Widget, "Data")
 
 
     def create_tab2(self):
@@ -100,8 +73,91 @@ class NewGSourceWindow(QMainWindow):
         self.tabWidget.addTab(tab2Widget, "Write New GasSource")
         Frame3.setFixedHeight(75)
 
-    def initiate_window(self):
-        pass
+
+
+    def create_tab3(self):
+        """
+         Creates and initializes all widgets in tab 3.
+        """
+        # Show registered GasSources
+        tab3Widget = QWidget()
+        tab3Layout = QGridLayout()
+
+        Frame2 = QGroupBox("GasSource")
+
+        self.GasSourceNameLabel = QLabel("Name: ")
+        self.GasSourceNameEdit2 = QLabel("")
+        self.GasSourceSaveChangesPushButton = QPushButton("Save changes")
+        self.GasSourceTableWidget = QTableWidget()
+
+        self.GasSourceTableWidget.setRowCount(4)
+        self.GasSourceTableWidget.setColumnCount(1)
+        self.GasSourceTableWidget.setHorizontalHeaderLabels([""])
+
+        self.GasSourceTableWidget.setVerticalHeaderLabels(
+                ["g_H2 [mbar l/s]", "g_CH4 [mbar l/s]", "g_CO [mbar l/s]", "g_CO2 [mbar l/s]"])
+
+        frame2Layout = QGridLayout()
+        frame2Layout.addWidget(self.GasSourceNameLabel, 0, 0, 1, 1)
+        frame2Layout.addWidget(self.GasSourceNameEdit2, 0, 1, 1, 1)
+        frame2Layout.addWidget(self.GasSourceSaveChangesPushButton, 0, 2, 1, 1)
+        frame2Layout.addWidget(self.GasSourceTableWidget, 1, 0, 9, 4)
+        Frame2.setLayout(frame2Layout)
+        Frame2.setMinimumWidth(550)
+        Frame2.setMinimumHeight(400)
+
+        Frame1 = QGroupBox("List of GasSources")
+        self.GasSourcesList = self.CreateList(Config.GassourceFolder)
+        frame1Layout = QGridLayout()
+        frame1Layout.addWidget(self.GasSourcesList)
+        Frame1.setLayout(frame1Layout)
+        Frame1.setFixedWidth(300)
+
+        tab3Layout.addWidget(Frame1, 0, 0)
+        tab3Layout.addWidget(Frame2, 0, 1)
+
+        tab3Widget.setLayout(tab3Layout)
+        self.tabWidget.addTab(tab3Widget, "View and Edit")
+
+
+    def populateTable(self):
+        """
+         Fills the table where the contents of a simulation are shown on selecting an item from the list.
+        @return:
+        """
+        item = self.GasSourcesList.currentItem().text()
+        self.GasSourceNameEdit2.setText(item.split("_")[0])
+        Data = ReadComponent(Config.GassourceFolder+ item + ".csv")
+        # self.GasSourceTableWidget.setHorizontalHeaderLabels(['H2', 'CH4', "CO", 'CO2'])
+        for i in range(self.GasSourceTableWidget.rowCount()):
+            for j in range(len(Data[0])):
+                self.GasSourceTableWidget.setItem(i, j, QTableWidgetItem(str(Data[i][j])))
+
+    def openDirectoryGasSource(self):
+        """
+        Opens the directory containing a new GasSource .
+        """
+
+        dir = (
+            os.path.dirname(
+                Config.DataFolder + 'Input/'))  # if self.filename is not None else Config.DataFolder+'Input/')
+        fname = unicode(QFileDialog.getOpenFileName(self, "Choose CSV-file to upload data", dir))
+
+        self.GasSourceEdit.setText(fname)
+
+
+    def CreateList(self, Dir):
+
+        listWidget = QListWidget()
+        listWidget.resize(300, 120)
+
+        for c in os.listdir(Dir):
+            item = ".".join(c.split(".")[:-1])
+            if item == "" and os.path.isdir(Dir + "/" + c):
+                item = c
+            list_item = QListWidgetItem(item, parent=listWidget)
+            list_item.setFlags(list_item.flags() | Qt.ItemIsEditable)
+        return listWidget
 
     def populate(self):
         """
@@ -109,70 +165,21 @@ class NewGSourceWindow(QMainWindow):
         """
         self.table_widget.setRowCount(4)
         self.table_widget.setColumnCount(1)
-        self.table_widget.setVerticalHeaderLabels([ "g_H2 [mbar *l/s]", "g_CH4 [mbar *l/s]","g_CO [mbar *l/s]",
-                                                    "g_CO2 [mbar *l/s]"])
+        self.table_widget.setVerticalHeaderLabels([ "g_H2 [mbar l/s]", "g_CH4 [mbar l/s]","g_CO [mbar l/s]",
+                                                    "g_CO2 [mbar l/s]"])
 
     def create_connections(self):
         """
         Creates the connections between the GUI widgets and the callback functions.
         """
+
         print('create_connections')
-        #self.unitComboBox.currentIndexChanged.connect(self.unitchange)
-        self.GasSourceButton.clicked.connect(self.openDirectoryGasSource)
-        self.SaveGasSourceButton.clicked.connect(self.SaveGasSource)
+
         self.SaveGasSourceButton2.clicked.connect(self.SaveCustomGasSource)
-
-    def openDirectoryGasSource(self):
-        """
-        Opens the directory containing a new type of Gas source .
-        """
-        dir = (
-        os.path.dirname(Config.DataFolder + 'Input/'))  # if self.filename is not None else Config.DataFolder+'Input/')
-        fname = unicode(QFileDialog.getOpenFileName(self, "Choose CSV-file to upload data", dir))
-
-        self.GasSourceEdit.setText(fname)
-
-    def SaveGasSource(self):
-        """
-        Copies the file containg the new gas source in the corresponding directory, so it will be properly detected by the PyVASCO. In case of error, launches a warning message.
-        """
-
-        f = open(self.GasSourceEdit.text())
-        lines = f.readlines()
-        f.close()
-        lines = [l.strip("\n").split(",") for l in lines]
-        print lines
-        self.GasSourceName = lines[0][0]
-        if (lines[1][0] != "g_H2 [mbar *l/s]" or lines[2][0] != "g_CH4 [mbar *l/s]" or lines[3][0] != "g_CO [mbar *l/s]" or \
-            lines[4][0] != "g_CO2 [mbar *l/s]" or self.GasSourceName == ""):
-            msg = MyMessageBox()
-            msg.setIcon(QMessageBox.Warning)
-            msg.setText("Wrong format for GasSource! ")
-            msg.setWindowTitle("GasSource Warning Bow")
-            msg.setDetailedText("A GasSource file should be a CSV file with the following structure: \n\n"
-                                "| Name of the GasSource |     \n"
-                                "|------------------|---    \n"
-                                "|   g_H2 [mbar *l/s]     |      \n"
-                                "|------------------|---    \n"
-                                "|   g_CH4 [mbar *l/s]    |      \n"
-                                "|------------------|---    \n"
-                                "|   g_CO [mbar *l/s]     |      \n"
-                                "|------------------|---    \n"
-                                "|   g_CO2 [mbar *l/s]     |      \n"
-                                "|------------------|---    \n")
-
-            msg.exec_()
-
-        else:
-            name = os.path.split(self.GasSourceEdit.text())
-            if name[0] != Config.GassourceFolder:
-                NewGasSource = os.path.join(Config.GassourceFolder, name[1])
-                os.rename(name, NewGasSource)
-            else:
-                NewGasSource = self.GasSourceEdit.text()
-
-            NewGasSource = Gassource(NewGasSource)
-            Config.Config.LoadGassource()
+        self.GasSourcesList.doubleClicked.connect(self.edit_current)
+        self.GasSourcesList.itemClicked.connect(self.populateTable)
+        self.GasSourcesList.itemChanged.connect(self.saveNameChanged)
+        self.GasSourceSaveChangesPushButton.clicked.connect(self.SaveChanges)
 
     def SaveCustomGasSource(self):
         """
@@ -182,13 +189,16 @@ class NewGSourceWindow(QMainWindow):
         if not os.path.isfile(Config.GassourceFolder + self.GasSourceName + ".csv"):
             f = open(Config.GassourceFolder + self.GasSourceName + ".csv", "w")
             f.write(self.GasSourceName + " \n")
-            labels = [ "g_H2 [l/s]", "g_CH4 [l/s]","g_CO [l/s]","g_CO2 [l/s]"]
+            labels = [ "g_H2 [mbar l/s]", "g_CH4 [mbar l/s]","g_CO [mbar l/s]","g_CO2 [mbar l/s]"]
             print labels
             for i in range(4):
                 cols = str(self.table_widget.item(i,0).text()) + "\n"
                 f.write(labels[i] + "," + cols)
             f.close()
             Config.LoadGassource()
+            self.close()
+            self.__init__()
+            self.show()
         else:
             def msgbtn(i):
                 print i.text()
@@ -196,7 +206,7 @@ class NewGSourceWindow(QMainWindow):
                     f = open(Config.GassourceFolder + self.GasSourceName + ".csv", "w")
                     f.write(self.GasSourceName + " \n")
                     print self.GasSourceName + " \n"
-                    labels = ["g_H2 [l/s]", "g_CH4 [l/s]", "g_CO [l/s]", "g_CO2 [l/s]"]
+                    labels = ["g_H2 [mbar l/s]", "g_CH4 [mbar l/s]", "g_CO [mbar l/s]", "g_CO2 [mbar l/s]"]
                     print labels
                     for i in range(4):
                         cols = str(self.table_widget.item(i, 0).text()) + "\n"
@@ -205,6 +215,7 @@ class NewGSourceWindow(QMainWindow):
                     f.close()
 
                     Config.LoadGassource()
+                    self.__init__()
                 else:
                     pass
             msg = MyMessageBox()
@@ -215,14 +226,49 @@ class NewGSourceWindow(QMainWindow):
             msg.buttonClicked.connect(msgbtn)
             msg.exec_()
 
+    def edit_current(self):
+        """
+       Allows the user to change the name of the items of the list
+       @return:
+       """
+        index = self.GasSourcesList.currentIndex()
+        if index.isValid():
+            item = self.GasSourcesList.itemFromIndex(index)
+            if not item.isSelected():
+                item.setSelected(True)
+            self.GasSourcesList.edit(index)
+
+            self.oldName = item.text()
+
+    def saveNameChanged(self):
+        """
+        Saves the new name assigned to any item of the list and changes the name of the correspondig simulation to its
+        new name
+        @return:
+        """
+        index = self.GasSourcesList.currentIndex()
+        self.newName = self.GasSourcesList.itemFromIndex(index).text()
+        os.rename(Config.GassourceFolder + self.oldName + ".csv",
+                  Config.GassourceFolder + str(self.newName) + ".csv")
+        self.populateTable()
+        self.GasSourcesList = self.CreateList(Config.GassourceFolder)
 
 
-
-
-
-
-
-
+    def SaveChanges(self):
+        """
+        Saves changes in an existing gas source
+        @return:
+        """
+        Data = []
+        for i in range(self.GasSourceTableWidget.rowCount()):
+            column = []
+            for j in range(self.GasSourceTableWidget.columnCount()):
+                column.append(str(self.GasSourceTableWidget.item(i, j).text()))
+            Data.append(column)
+        name = Config.GassourceFolder + self.GasSourceNameEdit2.text() + ".csv"
+        Data = [d[0] for d in Data]
+        ReWrite(name, Data, horizontal_labels=[""],
+                vertical_labels=["g_H2 [mbar l/s]","g_CH4 [mbar l/s]","g_CO [mbar l/s]","g_CO2 [mbar l/s]"])
 
 
 if __name__ == "__main__":

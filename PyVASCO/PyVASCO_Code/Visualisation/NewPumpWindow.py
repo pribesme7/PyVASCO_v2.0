@@ -12,10 +12,17 @@ from Config import Config
 
 import unit
 from Components.Pump import Pump
-from Visualisation import MyMessageBox
+from Visualisation import MyMessageBox,ReadComponent,ReWrite
 
 
 def WritePump(File,Array,Name):
+    """
+    Writes the pumping speed of a pump identified with 'Name' in the file 'File'  
+    @param  File: (str) File where the pump information will be written.
+    @param  Array: (np.ndarray) Array containing the pumping speeds of the pump for the different gas species
+    @param  Name: (str) Name of the pump
+    @return:
+    """
     f = open(File, "w")
     f.write(Name + ", \n")
     labels = ["S_H2 [l/s]", "S_CH4 [l/s]", "S_CO [l/s]", "S_CO2 [l/s]"]
@@ -31,6 +38,13 @@ def WritePump(File,Array,Name):
 
 
 def eformat(f, prec, exp_digits):
+    """
+    Writes a number in scientific format with a specified precission
+    @param f: number to express in scientific format
+    @param prec: (int) precission of the decimal part
+    @param exp_digits: (int) precission of the exponent
+    @return: (str) Input number in scientific format with
+    """
     s = "%.*e" % (prec, f)
     mantissa, exp = s.split('e')
     # add 1 to digits as 1 is taken by sign +/-
@@ -49,42 +63,15 @@ class NewPumpWindow(QMainWindow):
         self.setCentralWidget(self.tabWidget)
         self.create_connections()
         self.setWindowTitle("New Pump")
-        self.initiate_window()
+
 
     def create_widgets(self):
         """
-       Calls the methods 'create_tab1()' and 'create_tab2()' .
+       Calls the methods 'create_tab3()' and 'create_tab2()' .
        """
 
-        self.create_tab1()
+        self.create_tab3()
         self.create_tab2()
-
-    def create_tab1(self):
-        """
-        Creates and initializes all widgets in tab 1.
-        """
-        tab1Widget = QWidget()
-
-        Frame1 = QGroupBox("Load Data")
-        # widgets for FRAME 1
-        infoLabel = QLabel("Select new pump from file")
-
-        self.PumpEdit = QLineEdit()
-        self.PumpButton = QPushButton("Directory")
-        self.SavePumpButton = QPushButton("Save Pump")
-
-        frame1Layout = QGridLayout()  # how the items within one frame are aligned
-        frame1Layout.addWidget(infoLabel, 0, 0)
-        frame1Layout.addWidget(self.PumpButton, 1,0)
-        frame1Layout.addWidget(self.PumpEdit, 1,1)
-        frame1Layout.addWidget(self.SavePumpButton, 2, 1)
-
-        Frame1.setLayout(frame1Layout)
-
-        tab1Layout = QVBoxLayout()
-        tab1Layout.addWidget(Frame1)
-        tab1Widget.setLayout(tab1Layout)
-        self.tabWidget.addTab(tab1Widget, "Data")
 
 
     def create_tab2(self):
@@ -131,8 +118,91 @@ class NewPumpWindow(QMainWindow):
         self.tabWidget.addTab(tab2Widget, "Write New Pump")
         Frame3.setFixedHeight(75)
 
-    def initiate_window(self):
-        pass
+    def create_tab3(self):
+        """
+        Creates and initializes all widgets in tab 3.
+        """
+        # Show registered Pumps
+        tab3Widget = QWidget()
+        tab3Layout = QGridLayout()
+
+        Frame2 = QGroupBox("Pump")
+
+        self.PumpNameLabel = QLabel("Name: ")
+        self.PumpNameEdit2 = QLabel("")
+        self.PumpSaveChangesPushButton = QPushButton("Save changes")
+        self.PumpTableWidget = QTableWidget()
+        self.PumpTableWidget.setRowCount(4)
+        self.PumpTableWidget.setColumnCount(1)
+        self.PumpTableWidget.setVerticalHeaderLabels(["S_H2 [l/s]", "S_CH4 [l/s]", "S_CO [l/s]", "S_CO2 [l/s]"])
+        self.PumpTableWidget.setHorizontalHeaderLabels(["Nominal"])
+        frame2Layout = QGridLayout()
+        frame2Layout.addWidget(self.PumpNameLabel, 0, 0, 1, 1)
+        frame2Layout.addWidget(self.PumpNameEdit2, 0, 1, 1, 1)
+        frame2Layout.addWidget(self.PumpSaveChangesPushButton, 0, 2, 1, 1)
+        frame2Layout.addWidget(self.PumpTableWidget, 1, 0, 9, 4)
+        Frame2.setLayout(frame2Layout)
+        Frame2.setMinimumWidth(500)
+        Frame2.setMinimumHeight(400)
+
+        Frame1 = QGroupBox("List of Pumps")
+        self.PumpsList = self.CreateList(Config.PumpFolder)
+        frame1Layout = QGridLayout()
+        frame1Layout.addWidget(self.PumpsList)
+        Frame1.setLayout(frame1Layout)
+        Frame1.setFixedWidth(300)
+
+        tab3Layout.addWidget(Frame1, 0, 0)
+        tab3Layout.addWidget(Frame2, 0, 1)
+
+        tab3Widget.setLayout(tab3Layout)
+        self.tabWidget.addTab(tab3Widget, "View and Edit")
+
+    def CreateList(self, Dir):
+        """
+        Creates a list with all the files stored in Dir
+        @param Dir: Directory from which the items for the list are extrated.
+        @return: listWidget (QListWidget)
+        """
+        listWidget = QListWidget()
+        listWidget.resize(300, 120)
+
+        for c in os.listdir(Dir):
+            item = ".".join(c.split(".")[:-1])
+            if item == "" and os.path.isdir(Dir + "/" + c):
+                item = c
+            list_item = QListWidgetItem(item, parent=listWidget)
+            list_item.setFlags(list_item.flags() | Qt.ItemIsEditable)
+
+        return listWidget
+
+    def populateTable(self):
+        """
+         Fills the table where the contents of a simulation are shown on selecting an item from the list.
+         @return:
+        """
+        item = self.PumpsList.currentItem().text()
+        if os.path.isfile(Config.PumpFolder + item + ".csv"):
+            self.PumpTableWidget.setColumnCount(1)
+            self.PumpTableWidget.setHorizontalHeaderLabels(["Nominal"])
+            Data = ReadComponent(Config.PumpFolder + item + ".csv")
+            self.PumpNameEdit2.setText(item)
+            for i in range(self.PumpTableWidget.rowCount()):
+                for j in range(self.PumpTableWidget.columnCount()):
+                    self.PumpTableWidget.setItem(i, j, QTableWidgetItem(str(Data[i][j])))
+        else:
+            Data = ReadComponent(str(Config.PumpFolder + item))
+            self.PumpNameEdit2.setText(item)
+            keys = ["Nominal"] + [k for k in Data.keys() if k != "Nominal"]
+            labels = ["Nominal"] + [k + " mbar" for k in Data.keys() if k != "Nominal"]
+            self.Labels = keys
+            self.PumpTableWidget.setColumnCount(len(keys))
+            self.PumpTableWidget.setHorizontalHeaderLabels(labels)
+            for j, k in enumerate(keys):
+                for i in range(4):
+                    self.PumpTableWidget.setItem(i, j, QTableWidgetItem(str(Data[k][i][0])))
+
+
 
     def populate(self):
         """
@@ -154,14 +224,18 @@ class NewPumpWindow(QMainWindow):
         """
 
         print('create_connections')
-        #self.unitComboBox.currentIndexChanged.connect(self.unitchange)
-        self.PumpButton.clicked.connect(self.openDirectoryPump)
-        self.SavePumpButton.clicked.connect(self.SavePump)
         self.SavePumpButton2.clicked.connect(self.SaveCustomPump)
         self.AddSpeedLabel.clicked.connect(self.AddSpeedColumn)
         self.PumpNameEdit.editingFinished.connect(self.handleEditingFinished)
+        self.PumpsList.doubleClicked.connect(self.edit_current)
+        self.PumpsList.itemClicked.connect(self.populateTable)
+        self.PumpsList.itemChanged.connect(self.saveNameChanged)
+        self.PumpSaveChangesPushButton.clicked.connect(self.SaveChanges)
 
     def handleEditingFinished(self):
+        """
+         If a new pump identifier is written, the table below will be reseted
+        """
         if self.PumpNameEdit.isModified():
             print "Writing new pump! "
             self.populate()
@@ -185,48 +259,6 @@ class NewPumpWindow(QMainWindow):
         self.table_widget.setHorizontalHeaderLabels(self.Labels)
 
 
-    def SavePump(self):
-        """
-        Copies the file containg the new Pump in the corresponding directory, so it will be properly detected by the PyVASCO. In case of error, launches a warning message.
-        """
-
-        f = open(self.PumpEdit.text())
-        lines = f.readlines()
-        f.close()
-        lines = [l.strip("\n").split(",") for l in lines]
-        print lines
-        self.PumpName = lines[0][0]
-        if (lines[1][0] != "S_H2 [l/s]" or lines[2][0] != "S_CH4 [l/s]" or lines[3][0] != "S_CO [l/s]" or \
-            lines[4][0] != "S_CO2 [l/s]" or self.PumpName == ""):
-            msg = MyMessageBox()
-            msg.setIcon(QMessageBox.Warning)
-            msg.setText("Wrong format for pump! ")
-            msg.setWindowTitle("Pump Warning Bow")
-            msg.setDetailedText("A Pump file should be a CSV file with the following structure: \n\n"
-                                "| Name of the pump |     \n"
-                                "|------------------|---    \n"
-                                "|   S_H2 [l/s]     |      \n"
-                                "|------------------|---    \n"
-                                "|   S_CH4 [l/s]    |      \n"
-                                "|------------------|---    \n"
-                                "|   S_CO [l/s]     |      \n"
-                                "|------------------|---    \n"
-                                "|   S_CO2 [l/s]     |      \n"
-                                "|------------------|---    \n")
-
-            msg.exec_()
-
-        else:
-            name = os.path.split(self.PumpEdit.text())
-            if name[0] != Config.PumpFolder:
-                NewPump = os.path.join(Config.PumpFolder, name[1])
-                os.rename(name, NewPump)
-            else:
-                NewPump = self.PumpEdit.text()
-
-            NewPump = Pump(NewPump)
-            Config.Config.LoadPumps()
-
     def SaveCustomPump(self):
         """
         Creates a file in the corresponding input folder for the Pump defined in the tab 'Write New Pump' of the 'New Pump' window.
@@ -239,6 +271,9 @@ class NewPumpWindow(QMainWindow):
                 Array = [str(self.table_widget.item(i, 0).text()) for i in range(4)]
                 WritePump(Config.PumpFolder + self.PumpName + ".csv", Array,self.PumpName)
                 Config.LoadPumps()
+                self.close()
+                self.__init__()
+                self.show()
             else:
                 labels = ["Nominal"] + [l.split(" ")[0] for l in self.Labels if l != "Nominal"]
                 Array = [[str(self.table_widget.item(i, j).text()) for i in range(4)] for j in range(len(labels))]
@@ -250,6 +285,9 @@ class NewPumpWindow(QMainWindow):
                         pass
                     WritePump(Config.PumpFolder + self.PumpName + "/" + self.PumpName +"_" +  l + ".csv", Array[i], self.PumpName)
                 Config.LoadPumps()
+                self.close()
+                self.__init__()
+                self.show()
         else:
             def msgbtn(i):
                 print i.text()
@@ -276,8 +314,65 @@ class NewPumpWindow(QMainWindow):
             msg.buttonClicked.connect(msgbtn)
             msg.exec_()
 
+    def edit_current(self):
+        """
+        Allows the user to change the name of the items of the list
+        @return:
+        """
+        index = self.PumpsList.currentIndex()
+        if index.isValid():
+            item = self.PumpsList.itemFromIndex(index)
+            if not item.isSelected():
+                item.setSelected(True)
+            self.PumpsList.edit(index)
+
+            self.oldName = item.text()
 
 
+    def SaveChanges(self):
+        """
+                Saves changes in an existing simulation
+                 @return:
+                 """
+        Data = []
+        if self.PumpTableWidget.columnCount() > 1:
+            print "Complex pump!"
+            for j in range(self.PumpTableWidget.columnCount()):
+                row = []
+                for i in range(self.PumpTableWidget.rowCount()):
+                    row.append(str(self.PumpTableWidget.item(i,j).text()))
+                name = Config.PumpFolder + self.PumpNameEdit2.text() + "/"+  self.PumpNameEdit2.text()+"_" + self.Labels[j]+ ".csv"
+                ReWrite(name, row, vertical_labels=["S_H2 [l/s]", "S_CH4 [l/s]", "S_CO [l/s]", "S_CO2 [l/s]"],
+                        horizontal_labels=self.Labels[j])
+
+
+        else:
+            for i in range(self.PumpTableWidget.rowCount()):
+                column = []
+                for j in range(self.PumpTableWidget.columnCount()):
+                    column.append(str(self.PumpTableWidget.item(i,j).text()))
+                Data.append(column)
+
+
+            name = Config.PumpFolder+ self.PumpNameEdit2.text() + ".csv"
+            Data = [d[0] for d in Data]
+            ReWrite(name,Data,vertical_labels= ["S_H2 [l/s]", "S_CH4 [l/s]","S_CO [l/s]","S_CO2 [l/s]"],horizontal_labels =self.Labels)
+
+
+    def saveNameChanged(self):
+        index = self.PumpsList.currentIndex()
+        self.newName = self.PumpsList.itemFromIndex(index).text()
+        if len(self.Labels) > 1 :
+            print "complex pump! ", self.Labels
+            for f in os.listdir(Config.PumpFolder + self.oldName + "/"):
+                ending = f.split(self.oldName)[1]
+                os.rename(Config.PumpFolder + self.oldName + "/" + f,Config.PumpFolder + self.oldName + "/" + self.newName + ending  )
+            os.rename(Config.PumpFolder + self.oldName,Config.PumpFolder + self.newName)
+        else:
+            os.rename(Config.PumpFolder + self.oldName + ".csv", Config.PumpFolder + self.newName + ".csv")
+
+        self.populateTable()
+        self.CreateList(Config.DataFolder + "Input/Materials/")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
